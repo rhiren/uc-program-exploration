@@ -69,8 +69,9 @@ export default function MedicalPage() {
             <p className="eyebrow">Try the underlying thinking</p>
             <h2>Three short, low-pressure challenges</h2>
             <p>
-              Correctness will eventually adjust difficulty. Your reflection—not
-              a score—helps you notice what feels interesting.
+              The first activity is now interactive and shows explanations
+              without giving a score. Your reflection helps you notice what
+              feels interesting.
             </p>
           </div>
           <div className="challenge-grid">
@@ -82,7 +83,13 @@ export default function MedicalPage() {
                 <p className="card-label">Challenge {index + 1}</p>
                 <h3>{challenge.title}</h3>
                 <p>{challenge.learningGoals[0]}</p>
-                <span className="status-chip">Interactive version coming next</span>
+                {challenge.id === "bio-genetics-protein" ? (
+                  <Link className="challenge-link" href="/discover/start">
+                    Try the interactive activity →
+                  </Link>
+                ) : (
+                  <span className="status-chip">Interactive version coming later</span>
+                )}
               </article>
             ))}
           </div>

@@ -26,6 +26,24 @@ export default function DiscoverPage() {
         </p>
       </section>
 
+      <section className="shell journey-invitation" aria-labelledby="guided-discovery">
+        <div>
+          <p className="eyebrow">A gentle 6–8 minute start</p>
+          <h2 id="guided-discovery">Try one real question before choosing a path.</h2>
+          <p>
+            Answer four lightweight prompts, trace a short genetics mechanism,
+            and meet three different programs. It is an exploration—not a
+            personality or aptitude test.
+          </p>
+        </div>
+        <div>
+          <Link className="button button-primary" href="/discover/start">
+            Begin guided discovery →
+          </Link>
+          <span>No account · saves on this device</span>
+        </div>
+      </section>
+
       <section className="shell content-section" aria-labelledby="family-map">
         <div className="section-heading inline-heading">
           <div>

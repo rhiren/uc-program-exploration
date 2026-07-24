@@ -87,11 +87,15 @@ code.
 
 - Product home page
 - Discover overview with 12 program families and 8 detailed programs
+- Guided Discover journey with four questions, a genetics sampler, reflection,
+  and a diverse three-path reveal
+- Versioned device-local progress with export, import, and reset
 - Prepare overview with A–G and comprehensive-review guidance
 - Medicine overview with premed guidance, training timeline, and three
-  challenge introductions
+  challenge introductions; the genetics activity is interactive
 - Manifest-first content loading and validation
 - Local-first responsive visual foundation
 
-The next planned slice is interactive Discover onboarding, local progress
-storage, and the first genetics challenge.
+The next planned slice is the matching interactive Prepare journey: a
+lightweight academic baseline, A–G and UC GPA review, a partial UC Readiness
+Snapshot, and at most three next actions.

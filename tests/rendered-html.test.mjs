@@ -42,6 +42,7 @@ test("server-renders the product home from validated content", async () => {
 test("renders the three foundational routes", async () => {
   const expectations = [
     ["/discover", /Twelve program families/],
+    ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
     ["/medical", /Premed is generally a preparation pathway/],
   ];

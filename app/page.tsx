@@ -20,7 +20,7 @@ export default function Home() {
             your future into a test.
           </p>
           <div className="hero-actions" aria-label="Choose where to begin">
-            <Link className="button button-primary" href="/discover">
+            <Link className="button button-primary" href="/discover/start">
               Start with Discover <span aria-hidden="true">→</span>
             </Link>
             <Link className="button button-secondary" href="/prepare">
@@ -28,7 +28,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="privacy-note">
-            No account required. Your future progress will stay on this device.
+            No account required. Your progress stays on this device.
           </p>
         </div>
 
@@ -144,4 +144,3 @@ export default function Home() {
     </main>
   );
 }
-

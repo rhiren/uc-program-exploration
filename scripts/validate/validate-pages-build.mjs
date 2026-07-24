@@ -4,7 +4,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const outputRoot = join(root, "out");
 const basePath = process.env.PAGES_BASE_PATH ?? "";
-const routes = ["", "discover", "prepare", "medical"];
+const routes = ["", "discover", "discover/start", "prepare", "medical"];
 const failures = [];
 
 for (const route of routes) {
