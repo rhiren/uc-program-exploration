@@ -543,7 +543,28 @@ summary {
   font-weight: 700;
 }
 
-details p {
+.program-details {
+  margin-top: 14px;
+}
+
+.program-details h4 {
+  margin: 14px 0 7px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.program-details ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.program-details p {
   margin: 12px 0 0;
   color: var(--muted);
   font-size: 0.9rem;

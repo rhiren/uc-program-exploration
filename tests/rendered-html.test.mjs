@@ -53,6 +53,17 @@ test("renders the three foundational routes", async () => {
   }
 });
 
+test("describes the study experience before explaining coding", async () => {
+  const response = await render("/discover");
+  const html = await response.text();
+
+  assert.match(html, /What studying (?:<!-- -->)?Biology(?:<!-- -->)? is really like/);
+  assert.match(html, /Typical work/);
+  assert.match(html, /Plan and interpret experiments/);
+  assert.match(html, /How coding fits/);
+  assert.doesNotMatch(html, /What coding is really like/);
+});
+
 test("keeps editorial content behind the centralized loader", async () => {
   const [home, discover, prepare, medical, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -70,4 +81,3 @@ test("keeps editorial content behind the centralized loader", async () => {
   assert.match(packageJson, /"validate:content"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
-

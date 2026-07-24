@@ -72,13 +72,22 @@ export default function DiscoverPage() {
                 <div className="program-card-top">
                   <h3>{program.name}</h3>
                   <span>
-                    Coding {program.intensities.coding ?? "varies"}/5
+                    Coding use: {program.intensities.coding ?? "varies"}/5
                   </span>
                 </div>
                 <p>{program.summary}</p>
                 <details>
-                  <summary>What coding is really like</summary>
-                  <p>{program.codingReality}</p>
+                  <summary>What studying {program.name} is really like</summary>
+                  <div className="program-details">
+                    <h4>Typical work</h4>
+                    <ul>
+                      {program.typicalWork.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                    <h4>How coding fits</h4>
+                    <p>{program.codingReality}</p>
+                  </div>
                 </details>
               </article>
             ))}
@@ -97,4 +106,3 @@ export default function DiscoverPage() {
     </main>
   );
 }
-

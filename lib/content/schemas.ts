@@ -49,6 +49,7 @@ export const programSchema = maintainedRecordSchema
     name: z.string().min(1),
     familyIds: z.array(z.string().min(1)).min(1),
     summary: z.string().min(1),
+    typicalWork: z.array(z.string().min(1)).min(1),
     intensities: z.record(z.string(), z.number()),
     codingReality: z.string().min(1),
     careerIds: z.array(z.string().min(1)),
