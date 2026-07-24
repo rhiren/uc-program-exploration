@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "effectiveTerm": "Fall 2025"
+  },
+  "records": [
+    {
+      "id": "uc-berkeley-fall-2025-first-year",
+      "institutionId": "uc-berkeley",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 126836,
+      "admits": 14451,
+      "overallAdmitRatePercent": 11.4,
+      "admittedUcGpaMiddle50": {
+        "low": 4.15,
+        "high": 4.29
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-berkeley",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-davis-fall-2025-first-year",
+      "institutionId": "uc-davis",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 102980,
+      "admits": 45963,
+      "overallAdmitRatePercent": 44.6,
+      "admittedUcGpaMiddle50": {
+        "low": 4,
+        "high": 4.26
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-davis",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-irvine-fall-2025-first-year",
+      "institutionId": "uc-irvine",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 124230,
+      "admits": 35661,
+      "overallAdmitRatePercent": 28.7,
+      "admittedUcGpaMiddle50": {
+        "low": 4.04,
+        "high": 4.27
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-irvine",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "ucla-fall-2025-first-year",
+      "institutionId": "ucla",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 145070,
+      "admits": 13660,
+      "overallAdmitRatePercent": 9.4,
+      "admittedUcGpaMiddle50": {
+        "low": 4.2,
+        "high": 4.3
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-ucla",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-merced-fall-2025-first-year",
+      "institutionId": "uc-merced",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 49358,
+      "admits": 46932,
+      "overallAdmitRatePercent": 95.1,
+      "admittedUcGpaMiddle50": {
+        "low": 3.54,
+        "high": 4.15
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-merced",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-riverside-fall-2025-first-year",
+      "institutionId": "uc-riverside",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 70862,
+      "admits": 61718,
+      "overallAdmitRatePercent": 87.1,
+      "admittedUcGpaMiddle50": {
+        "low": 3.65,
+        "high": 4.16
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-riverside",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-san-diego-fall-2025-first-year",
+      "institutionId": "uc-san-diego",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 136740,
+      "admits": 38846,
+      "overallAdmitRatePercent": 28.4,
+      "admittedUcGpaMiddle50": {
+        "low": 4.11,
+        "high": 4.28
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-san-diego",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-santa-barbara-fall-2025-first-year",
+      "institutionId": "uc-santa-barbara",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 110178,
+      "admits": 42170,
+      "overallAdmitRatePercent": 38.3,
+      "admittedUcGpaMiddle50": {
+        "low": 4.09,
+        "high": 4.28
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-santa-barbara",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-santa-cruz-fall-2025-first-year",
+      "institutionId": "uc-santa-cruz",
+      "cohort": "Fall 2025 first-year applicants and admits",
+      "reportingAsOf": "2025-06",
+      "applicants": 66373,
+      "admits": 48244,
+      "overallAdmitRatePercent": 72.7,
+      "admittedUcGpaMiddle50": {
+        "low": 3.83,
+        "high": 4.2
+      },
+      "comparability": "campus_wide_only",
+      "limitation": "This is campus-wide historical context, not a major-level rate, target, safety label, or prediction. Applicant pools and selection change each year.",
+      "sourceIds": [
+        "uc-admit-santa-cruz",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "packageName": "UC Pathways Explorer version-1 content package"
+  },
+  "scope": {
+    "included": [
+      "12 program families",
+      "8 detailed programs",
+      "12 primary career records plus one clinical-data supporting record",
+      "9 UC undergraduate campuses",
+      "verified initial UC offering mappings",
+      "Fall 2025 campus-wide admission context",
+      "UC preparation rules",
+      "medical path and three challenges",
+      "two short journey branches",
+      "synthetic out-of-state portability fixture"
+    ],
+    "excluded": [
+      "Exhaustive all-UC major mapping",
+      "Nationwide student-facing content",
+      "Fall 2027 application dates before official publication",
+      "Invented major-level admit rates",
+      "Personalized admission predictions"
+    ]
+  },
+  "fileCount": 30,
+  "files": [
+    {
+      "path": "program-families.json",
+      "kind": "content",
+      "recordCount": 12
+    },
+    {
+      "path": "programs.json",
+      "kind": "content",
+      "recordCount": 8
+    },
+    {
+      "path": "careers.json",
+      "kind": "content",
+      "recordCount": 13
+    },
+    {
+      "path": "sources.json",
+      "kind": "content",
+      "recordCount": 53
+    },
+    {
+      "path": "data-contracts.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "institutions/collections.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "institutions/institutions.json",
+      "kind": "content",
+      "recordCount": 9
+    },
+    {
+      "path": "institutions/offerings.json",
+      "kind": "content",
+      "recordCount": 67
+    },
+    {
+      "path": "institutions/admissions.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "institutions/metrics.json",
+      "kind": "content",
+      "recordCount": 9
+    },
+    {
+      "path": "providers/uc/provider.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "providers/fixtures/out-of-state-institution.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "medical/path.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "medical/professions.json",
+      "kind": "content",
+      "recordCount": 5
+    },
+    {
+      "path": "medical/premed.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "medical/challenges/bio-genetics.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "medical/challenges/chem-buffers.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "medical/challenges/integrated-shortness-of-breath.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "journey/onboarding.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "journey/nodes.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "journey/path-profiles.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/ag-rules.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/gpa-rules.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/comprehensive-review.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/roadmap-templates.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/application-milestones.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "preparation/piq.json",
+      "kind": "content",
+      "recordCount": 1
+    },
+    {
+      "path": "schemas/record-collection.schema.json",
+      "kind": "json_schema",
+      "recordCount": 1
+    },
+    {
+      "path": "schemas/source-registry.schema.json",
+      "kind": "json_schema",
+      "recordCount": 1
+    },
+    {
+      "path": "manifest.json",
+      "kind": "manifest",
+      "recordCount": 1
+    }
+  ],
+  "validation": {
+    "generatedAt": "2026-07-23T00:00:00.000Z",
+    "generationIsDeterministic": true,
+    "checks": [
+      "JSON serialization",
+      "unique identifiers",
+      "source references",
+      "program-family references",
+      "program-career references",
+      "institution-offering references",
+      "prohibited major-admit fields",
+      "maintenance owner and review date"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.uc-pathways.test/schemas/record-collection.schema.json",
+  "title": "UC Pathways versioned record collection",
+  "type": "object",
+  "required": [
+    "meta",
+    "records"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "contentVersion",
+        "lastVerified",
+        "nextReviewDue",
+        "maintenanceOwnerRole"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "type": "string"
+        },
+        "contentVersion": {
+          "type": "string"
+        },
+        "lastVerified": {
+          "type": "string",
+          "format": "date"
+        },
+        "nextReviewDue": {
+          "type": "string",
+          "format": "date"
+        },
+        "maintenanceOwnerRole": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+}

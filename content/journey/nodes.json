@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "nodes": [
+    {
+      "id": "home-choice",
+      "type": "choice",
+      "prompt": "What would help today?",
+      "choices": [
+        {
+          "id": "discover",
+          "label": "Discover my options",
+          "nextNodeId": "onboarding"
+        },
+        {
+          "id": "prepare",
+          "label": "Prepare for UC",
+          "nextNodeId": "baseline-residency"
+        }
+      ]
+    },
+    {
+      "id": "onboarding",
+      "type": "question_sequence",
+      "contentRef": "journey/onboarding.json",
+      "nextNodeId": "bio-genetics-protein"
+    },
+    {
+      "id": "bio-genetics-protein",
+      "type": "challenge",
+      "contentRef": "medical/challenges/bio-genetics.json",
+      "nextNodeId": "discovery-reflection"
+    },
+    {
+      "id": "discovery-reflection",
+      "type": "reflection",
+      "prompts": [
+        "How did this feel?",
+        "What part, if any, would you want more of?"
+      ],
+      "nextNodeId": "recommendation-reveal"
+    },
+    {
+      "id": "recommendation-reveal",
+      "type": "recommendation",
+      "requiredSlots": [
+        "evidence_supported",
+        "adjacent",
+        "discovery"
+      ],
+      "nextNodeId": "save-discover"
+    },
+    {
+      "id": "save-discover",
+      "type": "save_exit",
+      "optionalNextNodeId": "baseline-residency"
+    },
+    {
+      "id": "baseline-residency",
+      "type": "question",
+      "prompt": "For UC requirement explanations, which applies?",
+      "choices": [
+        "California",
+        "Nonresident",
+        "Unsure",
+        "Skip"
+      ],
+      "nextNodeId": "baseline-courses"
+    },
+    {
+      "id": "baseline-courses",
+      "type": "progressive_course_entry",
+      "prompt": "Add one completed, current, or planned course—or continue with unknowns.",
+      "nextNodeId": "readiness-preview"
+    },
+    {
+      "id": "readiness-preview",
+      "type": "readiness_snapshot",
+      "maxNextActions": 3,
+      "nextNodeId": "save-prepare"
+    },
+    {
+      "id": "save-prepare",
+      "type": "save_exit",
+      "optionalNextNodeId": "onboarding"
+    }
+  ]
+}

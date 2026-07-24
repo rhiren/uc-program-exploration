@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "computing-data-ai",
+      "slug": "computing-data-ai",
+      "name": "Computing, data, and AI",
+      "summary": "Use computation, statistics, and data to understand systems and support decisions.",
+      "featuredProgramIds": [
+        "data-science",
+        "statistics"
+      ],
+      "order": 1,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "engineering-physical-systems",
+      "slug": "engineering-physical-systems",
+      "name": "Engineering and physical systems",
+      "summary": "Design, test, and improve devices, processes, and physical systems.",
+      "featuredProgramIds": [
+        "bioengineering",
+        "operations-research"
+      ],
+      "order": 2,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "biology-life-sciences",
+      "slug": "biology-life-sciences",
+      "name": "Biology and life sciences",
+      "summary": "Study living systems from molecules and cells to organisms and ecosystems.",
+      "featuredProgramIds": [
+        "biology",
+        "biochemistry"
+      ],
+      "order": 3,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "medicine-health-public-health",
+      "slug": "medicine-health-public-health",
+      "name": "Medicine, health, and public health",
+      "summary": "Improve health through patient care, prevention, systems, research, and policy.",
+      "featuredProgramIds": [
+        "public-health"
+      ],
+      "order": 4,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "psych-neuro-cognitive",
+      "slug": "psych-neuro-cognitive",
+      "name": "Psychology, neuroscience, and cognitive science",
+      "summary": "Study mind, brain, behavior, learning, and interaction with technology.",
+      "featuredProgramIds": [
+        "cognitive-science"
+      ],
+      "order": 5,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "math-stat-physical",
+      "slug": "math-stat-physical",
+      "name": "Mathematics, statistics, and physical sciences",
+      "summary": "Build and apply abstract and quantitative models.",
+      "featuredProgramIds": [
+        "statistics",
+        "operations-research"
+      ],
+      "order": 6,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "economics-business-operations",
+      "slug": "economics-business-operations",
+      "name": "Economics, business, and operations",
+      "summary": "Study choices, incentives, organizations, and resource allocation.",
+      "featuredProgramIds": [
+        "operations-research"
+      ],
+      "order": 7,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "environment-climate-agriculture",
+      "slug": "environment-climate-agriculture",
+      "name": "Environment, climate, and agriculture",
+      "summary": "Understand and improve natural and human environmental systems.",
+      "featuredProgramIds": [],
+      "order": 8,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "social-government-policy",
+      "slug": "social-government-policy",
+      "name": "Social sciences, government, and public policy",
+      "summary": "Study people, institutions, communities, and policy choices.",
+      "featuredProgramIds": [
+        "public-health"
+      ],
+      "order": 9,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "humanities-languages-philosophy",
+      "slug": "humanities-languages-philosophy",
+      "name": "Humanities, languages, and philosophy",
+      "summary": "Interpret human experience, ideas, values, language, and culture.",
+      "featuredProgramIds": [],
+      "order": 10,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "design-media-arts",
+      "slug": "design-media-arts",
+      "name": "Design, media, and the arts",
+      "summary": "Create experiences, communications, and expressive work.",
+      "featuredProgramIds": [],
+      "order": 11,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "education-human-development",
+      "slug": "education-human-development",
+      "name": "Education and human development",
+      "summary": "Understand learning and help people develop across settings and life stages.",
+      "featuredProgramIds": [
+        "cognitive-science"
+      ],
+      "order": 12,
+      "sourceIds": [],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

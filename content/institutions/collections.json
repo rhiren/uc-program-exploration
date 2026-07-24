@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "uc-system",
+      "name": "University of California",
+      "providerId": "uc",
+      "institutionIds": [
+        "uc-berkeley",
+        "uc-davis",
+        "uc-irvine",
+        "ucla",
+        "uc-merced",
+        "uc-riverside",
+        "uc-san-diego",
+        "uc-santa-barbara",
+        "uc-santa-cruz"
+      ],
+      "undergraduateCampusCount": 9,
+      "scopeNote": "UCSF is not an undergraduate campus and is excluded from undergraduate campus comparisons.",
+      "sourceIds": [
+        "uc-major-checker",
+        "uc-first-year-requirements"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "profiles": [
+    {
+      "id": "profile-biology",
+      "programId": "biology",
+      "dimensions": {
+        "quantitativeReasoning": 3,
+        "coding": 2,
+        "laboratory": 5,
+        "writingCommunication": 3,
+        "peopleInteraction": 2,
+        "systemsThinking": 3
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-biochemistry",
+      "programId": "biochemistry",
+      "dimensions": {
+        "quantitativeReasoning": 4,
+        "coding": 2,
+        "laboratory": 5,
+        "writingCommunication": 3,
+        "peopleInteraction": 1,
+        "systemsThinking": 3
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-data-science",
+      "programId": "data-science",
+      "dimensions": {
+        "quantitativeReasoning": 5,
+        "coding": 5,
+        "laboratory": 1,
+        "writingCommunication": 3,
+        "peopleInteraction": 2,
+        "systemsThinking": 5
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-statistics",
+      "programId": "statistics",
+      "dimensions": {
+        "quantitativeReasoning": 5,
+        "coding": 4,
+        "laboratory": 1,
+        "writingCommunication": 3,
+        "peopleInteraction": 2,
+        "systemsThinking": 3
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-cognitive-science",
+      "programId": "cognitive-science",
+      "dimensions": {
+        "quantitativeReasoning": 4,
+        "coding": 3,
+        "laboratory": 2,
+        "writingCommunication": 4,
+        "peopleInteraction": 4,
+        "systemsThinking": 3
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-public-health",
+      "programId": "public-health",
+      "dimensions": {
+        "quantitativeReasoning": 3,
+        "coding": 2,
+        "laboratory": 1,
+        "writingCommunication": 5,
+        "peopleInteraction": 5,
+        "systemsThinking": 5
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-bioengineering",
+      "programId": "bioengineering",
+      "dimensions": {
+        "quantitativeReasoning": 5,
+        "coding": 3,
+        "laboratory": 4,
+        "writingCommunication": 3,
+        "peopleInteraction": 2,
+        "systemsThinking": 5
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    },
+    {
+      "id": "profile-operations-research",
+      "programId": "operations-research",
+      "dimensions": {
+        "quantitativeReasoning": 5,
+        "coding": 4,
+        "laboratory": 1,
+        "writingCommunication": 3,
+        "peopleInteraction": 3,
+        "systemsThinking": 5
+      },
+      "minimumIndependentSignalsForDevelopingEvidence": 3
+    }
+  ],
+  "diversityRule": [
+    "evidence_supported",
+    "adjacent",
+    "discovery"
+  ],
+  "neverEliminateFromOneSampler": true
+}

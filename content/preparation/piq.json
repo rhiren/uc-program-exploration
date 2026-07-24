@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "officialPromptPolicy": "Load or verify the current official prompts before the fall 2027 application cycle.",
+  "storyBankFields": [
+    "experience",
+    "challengeOrOpportunity",
+    "actionsTaken",
+    "growthOrImpact",
+    "whyItMatters",
+    "possibleThemes"
+  ],
+  "authorshipRules": [
+    "Do not generate a final response.",
+    "Do not imitate the student's voice.",
+    "Keep brainstorming private and local.",
+    "Use the official UC guidance and prompts."
+  ],
+  "sourceIds": [
+    "uc-piq"
+  ]
+}

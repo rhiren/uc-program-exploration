@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "collectionEnvelopeRequired": [
+    "meta",
+    "records"
+  ],
+  "sourceRequired": [
+    "id",
+    "title",
+    "publisher",
+    "url",
+    "sourceType",
+    "lastVerified",
+    "nextReviewDue",
+    "maintenanceOwnerRole"
+  ],
+  "programRequired": [
+    "id",
+    "slug",
+    "name",
+    "familyIds",
+    "summary",
+    "intensities",
+    "codingReality",
+    "careerIds",
+    "premedCompatibility",
+    "highSchoolPreparation",
+    "sourceIds"
+  ],
+  "careerRequired": [
+    "id",
+    "slug",
+    "name",
+    "summary",
+    "typicalWeek",
+    "intensities",
+    "educationPath",
+    "relatedProgramIds",
+    "laborData",
+    "aiImpact",
+    "sourceIds"
+  ],
+  "institutionRequired": [
+    "id",
+    "collectionId",
+    "providerId",
+    "name",
+    "location",
+    "calendarSystem",
+    "officialUrl",
+    "sourceIds"
+  ],
+  "offeringRequired": [
+    "id",
+    "institutionId",
+    "canonicalProgramId",
+    "officialMajorName",
+    "degreeType",
+    "firstYearAvailable",
+    "admissionContext",
+    "capacityStatus",
+    "publishedMajorAdmitData",
+    "officialUrl",
+    "effectiveTerm",
+    "sourceIds"
+  ],
+  "prohibitedOfferingFields": [
+    "admitRate",
+    "estimatedAdmitRate",
+    "chanceOfAdmission"
+  ],
+  "enums": {
+    "degreeType": [
+      "BA",
+      "BS",
+      "BFA",
+      "other"
+    ],
+    "admissionContext": [
+      "campus",
+      "college",
+      "direct_major",
+      "unknown"
+    ],
+    "capacityStatus": [
+      "selective",
+      "capacity_constrained",
+      "not_identified",
+      "unknown"
+    ],
+    "publishedMajorAdmitData": [
+      "available",
+      "not_published",
+      "not_comparable",
+      "unknown"
+    ],
+    "preparationLabel": [
+      "uc_eligibility_requirement",
+      "published_institution_program_requirement",
+      "recommended_academic_preparation",
+      "optional_exploration",
+      "verify_with_counselor_or_institution"
+    ]
+  }
+}

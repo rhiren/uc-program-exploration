@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "lastVerified": "2026-07-23",
+  "nextReviewDue": "2027-07-01",
+  "maintenanceOwnerRole": "science_content_editor",
+  "disclaimer": "This is a fictional educational activity, not a diagnosis, aptitude test, or medical recommendation.",
+  "defaultMinutes": 8,
+  "optionalDeepDiveMinutes": 15,
+  "resultFields": [
+    "perceivedDifficulty",
+    "experience",
+    "favoriteAspect",
+    "wantsMore"
+  ],
+  "id": "bio-genetics-protein",
+  "title": "How can one DNA change affect the body?",
+  "prerequisites": [
+    "High-school biology",
+    "Basic gene-to-protein idea"
+  ],
+  "learningGoals": [
+    "Connect a gene variant to a protein change",
+    "Trace effects from protein to cell and organism",
+    "Distinguish evidence from assumption"
+  ],
+  "steps": [
+    {
+      "id": "predict",
+      "type": "single_choice",
+      "prompt": "A gene provides instructions for part of hemoglobin. Which change is most directly downstream of a DNA variant?",
+      "choices": [
+        {
+          "id": "protein",
+          "text": "The amino-acid sequence or amount of a hemoglobin subunit"
+        },
+        {
+          "id": "air",
+          "text": "The oxygen percentage in the room"
+        },
+        {
+          "id": "heart",
+          "text": "The number of heart chambers"
+        }
+      ],
+      "correctChoiceId": "protein",
+      "explanation": "A gene variant can change the sequence or production of the protein it encodes."
+    },
+    {
+      "id": "evidence",
+      "type": "evidence_sort",
+      "prompt": "Put the evidence chain in causal order.",
+      "items": [
+        "HBB gene variant",
+        "Altered beta-globin",
+        "Hemoglobin S behavior",
+        "Red-cell shape and flexibility changes",
+        "Reduced blood flow or oxygen delivery in some conditions"
+      ],
+      "explanation": "The chain moves from genetic information to protein, cell behavior, and organism-level effects."
+    },
+    {
+      "id": "uncertainty",
+      "type": "multiple_choice",
+      "prompt": "What else would you need before predicting how severely one person is affected?",
+      "choices": [
+        {
+          "id": "genotype",
+          "text": "Which variants and copies are present"
+        },
+        {
+          "id": "context",
+          "text": "Clinical and environmental context"
+        },
+        {
+          "id": "both",
+          "text": "Both"
+        }
+      ],
+      "correctChoiceId": "both",
+      "explanation": "A mechanism does not by itself determine one person's experience."
+    }
+  ],
+  "reflections": [
+    "Was tracing the mechanism interesting, okay, or draining?",
+    "Would you want a deeper molecular explanation or a more patient-centered case?"
+  ],
+  "sourceIds": [
+    "nih-sickle-cell"
+  ]
+}

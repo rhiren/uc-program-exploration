@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "id": "uc",
+  "name": "University of California provider",
+  "collectionId": "uc-system",
+  "normalizedFiles": {
+    "institutions": "../../institutions/institutions.json",
+    "offerings": "../../institutions/offerings.json",
+    "admissions": "../../institutions/admissions.json",
+    "metrics": "../../institutions/metrics.json",
+    "sources": "../../sources.json"
+  },
+  "runtimeNetworkRequired": false
+}

@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "coreMessage": "Premed is generally a preparation pathway, not an undergraduate major.",
+  "principles": [
+    "Students may major in a science or non-science field.",
+    "Medical-school prerequisites vary by school.",
+    "A four-year degree is generally required by medical schools.",
+    "Common preparation includes biology, English, and chemistry through organic chemistry; other coursework varies.",
+    "Medical schools also consider competencies and experiences, not coursework alone.",
+    "UC undergraduate admission and medical-school admission are separate processes."
+  ],
+  "commonPreparationAreas": [
+    "Biology",
+    "General and organic chemistry",
+    "English and writing",
+    "Physics",
+    "Mathematics or statistics",
+    "Biochemistry",
+    "Psychology",
+    "Sociology"
+  ],
+  "verificationNote": "Use AAMC's school-specific resources and a college prehealth advisor; never assume one universal prerequisite list.",
+  "sourceIds": [
+    "aamc-admission-requirements",
+    "aamc-premed-competencies"
+  ]
+}

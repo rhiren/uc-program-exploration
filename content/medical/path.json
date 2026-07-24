@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "title": "Path to independent physician practice",
+  "stages": [
+    {
+      "id": "high-school",
+      "title": "High-school exploration",
+      "typicalYears": null,
+      "note": "Explore science, service, teamwork, patient-facing environments, and the realities of long training without treating high school as premedical school."
+    },
+    {
+      "id": "undergraduate",
+      "title": "Undergraduate degree",
+      "typicalYears": 4,
+      "note": "Complete a bachelor's degree, major requirements, medical-school preparation, and meaningful experiences."
+    },
+    {
+      "id": "application",
+      "title": "MCAT and medical-school application",
+      "typicalYears": null,
+      "note": "Timing varies; gap years are common and not failures."
+    },
+    {
+      "id": "medical-school",
+      "title": "Medical school",
+      "typicalYears": 4,
+      "note": "Classroom, laboratory, clinical skills, and rotations lead toward residency."
+    },
+    {
+      "id": "residency",
+      "title": "Residency",
+      "typicalYearsRange": [
+        3,
+        7
+      ],
+      "note": "Length varies by specialty; some sources describe longer training for selected paths."
+    },
+    {
+      "id": "fellowship",
+      "title": "Optional fellowship",
+      "typicalYearsRange": [
+        1,
+        3
+      ],
+      "note": "Subspecialty training is optional and varies."
+    },
+    {
+      "id": "practice",
+      "title": "Licensure, practice, and continuing education",
+      "typicalYears": null,
+      "note": "Independent practice responsibilities and lifelong learning continue."
+    }
+  ],
+  "toggles": {
+    "gapYears": [
+      0,
+      1,
+      2
+    ],
+    "fellowship": [
+      false,
+      true
+    ],
+    "specialtyCategory": [
+      "primary_care",
+      "medical",
+      "surgical",
+      "unsure"
+    ]
+  },
+  "reflectionPrompts": [
+    "Which parts of the work—not the title—appeal to you?",
+    "How do you feel about repeated high-stakes learning and feedback?",
+    "What would you want to observe in real clinical work before deciding?"
+  ],
+  "sourceIds": [
+    "aamc-training-years",
+    "aamc-med-school",
+    "aamc-med-timeline",
+    "bls-physicians"
+  ]
+}

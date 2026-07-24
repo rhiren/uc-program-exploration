@@ -1,0 +1,985 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "biology",
+      "slug": "biology",
+      "name": "Biology",
+      "familyIds": [
+        "biology-life-sciences",
+        "medicine-health-public-health"
+      ],
+      "summary": "Biology investigates how living systems work, change, interact, and respond—from molecules and cells to organisms and ecosystems.",
+      "coreQuestions": [
+        "How do cells maintain life?",
+        "How do genes and environments shape traits?",
+        "How do organisms and ecosystems change over time?"
+      ],
+      "typicalWork": [
+        "Plan and interpret experiments",
+        "Analyze biological evidence",
+        "Learn mechanisms and terminology",
+        "Write lab reports and scientific explanations"
+      ],
+      "representativeCourses": [
+        "Cell biology",
+        "Genetics",
+        "Evolution",
+        "Ecology",
+        "Physiology",
+        "Laboratory methods"
+      ],
+      "commonAssignments": [
+        "Laboratory reports",
+        "Evidence-based explanations",
+        "Data interpretation",
+        "Research-paper reading"
+      ],
+      "intensities": {
+        "mathematics": 3,
+        "coding": 2,
+        "laboratory": 5,
+        "writing": 3,
+        "memorization": 4,
+        "abstractTheory": 3,
+        "teamwork": 3,
+        "peopleInteraction": 2
+      },
+      "codingReality": "Coding is not usually the center of a general biology major, but data analysis and computational tools increasingly appear in research and advanced courses.",
+      "rewarding": [
+        "Connecting mechanisms across levels of life",
+        "Hands-on discovery",
+        "Applying science to health or environment"
+      ],
+      "frustrating": [
+        "Large vocabulary",
+        "Experiments that fail or produce ambiguous results",
+        "Graduate education is common for independent research careers"
+      ],
+      "mayEnjoy": [
+        "Asking why living systems behave as they do",
+        "Combining observation with evidence",
+        "Learning through labs and diagrams"
+      ],
+      "adjacentProgramIds": [
+        "biochemistry",
+        "public-health",
+        "bioengineering"
+      ],
+      "careerIds": [
+        "physician",
+        "epidemiologist",
+        "bioinformatics-scientist",
+        "genetic-counselor"
+      ],
+      "premedCompatibility": {
+        "level": "high",
+        "note": "Many requirements overlap, but the major itself does not guarantee completion of every medical-school prerequisite."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Complete the UC A–G science requirement."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "If offered and sustainable, continue biology and chemistry and build quantitative confidence."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Try a short lab, ecology observation, genetics case, or research conversation."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Confirm each high-school course's A–G category on the official course list."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-biology-genetics",
+          "title": "Trace a DNA change to a protein and cell effect",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-davis",
+        "catalog-san-diego",
+        "nih-sickle-cell"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-integrative-biology-ba",
+        "berkeley-mcb-ba",
+        "davis-biological-sciences-bs",
+        "irvine-biological-sciences-bs",
+        "ucla-biology-bs",
+        "merced-biological-sciences-ba",
+        "merced-biological-sciences-bs",
+        "riverside-biology-bs",
+        "sandiego-general-biology-bs",
+        "sandiego-molecular-cell-biology-bs",
+        "santabarbara-biological-sciences-ba",
+        "santabarbara-biological-sciences-bs",
+        "santacruz-biology-ba",
+        "santacruz-biology-bs"
+      ]
+    },
+    {
+      "id": "biochemistry",
+      "slug": "biochemistry",
+      "name": "Biochemistry",
+      "familyIds": [
+        "biology-life-sciences",
+        "math-stat-physical"
+      ],
+      "summary": "Biochemistry studies the molecular reactions and structures that make life possible, connecting chemistry with cell biology and medicine.",
+      "coreQuestions": [
+        "How do proteins and enzymes work?",
+        "How do cells store and use energy?",
+        "How can molecular changes lead to disease?"
+      ],
+      "typicalWork": [
+        "Reason about molecular structure and reactions",
+        "Run chemistry and biology laboratories",
+        "Interpret spectra, assays, and experimental data"
+      ],
+      "representativeCourses": [
+        "General and organic chemistry",
+        "Biochemistry",
+        "Molecular biology",
+        "Physical chemistry",
+        "Analytical or laboratory methods"
+      ],
+      "commonAssignments": [
+        "Mechanism problems",
+        "Quantitative problem sets",
+        "Laboratory notebooks and reports",
+        "Molecular-model interpretation"
+      ],
+      "intensities": {
+        "mathematics": 4,
+        "coding": 2,
+        "laboratory": 5,
+        "writing": 3,
+        "memorization": 4,
+        "abstractTheory": 4,
+        "teamwork": 3,
+        "peopleInteraction": 1
+      },
+      "codingReality": "Programming is not usually central, but computation is increasingly used for molecular modeling, genomics, and laboratory data.",
+      "rewarding": [
+        "Explaining health and disease at a molecular level",
+        "Integrating chemistry and biology",
+        "Precise laboratory investigation"
+      ],
+      "frustrating": [
+        "Dense prerequisite chains",
+        "Heavy lab schedules",
+        "Simultaneous conceptual and memorization demands"
+      ],
+      "mayEnjoy": [
+        "Chemistry reactions and biological mechanisms",
+        "Detailed causal explanations",
+        "Laboratory measurement"
+      ],
+      "adjacentProgramIds": [
+        "biology",
+        "bioengineering",
+        "data-science"
+      ],
+      "careerIds": [
+        "physician",
+        "bioinformatics-scientist",
+        "biomedical-engineer"
+      ],
+      "premedCompatibility": {
+        "level": "high",
+        "note": "Substantial prerequisite overlap is common, but requirements vary by medical school."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Complete UC A–G laboratory science requirements."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue chemistry and mathematics if available and sustainable; biology is also useful."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Model enzyme behavior or investigate how pH affects a biological system."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Verify A–G certification and senior-course prerequisites."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-biochem-buffer",
+          "title": "Explore carbon dioxide and the blood buffer system",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-ucla",
+        "catalog-santa-barbara",
+        "ncbi-co2-buffer"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "davis-biochem-molecular-bs",
+        "irvine-biochem-molecular-bs",
+        "ucla-biochemistry-bs",
+        "merced-biochemistry-bs",
+        "riverside-biochemistry-bs",
+        "sandiego-biochemistry-bs",
+        "santabarbara-biochemistry-bs",
+        "santabarbara-biochem-molecular-bs",
+        "santacruz-biochem-molecular-bs"
+      ]
+    },
+    {
+      "id": "data-science",
+      "slug": "data-science",
+      "name": "Data Science",
+      "familyIds": [
+        "computing-data-ai",
+        "math-stat-physical"
+      ],
+      "summary": "Data science combines statistics, programming, data management, and domain knowledge to draw defensible conclusions from data.",
+      "coreQuestions": [
+        "What can the data support?",
+        "How uncertain is a conclusion?",
+        "How can messy information become a useful model?"
+      ],
+      "typicalWork": [
+        "Clean and organize data",
+        "Write code for analysis",
+        "Build and evaluate statistical or machine-learning models",
+        "Explain limitations"
+      ],
+      "representativeCourses": [
+        "Programming",
+        "Calculus",
+        "Linear algebra",
+        "Probability",
+        "Statistics",
+        "Machine learning",
+        "Data ethics"
+      ],
+      "commonAssignments": [
+        "Coding notebooks",
+        "Model comparisons",
+        "Data projects",
+        "Written interpretation and presentations"
+      ],
+      "intensities": {
+        "mathematics": 5,
+        "coding": 5,
+        "laboratory": 1,
+        "writing": 3,
+        "memorization": 2,
+        "abstractTheory": 4,
+        "teamwork": 4,
+        "peopleInteraction": 2
+      },
+      "codingReality": "Meaningful programming is a core part of most data-science degrees and jobs. AI can assist with code, but students still need to understand, test, debug, and defend analyses.",
+      "rewarding": [
+        "Finding structure in messy evidence",
+        "Applying quantitative tools across domains",
+        "Turning analysis into decisions"
+      ],
+      "frustrating": [
+        "Debugging",
+        "Ambiguous or biased data",
+        "Pressure to explain uncertainty to people who want a simple answer"
+      ],
+      "mayEnjoy": [
+        "Statistics and modeling",
+        "Open-ended problem solving",
+        "Using evidence across biology, health, business, or policy"
+      ],
+      "adjacentProgramIds": [
+        "statistics",
+        "operations-research",
+        "cognitive-science"
+      ],
+      "careerIds": [
+        "data-scientist",
+        "clinical-data-scientist",
+        "operations-research-analyst",
+        "bioinformatics-scientist"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_planning",
+        "note": "It can build valuable quantitative skills, but science laboratories and other prerequisites often require additional scheduling."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Meet UC A–G mathematics requirements; coding is not a systemwide UC eligibility requirement."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics and, if willing, try a small data analysis using a beginner-friendly language or spreadsheet."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Analyze a small health or biology dataset and explain one limitation."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Check whether a campus admits directly to the major and whether switching is constrained."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-data-evidence",
+          "title": "Compare two explanations for a small health dataset",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-berkeley",
+        "bls-data-scientists",
+        "wef-future-jobs"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-data-science-ba",
+        "davis-data-science-bs",
+        "irvine-data-science-bs",
+        "ucla-data-theory-bs",
+        "merced-data-science-analytics-ba",
+        "riverside-data-science-bs",
+        "sandiego-data-science-bs"
+      ]
+    },
+    {
+      "id": "statistics",
+      "slug": "statistics",
+      "name": "Statistics",
+      "familyIds": [
+        "math-stat-physical",
+        "computing-data-ai"
+      ],
+      "summary": "Statistics develops methods for learning from variable and incomplete data while measuring uncertainty.",
+      "coreQuestions": [
+        "How should evidence be collected?",
+        "What pattern could be chance?",
+        "How confident should a conclusion be?"
+      ],
+      "typicalWork": [
+        "Design studies",
+        "Build probability models",
+        "Estimate effects",
+        "Test assumptions",
+        "Communicate uncertainty"
+      ],
+      "representativeCourses": [
+        "Calculus",
+        "Linear algebra",
+        "Probability",
+        "Statistical inference",
+        "Regression",
+        "Experimental design"
+      ],
+      "commonAssignments": [
+        "Proofs and problem sets",
+        "Statistical computing",
+        "Study critiques",
+        "Applied analysis reports"
+      ],
+      "intensities": {
+        "mathematics": 5,
+        "coding": 4,
+        "laboratory": 1,
+        "writing": 3,
+        "memorization": 2,
+        "abstractTheory": 5,
+        "teamwork": 3,
+        "peopleInteraction": 2
+      },
+      "codingReality": "Statistical computing is common. The emphasis is usually on analysis and reasoning rather than building software products.",
+      "rewarding": [
+        "Separating signal from noise",
+        "Working across medicine, science, policy, and business",
+        "Making uncertainty explicit"
+      ],
+      "frustrating": [
+        "Abstract probability",
+        "Subtle assumptions",
+        "Results that remain uncertain after careful work"
+      ],
+      "mayEnjoy": [
+        "Mathematical reasoning",
+        "Designing fair comparisons",
+        "Questioning claims made from data"
+      ],
+      "adjacentProgramIds": [
+        "data-science",
+        "operations-research",
+        "public-health"
+      ],
+      "careerIds": [
+        "biostatistician",
+        "data-scientist",
+        "epidemiologist",
+        "operations-research-analyst"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_planning",
+        "note": "Statistics supports research and evidence literacy; laboratory science prerequisites must be scheduled separately."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Meet UC A–G mathematics requirements using courses certified for the applicable term."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics through the strongest sustainable sequence available."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Critique a study or design a fair experiment."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Because UC math-course classification guidance changes, verify the school's certified course list."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-statistics-study",
+          "title": "Spot bias in a study design",
+          "minutes": 7
+        }
+      ],
+      "sourceIds": [
+        "catalog-santa-barbara",
+        "bls-statisticians",
+        "uc-ag-requirements"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-statistics-ba",
+        "davis-statistics-ab",
+        "davis-statistics-bs",
+        "ucla-stat-data-science-bs",
+        "riverside-statistics-bs",
+        "sandiego-math-statistics-bs",
+        "santabarbara-stat-data-science-ba",
+        "santabarbara-stat-data-science-bs"
+      ]
+    },
+    {
+      "id": "cognitive-science",
+      "slug": "cognitive-science",
+      "name": "Cognitive Science",
+      "familyIds": [
+        "psych-neuro-cognitive",
+        "computing-data-ai"
+      ],
+      "summary": "Cognitive science studies mind and intelligence using psychology, neuroscience, linguistics, philosophy, computation, and experimental methods.",
+      "coreQuestions": [
+        "How do people perceive, learn, remember, and decide?",
+        "How can mental processes be tested?",
+        "How do people interact with technology?"
+      ],
+      "typicalWork": [
+        "Design behavioral studies",
+        "Analyze data",
+        "Read competing theories",
+        "Model cognition",
+        "Conduct user or laboratory research"
+      ],
+      "representativeCourses": [
+        "Cognitive psychology",
+        "Neuroscience",
+        "Research methods",
+        "Statistics",
+        "Linguistics",
+        "Computation or philosophy"
+      ],
+      "commonAssignments": [
+        "Experiment reports",
+        "Theory comparisons",
+        "Data analysis",
+        "Research presentations"
+      ],
+      "intensities": {
+        "mathematics": 3,
+        "coding": 3,
+        "laboratory": 2,
+        "writing": 4,
+        "memorization": 3,
+        "abstractTheory": 4,
+        "teamwork": 4,
+        "peopleInteraction": 4
+      },
+      "codingReality": "Coding varies by track. Computational cognition and data-heavy research can involve substantial programming; human-centered tracks may involve less.",
+      "rewarding": [
+        "Connecting biology, behavior, and technology",
+        "Designing studies about people",
+        "Multiple ways to approach one question"
+      ],
+      "frustrating": [
+        "Interdisciplinary breadth can feel diffuse",
+        "Human evidence is noisy",
+        "Some career paths require graduate training"
+      ],
+      "mayEnjoy": [
+        "Psychology and biology together",
+        "Asking how people think",
+        "Research with human participants or behavior data"
+      ],
+      "adjacentProgramIds": [
+        "biology",
+        "data-science",
+        "statistics"
+      ],
+      "careerIds": [
+        "ux-researcher",
+        "data-scientist",
+        "physician"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_planning",
+        "note": "Behavioral and neuroscience courses may be relevant, but chemistry, physics, biology, and laboratory prerequisites require deliberate scheduling."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "No cognitive-science-specific course is a systemwide UC eligibility requirement."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics; biology, psychology, writing, or computer science can each be useful depending on the track."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Run a simple memory or perception study without collecting identifying data."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Compare BA and BS requirements and campus-specific admission context."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-cognition-memory",
+          "title": "Design a fair memory comparison",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-irvine",
+        "catalog-merced",
+        "onet-human-factors"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-cognitive-science-ba",
+        "davis-cognitive-science-ab",
+        "davis-cognitive-science-bs",
+        "irvine-cognitive-sciences-bs",
+        "ucla-cognitive-science-bs",
+        "merced-cognitive-science-ba",
+        "merced-cognitive-science-bs",
+        "sandiego-cognitive-science-ba",
+        "sandiego-cognitive-science-bs",
+        "santacruz-cognitive-science-bs"
+      ]
+    },
+    {
+      "id": "public-health",
+      "slug": "public-health",
+      "name": "Public Health",
+      "familyIds": [
+        "medicine-health-public-health",
+        "social-government-policy"
+      ],
+      "summary": "Public health improves the health of populations through prevention, evidence, community partnership, policy, and health systems.",
+      "coreQuestions": [
+        "Why do health outcomes differ across groups and places?",
+        "Which prevention strategy works?",
+        "How should limited resources be used?"
+      ],
+      "typicalWork": [
+        "Analyze population data",
+        "Design and evaluate programs",
+        "Study social and environmental causes",
+        "Communicate with communities and policymakers"
+      ],
+      "representativeCourses": [
+        "Epidemiology",
+        "Biostatistics",
+        "Environmental health",
+        "Health policy",
+        "Behavioral science",
+        "Program evaluation"
+      ],
+      "commonAssignments": [
+        "Community or policy briefs",
+        "Data interpretation",
+        "Program plans",
+        "Group projects"
+      ],
+      "intensities": {
+        "mathematics": 3,
+        "coding": 2,
+        "laboratory": 1,
+        "writing": 5,
+        "memorization": 3,
+        "abstractTheory": 3,
+        "teamwork": 5,
+        "peopleInteraction": 5
+      },
+      "codingReality": "Coding varies. Epidemiology and biostatistics tracks can use R, Python, SAS, or similar tools; policy and community tracks may use less.",
+      "rewarding": [
+        "Preventing problems at scale",
+        "Combining evidence and human context",
+        "Working across science, policy, and community needs"
+      ],
+      "frustrating": [
+        "Outcomes depend on complex systems",
+        "Policy change can be slow",
+        "Entry roles vary and graduate education is common for specialized work"
+      ],
+      "mayEnjoy": [
+        "Health plus statistics or policy",
+        "Systems thinking",
+        "Community-level problem solving"
+      ],
+      "adjacentProgramIds": [
+        "biology",
+        "statistics",
+        "operations-research"
+      ],
+      "careerIds": [
+        "epidemiologist",
+        "public-health-analyst",
+        "healthcare-operations-analyst",
+        "biostatistician"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_planning",
+        "note": "The major offers useful population-health perspective, but medical-school science prerequisites may not all be included."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Meet the general UC A–G requirements; public health has no systemwide high-school prerequisite."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Build biology, statistics, writing, and social-science skills within a sustainable schedule."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Investigate a local health pattern using public, non-identifying data."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Some campus public-health majors require later application or are selective; verify the current policy."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-public-health",
+          "title": "Choose evidence for a fictional prevention program",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-san-diego",
+        "catalog-ucla",
+        "bls-epidemiologists"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-public-health-ba",
+        "irvine-public-health-policy-ba",
+        "irvine-public-health-sciences-bs",
+        "ucla-public-health-ba",
+        "ucla-public-health-bs",
+        "merced-public-health-ba",
+        "merced-public-health-bs",
+        "sandiego-public-health-bs",
+        "sandiego-public-health-biostat-bs"
+      ]
+    },
+    {
+      "id": "bioengineering",
+      "slug": "bioengineering",
+      "name": "Bioengineering",
+      "familyIds": [
+        "engineering-physical-systems",
+        "biology-life-sciences",
+        "medicine-health-public-health"
+      ],
+      "summary": "Bioengineering applies engineering, mathematics, computing, and biology to devices, diagnostics, therapeutics, and biological systems.",
+      "coreQuestions": [
+        "How can a device measure or support the body?",
+        "How can biological systems be modeled or redesigned?",
+        "How do safety and design tradeoffs interact?"
+      ],
+      "typicalWork": [
+        "Solve engineering problem sets",
+        "Build and test prototypes",
+        "Run laboratories",
+        "Model systems",
+        "Work in design teams"
+      ],
+      "representativeCourses": [
+        "Calculus",
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Programming",
+        "Circuits or mechanics",
+        "Physiology",
+        "Design"
+      ],
+      "commonAssignments": [
+        "Engineering calculations",
+        "Laboratory reports",
+        "Prototype and capstone projects",
+        "Team presentations"
+      ],
+      "intensities": {
+        "mathematics": 5,
+        "coding": 3,
+        "laboratory": 4,
+        "writing": 3,
+        "memorization": 3,
+        "abstractTheory": 4,
+        "teamwork": 5,
+        "peopleInteraction": 2
+      },
+      "codingReality": "Most programs include some programming or computational modeling, although it is one tool among mathematics, physical science, biology, and design.",
+      "rewarding": [
+        "Creating tangible health technology",
+        "Combining multiple sciences",
+        "Team-based design"
+      ],
+      "frustrating": [
+        "Dense prerequisite load",
+        "Less room for electives",
+        "Design must satisfy safety, cost, regulatory, and technical constraints"
+      ],
+      "mayEnjoy": [
+        "Math and biology together",
+        "Building and testing",
+        "Solving constrained real-world problems"
+      ],
+      "adjacentProgramIds": [
+        "biology",
+        "biochemistry",
+        "operations-research"
+      ],
+      "careerIds": [
+        "biomedical-engineer",
+        "physician",
+        "bioinformatics-scientist"
+      ],
+      "premedCompatibility": {
+        "level": "possible_but_demanding",
+        "note": "It can prepare students well scientifically, but the engineering workload and medical-school prerequisites require careful planning."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Meet UC A–G requirements; campus engineering admission policies may differ."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics, chemistry, biology, and physics when available and sustainable."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Redesign a simple health-monitoring device around a user need."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Verify direct-admission and change-of-major constraints before using an alternate-major strategy."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-bioengineering",
+          "title": "Compare two sensor designs for a fictional patient need",
+          "minutes": 9
+        }
+      ],
+      "sourceIds": [
+        "catalog-san-diego",
+        "catalog-merced",
+        "bls-biomedical-engineers"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-bioengineering-bs",
+        "davis-biomedical-engineering-bs",
+        "irvine-biomedical-engineering-bs",
+        "ucla-bioengineering-bs",
+        "merced-bioengineering-bs",
+        "riverside-bioengineering-bs",
+        "sandiego-bioengineering-bs",
+        "sandiego-bioengineering-bioinformatics-bs",
+        "santacruz-biomolecular-eng-bioinfo-bs"
+      ]
+    },
+    {
+      "id": "operations-research",
+      "slug": "operations-research",
+      "name": "Operations Research and Systems Analytics",
+      "familyIds": [
+        "engineering-physical-systems",
+        "math-stat-physical",
+        "economics-business-operations"
+      ],
+      "summary": "Operations research uses mathematical models, optimization, simulation, and data to improve decisions in complex systems.",
+      "coreQuestions": [
+        "How should scarce resources be allocated?",
+        "What schedule or route works best?",
+        "How robust is a decision when conditions change?"
+      ],
+      "typicalWork": [
+        "Build optimization models",
+        "Simulate systems",
+        "Analyze tradeoffs",
+        "Work with decision makers",
+        "Translate constraints into mathematics"
+      ],
+      "representativeCourses": [
+        "Calculus",
+        "Linear algebra",
+        "Probability",
+        "Optimization",
+        "Simulation",
+        "Programming",
+        "Economics"
+      ],
+      "commonAssignments": [
+        "Modeling problem sets",
+        "Coding projects",
+        "Case analyses",
+        "Team presentations"
+      ],
+      "intensities": {
+        "mathematics": 5,
+        "coding": 4,
+        "laboratory": 1,
+        "writing": 3,
+        "memorization": 2,
+        "abstractTheory": 5,
+        "teamwork": 4,
+        "peopleInteraction": 3
+      },
+      "codingReality": "Programming is commonly used to solve models and analyze scenarios, but the role centers on decisions and systems rather than software development.",
+      "rewarding": [
+        "Finding practical improvements",
+        "Clear tradeoffs and constraints",
+        "Applications in healthcare, transport, supply chains, policy, and business"
+      ],
+      "frustrating": [
+        "Real constraints are messy",
+        "Models simplify reality",
+        "Stakeholders may value competing outcomes"
+      ],
+      "mayEnjoy": [
+        "Mathematical puzzles with practical consequences",
+        "Systems thinking",
+        "Explaining recommendations"
+      ],
+      "adjacentProgramIds": [
+        "statistics",
+        "data-science",
+        "bioengineering"
+      ],
+      "careerIds": [
+        "operations-research-analyst",
+        "healthcare-operations-analyst",
+        "data-scientist"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_substantial_planning",
+        "note": "The major can support healthcare systems work, but premed laboratory sciences are usually outside the core."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Meet UC A–G mathematics requirements."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics and practice translating real situations into constraints and tradeoffs."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Optimize a fictional clinic schedule with competing goals."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "The field may appear under industrial engineering, analytics, applied mathematics, or management science; compare exact curricula."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-or-clinic",
+          "title": "Improve a fictional clinic schedule",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "catalog-berkeley",
+        "bls-or-analysts"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-ieor-bs"
+      ]
+    }
+  ]
+}

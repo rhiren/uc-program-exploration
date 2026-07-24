@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "studentFacing": false,
+    "synthetic": true
+  },
+  "provider": {
+    "id": "fixture-provider",
+    "name": "Synthetic portability fixture"
+  },
+  "institution": {
+    "id": "fixture-out-of-state-public",
+    "collectionId": "fixture-public-system",
+    "providerId": "fixture-provider",
+    "name": "Fixture State University",
+    "shortName": "FSU Fixture",
+    "location": {
+      "city": "Example City",
+      "state": "Outside California",
+      "country": "United States"
+    },
+    "calendarSystem": "semester",
+    "undergraduateCampus": true,
+    "sourceIds": []
+  },
+  "offering": {
+    "id": "fixture-biological-sciences-bs",
+    "institutionId": "fixture-out-of-state-public",
+    "canonicalProgramId": "biology",
+    "officialMajorName": "Biological Sciences",
+    "degreeType": "BS",
+    "firstYearAvailable": true,
+    "admissionContext": "unknown",
+    "capacityStatus": "unknown",
+    "publishedMajorAdmitData": "unknown",
+    "sourceIds": []
+  },
+  "purpose": "Prove that page components and recommendation logic consume institution-neutral entities. Never display this synthetic record to the student."
+}

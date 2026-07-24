@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "lastVerified": "2026-07-23",
+  "nextReviewDue": "2027-07-01",
+  "maintenanceOwnerRole": "science_content_editor",
+  "disclaimer": "This is a fictional educational activity, not a diagnosis, aptitude test, or medical recommendation.",
+  "defaultMinutes": 8,
+  "optionalDeepDiveMinutes": 15,
+  "resultFields": [
+    "perceivedDifficulty",
+    "experience",
+    "favoriteAspect",
+    "wantsMore"
+  ],
+  "id": "integrated-shortness-breath",
+  "title": "Shortness of breath: which evidence matters?",
+  "prerequisites": [
+    "High-school biology",
+    "Basic respiration and circulation"
+  ],
+  "learningGoals": [
+    "Connect ventilation, gas exchange, circulation, and oxygen delivery",
+    "Prioritize evidence",
+    "Remain comfortable with uncertainty"
+  ],
+  "fictionalScenario": "A fictional student in a supervised lab simulation feels short of breath after exertion. This is not a real person and you will not diagnose or treat anyone.",
+  "steps": [
+    {
+      "id": "systems",
+      "type": "multiple_select",
+      "prompt": "Which systems could affect oxygen reaching tissues?",
+      "choices": [
+        {
+          "id": "lungs",
+          "text": "Ventilation and lung gas exchange"
+        },
+        {
+          "id": "blood",
+          "text": "Hemoglobin and blood flow"
+        },
+        {
+          "id": "heart",
+          "text": "Circulation"
+        },
+        {
+          "id": "all",
+          "text": "All of these"
+        }
+      ],
+      "correctChoiceIds": [
+        "all"
+      ],
+      "explanation": "Oxygen delivery depends on air movement, gas exchange, blood oxygen-carrying capacity, and circulation."
+    },
+    {
+      "id": "evidence",
+      "type": "rank",
+      "prompt": "Rank the first evidence you would want in this fictional educational model.",
+      "items": [
+        "Observed breathing pattern",
+        "Oxygen saturation trend",
+        "Heart-rate trend",
+        "Context such as exertion and timing"
+      ],
+      "explanation": "There is no single perfect ordering. The point is to combine measurements with context rather than jump to a label."
+    },
+    {
+      "id": "conclusion",
+      "type": "single_choice",
+      "prompt": "What is the strongest conclusion from one abnormal measurement?",
+      "choices": [
+        {
+          "id": "diagnosis",
+          "text": "It proves one diagnosis"
+        },
+        {
+          "id": "repeat",
+          "text": "It is evidence to verify and interpret with other information"
+        }
+      ],
+      "correctChoiceId": "repeat",
+      "explanation": "Measurements can be noisy or incomplete; careful reasoning asks what else is needed."
+    }
+  ],
+  "reflections": [
+    "Did integrating several systems feel interesting, okay, or draining?",
+    "Did you enjoy choosing evidence despite uncertainty?"
+  ],
+  "sourceIds": [
+    "nih-lungs"
+  ]
+}

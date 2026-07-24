@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "ruleId": "uc-ag-2026-07-23"
+  },
+  "categories": [
+    {
+      "id": "a",
+      "name": "History",
+      "yearsRequired": 2,
+      "yearsRecommended": null
+    },
+    {
+      "id": "b",
+      "name": "English",
+      "yearsRequired": 4,
+      "yearsRecommended": null
+    },
+    {
+      "id": "c",
+      "name": "Mathematics",
+      "yearsRequired": 3,
+      "yearsRecommended": 4
+    },
+    {
+      "id": "d",
+      "name": "Science",
+      "yearsRequired": 2,
+      "yearsRecommended": 3
+    },
+    {
+      "id": "e",
+      "name": "Language other than English or equivalent",
+      "yearsRequired": 2,
+      "yearsRecommended": 3
+    },
+    {
+      "id": "f",
+      "name": "Visual and performing arts",
+      "yearsRequired": 1,
+      "yearsRecommended": null
+    },
+    {
+      "id": "g",
+      "name": "College-preparatory elective",
+      "yearsRequired": 1,
+      "yearsRecommended": null
+    }
+  ],
+  "totalCoursesMinimum": 15,
+  "coursesBeforeSeniorYearMinimum": 11,
+  "minimumGrade": "C",
+  "classificationPolicy": "Use the official school A–G course list when available. Unknown classifications remain unresolved, not failed.",
+  "warnings": [
+    "Minimum eligibility is not a competitive target.",
+    "Course certification and mathematics guidance may change; verify the effective term with a counselor and the official list."
+  ],
+  "sourceIds": [
+    "uc-first-year-requirements",
+    "uc-ag-requirements"
+  ]
+}

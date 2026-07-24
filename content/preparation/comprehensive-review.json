@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "factors": [
+    "Academic GPA in completed A–G courses, including eligible honors points",
+    "Number, content, and performance in A–G courses beyond the minimum",
+    "UC-approved honors, AP, IB, and transferable college coursework",
+    "ELC identification when officially determined",
+    "Quality of the planned or in-progress senior-year program",
+    "Academic performance in context, including improvement",
+    "Special talents, achievements, contributions, responsibilities, and experiences",
+    "Accomplishments in light of opportunities and life circumstances"
+  ],
+  "productRules": [
+    "Do not score factors.",
+    "Do not prescribe maximum rigor.",
+    "Preserve school-opportunity and life context.",
+    "Send school-specific questions to counselor verification."
+  ],
+  "sourceIds": [
+    "uc-comprehensive-review"
+  ]
+}

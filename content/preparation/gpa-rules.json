@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "ruleId": "uc-gpa-eligibility-capped-2026-07-23"
+  },
+  "calculationType": "eligibility_capped_estimate",
+  "includedWindow": "A–G courses from summer after 9th grade through summer after 11th grade",
+  "gradePoints": {
+    "A": 4,
+    "B": 3,
+    "C": 2,
+    "D": 1,
+    "F": 0
+  },
+  "plusMinusIgnored": true,
+  "californiaResident": {
+    "minimum": 3,
+    "honorsEligibleTypes": [
+      "uc_certified",
+      "ap",
+      "ib",
+      "transferable_college"
+    ],
+    "honorsPointCapTotal": 8,
+    "honorsPointCapGrade10": 4
+  },
+  "nonresident": {
+    "minimum": 3.4,
+    "honorsEligibleTypes": [
+      "ap",
+      "ib"
+    ],
+    "honorsPointCapTotal": 8,
+    "honorsPointCapGrade10": 4
+  },
+  "honorsPointGradeEligibility": [
+    "A",
+    "B",
+    "C"
+  ],
+  "rounding": "Do not round up or down.",
+  "resultLabel": "Estimate until UC calculates the official GPA from the application.",
+  "prohibitedUses": [
+    "admission_probability",
+    "campus_recommendation",
+    "student_ranking"
+  ],
+  "sourceIds": [
+    "uc-gpa-requirement"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor",
+    "targetEnrollmentTerm": "Fall 2028",
+    "expectedApplicationPeriod": "Fall 2027",
+    "publicationStatus": "not_yet_published"
+  },
+  "milestones": [
+    {
+      "id": "application-opens",
+      "expectedTiming": "Usually late summer before application submission",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Verify on the official UC dates page before showing a date."
+    },
+    {
+      "id": "application-filing",
+      "expectedTiming": "Fall of 12th grade",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Do not copy the prior cycle's dates forward."
+    },
+    {
+      "id": "financial-aid",
+      "expectedTiming": "Fall and winter of 12th grade",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Verify FAFSA, California Dream Act, and Cal Grant dates for the applicable year."
+    },
+    {
+      "id": "decisions",
+      "expectedTiming": "Spring of 12th grade",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Verify campus decision windows."
+    },
+    {
+      "id": "sir",
+      "expectedTiming": "Spring of 12th grade",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Verify the Statement of Intent to Register deadline."
+    },
+    {
+      "id": "transcripts",
+      "expectedTiming": "Summer after 12th grade",
+      "officialDate": null,
+      "status": "awaiting_official_cycle",
+      "action": "Verify transcript and exam-result deadlines."
+    }
+  ],
+  "sourceIds": [
+    "uc-dates"
+  ]
+}

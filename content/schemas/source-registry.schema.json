@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.uc-pathways.test/schemas/source-registry.schema.json",
+  "title": "UC Pathways source registry",
+  "type": "object",
+  "required": [
+    "meta",
+    "records"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "contentVersion",
+        "lastVerified",
+        "nextReviewDue",
+        "maintenanceOwnerRole"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "type": "string"
+        },
+        "contentVersion": {
+          "type": "string"
+        },
+        "lastVerified": {
+          "type": "string",
+          "format": "date"
+        },
+        "nextReviewDue": {
+          "type": "string",
+          "format": "date"
+        },
+        "maintenanceOwnerRole": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "publisher",
+          "url",
+          "sourceType",
+          "lastVerified",
+          "nextReviewDue",
+          "maintenanceOwnerRole"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sourceType": {
+            "enum": [
+              "official_uc",
+              "campus_catalog",
+              "government",
+              "professional_association",
+              "research",
+              "forecast"
+            ]
+          },
+          "lastVerified": {
+            "type": "string",
+            "format": "date"
+          },
+          "nextReviewDue": {
+            "type": "string",
+            "format": "date"
+          },
+          "maintenanceOwnerRole": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

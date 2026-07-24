@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "requiredBeforeFirstSampler": 4,
+  "questions": [
+    {
+      "id": "problem-style",
+      "prompt": "Which sounds most interesting right now?",
+      "choices": [
+        "Explain how a living system works",
+        "Find a pattern in evidence",
+        "Improve a system with constraints",
+        "Understand how people think",
+        "I'm not sure"
+      ],
+      "skipAllowed": true
+    },
+    {
+      "id": "activity-style",
+      "prompt": "Which kind of activity would you rather sample?",
+      "choices": [
+        "A biology mechanism",
+        "A chemistry puzzle",
+        "A data question",
+        "A design or systems challenge",
+        "Surprise me"
+      ],
+      "skipAllowed": true
+    },
+    {
+      "id": "people-systems",
+      "prompt": "Would you rather focus on one person, a population, a device, or a dataset?",
+      "choices": [
+        "One person",
+        "A population",
+        "A device or process",
+        "A dataset",
+        "It depends"
+      ],
+      "skipAllowed": true
+    },
+    {
+      "id": "training",
+      "prompt": "How do you feel about careers that require graduate or professional education?",
+      "choices": [
+        "Open to exploring",
+        "Unsure",
+        "Prefer a bachelor's-entry path",
+        "I want to understand the tradeoff first"
+      ],
+      "skipAllowed": true
+    }
+  ],
+  "privacyNote": "No name, school, birth date, address, email, or other identifying information is requested."
+}

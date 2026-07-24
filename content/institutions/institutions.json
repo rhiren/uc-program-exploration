@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "uc-berkeley",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Berkeley",
+      "shortName": "UC Berkeley",
+      "location": {
+        "city": "Berkeley",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "semester",
+      "setting": "urban",
+      "officialUrl": "https://www.berkeley.edu",
+      "costUrl": "https://financialaid.berkeley.edu/how-aid-works/student-budgets-cost-of-attendance/",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-berkeley",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-davis",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Davis",
+      "shortName": "UC Davis",
+      "location": {
+        "city": "Davis",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "college_town",
+      "officialUrl": "https://www.ucdavis.edu",
+      "costUrl": "https://financialaid.ucdavis.edu/undergraduate/cost",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-davis",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-irvine",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Irvine",
+      "shortName": "UC Irvine",
+      "location": {
+        "city": "Irvine",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "suburban",
+      "officialUrl": "https://uci.edu",
+      "costUrl": "https://www.ofas.uci.edu/cost/",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-irvine",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "ucla",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Los Angeles",
+      "shortName": "UCLA",
+      "location": {
+        "city": "Los Angeles",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "urban",
+      "officialUrl": "https://www.ucla.edu",
+      "costUrl": "https://financialaid.ucla.edu/undergraduate/cost-of-attendance",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-ucla",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-merced",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Merced",
+      "shortName": "UC Merced",
+      "location": {
+        "city": "Merced",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "semester",
+      "setting": "small_city",
+      "officialUrl": "https://www.ucmerced.edu",
+      "costUrl": "https://financialaid.ucmerced.edu/cost-attendance",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-merced",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-riverside",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Riverside",
+      "shortName": "UC Riverside",
+      "location": {
+        "city": "Riverside",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "suburban",
+      "officialUrl": "https://www.ucr.edu",
+      "costUrl": "https://financialaid.ucr.edu/cost",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-riverside",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-san-diego",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, San Diego",
+      "shortName": "UC San Diego",
+      "location": {
+        "city": "La Jolla / San Diego",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "suburban_coastal",
+      "officialUrl": "https://ucsd.edu",
+      "costUrl": "https://fas.ucsd.edu/cost-of-attendance/",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-san-diego",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-santa-barbara",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Santa Barbara",
+      "shortName": "UC Santa Barbara",
+      "location": {
+        "city": "Santa Barbara / Goleta",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "suburban_coastal",
+      "officialUrl": "https://www.ucsb.edu",
+      "costUrl": "https://www.finaid.ucsb.edu/cost-of-attendance",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-santa-barbara",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "uc-santa-cruz",
+      "collectionId": "uc-system",
+      "providerId": "uc",
+      "name": "University of California, Santa Cruz",
+      "shortName": "UC Santa Cruz",
+      "location": {
+        "city": "Santa Cruz",
+        "state": "California",
+        "country": "United States"
+      },
+      "calendarSystem": "quarter",
+      "setting": "small_city_coastal",
+      "officialUrl": "https://www.ucsc.edu",
+      "costUrl": "https://financialaid.ucsc.edu/cost-to-attend/",
+      "financialAidUrl": "https://admission.universityofcalifornia.edu/tuition-financial-aid/estimate-your-aid.html",
+      "undergraduateCampus": true,
+      "prehealthNote": "Premed is a preparation pathway rather than a UC undergraduate major. Verify campus advising and current opportunities directly.",
+      "researchNote": "Research access varies by department, lab, prerequisites, and student initiative; campus presence alone does not guarantee access.",
+      "sourceIds": [
+        "catalog-santa-cruz",
+        "uc-calendar",
+        "uc-cost",
+        "uc-aid"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

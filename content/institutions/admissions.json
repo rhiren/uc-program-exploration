@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "uc-system-first-year",
+      "collectionId": "uc-system",
+      "applicationCycle": "Expected fall 2027 application for fall 2028 enrollment",
+      "cycleStatus": "not_yet_published",
+      "eligibility": {
+        "agCoursesMinimum": 15,
+        "agCoursesBeforeSeniorYearMinimum": 11,
+        "gradeFloor": "C",
+        "californiaResidentMinimumUcGpa": 3,
+        "nonresidentMinimumUcGpa": 3.4
+      },
+      "reviewModel": "comprehensive_review",
+      "standardizedTestPolicy": "Verify current UC policy before the application cycle; do not infer from this content package.",
+      "deadlineStatus": "Future cycle dates are intentionally not populated until UC publishes them.",
+      "noPredictionDisclaimer": "Meeting minimum requirements does not guarantee admission. Historical data do not predict an individual result.",
+      "majorDataPolicy": "Never infer major-level admission rates from campus or grouped-college data.",
+      "sourceIds": [
+        "uc-first-year-requirements",
+        "uc-gpa-requirement",
+        "uc-comprehensive-review",
+        "uc-dates",
+        "uc-admit-data"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

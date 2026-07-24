@@ -1,0 +1,1061 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "physician",
+      "slug": "physician",
+      "name": "Physician",
+      "summary": "Physicians diagnose, treat, and help prevent illness while carrying responsibility for complex decisions and patient communication.",
+      "typicalWeek": [
+        "Review histories and symptoms",
+        "Examine patients",
+        "Interpret tests",
+        "Discuss options and uncertainty",
+        "Document care",
+        "Coordinate with healthcare teams"
+      ],
+      "workEnvironment": [
+        "Clinics",
+        "Hospitals",
+        "Community health settings",
+        "Research, government, or industry roles"
+      ],
+      "intensities": {
+        "quantitative": 3,
+        "coding": 1,
+        "writing": 4,
+        "laboratory": 2,
+        "peopleInteraction": 5,
+        "emotionalLoad": 5
+      },
+      "educationPath": "Usually four years of college, four years of medical school, and roughly 3–7 or more years of residency depending on specialty; fellowship may add training.",
+      "relatedProgramIds": [
+        "biology",
+        "biochemistry",
+        "cognitive-science",
+        "public-health",
+        "bioengineering",
+        "data-science",
+        "statistics"
+      ],
+      "adjacentCareerIds": [
+        "physician-assistant",
+        "genetic-counselor",
+        "epidemiologist"
+      ],
+      "laborData": {
+        "socCode": "29-1210",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 239200,
+        "growthPercent": 3,
+        "typicalEntryEducation": "Doctoral or professional degree plus residency",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-physicians"
+        ],
+        "medianQualifier": "at_least"
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Drafting notes",
+          "Information retrieval",
+          "Administrative triage"
+        ],
+        "augmentedTasks": [
+          "Imaging and pattern review",
+          "Decision support",
+          "Patient monitoring"
+        ],
+        "humanCenter": [
+          "Accountability",
+          "Physical examination and procedures",
+          "Trust",
+          "Context-sensitive judgment"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Compare evidence in a fictional case, then reflect on whether uncertainty and patient communication feel engaging.",
+      "sourceIds": [
+        "bls-physicians",
+        "aamc-training-years",
+        "aamc-med-school"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "physician-assistant",
+      "slug": "physician-assistant",
+      "name": "Physician Assistant",
+      "summary": "PAs examine, diagnose, and treat patients in physician-led or collaborative healthcare teams, with scope varying by state and setting.",
+      "typicalWeek": [
+        "Obtain histories",
+        "Examine patients",
+        "Order and interpret tests",
+        "Treat and educate patients",
+        "Coordinate with physicians and other clinicians"
+      ],
+      "workEnvironment": [
+        "Physician offices",
+        "Hospitals",
+        "Outpatient clinics",
+        "Surgical and specialty settings"
+      ],
+      "intensities": {
+        "quantitative": 2,
+        "coding": 1,
+        "writing": 4,
+        "laboratory": 2,
+        "peopleInteraction": 5,
+        "emotionalLoad": 5
+      },
+      "educationPath": "A bachelor's degree and patient-care experience are common before an accredited PA master's program, typically about 27 months, followed by certification and state licensure.",
+      "relatedProgramIds": [
+        "biology",
+        "biochemistry",
+        "public-health"
+      ],
+      "adjacentCareerIds": [
+        "physician",
+        "genetic-counselor"
+      ],
+      "laborData": {
+        "socCode": "29-1071",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 133260,
+        "growthPercent": 20,
+        "typicalEntryEducation": "Master's degree",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-physician-assistants"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Documentation",
+          "Scheduling support",
+          "Reference lookup"
+        ],
+        "augmentedTasks": [
+          "Clinical decision support",
+          "Remote monitoring"
+        ],
+        "humanCenter": [
+          "Hands-on care",
+          "Communication",
+          "Team accountability"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Interview or observe a PA through an approved school or family connection and compare the role with a physician.",
+      "sourceIds": [
+        "bls-physician-assistants",
+        "aapa-pa-path"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "epidemiologist",
+      "slug": "epidemiologist",
+      "name": "Epidemiologist",
+      "summary": "Epidemiologists study patterns and causes of disease and injury in populations and evaluate ways to prevent harm.",
+      "typicalWeek": [
+        "Design or review studies",
+        "Analyze surveillance data",
+        "Investigate outbreaks",
+        "Write reports",
+        "Coordinate with public agencies or health systems"
+      ],
+      "workEnvironment": [
+        "Government",
+        "Universities",
+        "Hospitals",
+        "Research organizations",
+        "Occasional field response"
+      ],
+      "intensities": {
+        "quantitative": 4,
+        "coding": 3,
+        "writing": 4,
+        "laboratory": 1,
+        "peopleInteraction": 4,
+        "emotionalLoad": 3
+      },
+      "educationPath": "A master's degree in public health, epidemiology, or a related field is typical; some roles require a doctoral or medical degree.",
+      "relatedProgramIds": [
+        "public-health",
+        "statistics",
+        "biology",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "biostatistician",
+        "public-health-analyst",
+        "physician"
+      ],
+      "laborData": {
+        "socCode": "19-1041",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 83980,
+        "growthPercent": 16,
+        "typicalEntryEducation": "Master's degree",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-epidemiologists"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Data cleaning",
+          "Report templates",
+          "Signal screening"
+        ],
+        "augmentedTasks": [
+          "Surveillance anomaly detection",
+          "Literature synthesis",
+          "Forecast scenarios"
+        ],
+        "humanCenter": [
+          "Study design",
+          "Causal judgment",
+          "Public communication",
+          "Ethics"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Use a small fictional outbreak table to decide which additional evidence matters.",
+      "sourceIds": [
+        "bls-epidemiologists"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "biostatistician",
+      "slug": "biostatistician",
+      "name": "Biostatistician",
+      "summary": "Biostatisticians design studies and analyze health and biological data while making uncertainty and limitations explicit.",
+      "typicalWeek": [
+        "Plan experiments or trials",
+        "Write analysis code",
+        "Check assumptions",
+        "Meet with scientists or clinicians",
+        "Explain results"
+      ],
+      "workEnvironment": [
+        "Pharmaceutical and biotech firms",
+        "Universities",
+        "Hospitals",
+        "Government",
+        "Research organizations"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 4,
+        "writing": 4,
+        "laboratory": 1,
+        "peopleInteraction": 3,
+        "emotionalLoad": 2
+      },
+      "educationPath": "A master's degree is typical for many statistician roles; research leadership often favors doctoral training.",
+      "relatedProgramIds": [
+        "statistics",
+        "data-science",
+        "public-health",
+        "biology"
+      ],
+      "adjacentCareerIds": [
+        "epidemiologist",
+        "data-scientist",
+        "bioinformatics-scientist"
+      ],
+      "laborData": {
+        "socCode": "15-2041",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 103300,
+        "growthPercent": 9,
+        "typicalEntryEducation": "Master's degree typical; some bachelor's-entry roles",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-statisticians"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Code scaffolding",
+          "Standard tables",
+          "Diagnostic summaries"
+        ],
+        "augmentedTasks": [
+          "Model exploration",
+          "Reproducibility checks"
+        ],
+        "humanCenter": [
+          "Study design",
+          "Method choice",
+          "Regulatory explanation",
+          "Uncertainty"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Design a fair comparison for a fictional treatment study and list possible confounders.",
+      "sourceIds": [
+        "bls-statisticians"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "bioinformatics-scientist",
+      "slug": "bioinformatics-scientist",
+      "name": "Bioinformatics Scientist",
+      "summary": "Bioinformatics scientists develop and use computational methods to analyze genomic, molecular, and other biological information.",
+      "typicalWeek": [
+        "Write analysis software",
+        "Manage scientific data",
+        "Develop algorithms",
+        "Interpret results with biologists",
+        "Document reproducible workflows"
+      ],
+      "workEnvironment": [
+        "Biotechnology",
+        "Pharmaceuticals",
+        "Universities",
+        "Medical research",
+        "Government laboratories"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 5,
+        "writing": 3,
+        "laboratory": 2,
+        "peopleInteraction": 3,
+        "emotionalLoad": 2
+      },
+      "educationPath": "Advanced research roles commonly require graduate training; related bachelor's degrees can lead to analyst or technical roles with strong computational experience.",
+      "relatedProgramIds": [
+        "data-science",
+        "statistics",
+        "biology",
+        "biochemistry"
+      ],
+      "adjacentCareerIds": [
+        "biostatistician",
+        "data-scientist",
+        "biomedical-engineer"
+      ],
+      "laborData": {
+        "socCode": "19-1029.01",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 100590,
+        "growthPercent": 9,
+        "typicalEntryEducation": "No exact BLS category; medical-scientist proxy often requires a doctoral degree",
+        "geography": "United States",
+        "sourceIds": [
+          "onet-bioinformatics",
+          "bls-medical-scientists"
+        ],
+        "isProxy": true,
+        "limitation": "Pay and growth use the broader medical scientists category; bioinformatics-specific national estimates are not directly comparable."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Code generation",
+          "Annotation lookup",
+          "Pipeline configuration"
+        ],
+        "augmentedTasks": [
+          "Pattern discovery",
+          "Protein and sequence modeling",
+          "Literature linkage"
+        ],
+        "humanCenter": [
+          "Biological interpretation",
+          "Experimental design",
+          "Validation",
+          "Data stewardship"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Compare two short DNA sequences and explain what additional biological evidence would be needed.",
+      "sourceIds": [
+        "onet-bioinformatics",
+        "bls-medical-scientists"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "data-scientist",
+      "slug": "data-scientist",
+      "name": "Data Scientist",
+      "summary": "Data scientists use programming, statistics, and domain knowledge to extract useful and defensible insight from data.",
+      "typicalWeek": [
+        "Clean data",
+        "Write code",
+        "Build and test models",
+        "Meet with domain experts",
+        "Present findings and limitations"
+      ],
+      "workEnvironment": [
+        "Technology",
+        "Research",
+        "Consulting",
+        "Insurance",
+        "Healthcare",
+        "Government"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 5,
+        "writing": 3,
+        "laboratory": 1,
+        "peopleInteraction": 3,
+        "emotionalLoad": 2
+      },
+      "educationPath": "A bachelor's degree is typical for entry, although some employers prefer a master's or doctoral degree.",
+      "relatedProgramIds": [
+        "data-science",
+        "statistics",
+        "operations-research",
+        "cognitive-science"
+      ],
+      "adjacentCareerIds": [
+        "biostatistician",
+        "operations-research-analyst",
+        "bioinformatics-scientist"
+      ],
+      "laborData": {
+        "socCode": "15-2051",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 112590,
+        "growthPercent": 34,
+        "typicalEntryEducation": "Bachelor's degree",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-data-scientists"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Code scaffolding",
+          "Data documentation",
+          "Baseline models"
+        ],
+        "augmentedTasks": [
+          "Feature exploration",
+          "Model prototyping",
+          "Natural-language interfaces"
+        ],
+        "humanCenter": [
+          "Problem framing",
+          "Data quality judgment",
+          "Evaluation",
+          "Accountability"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Analyze a small dataset and write what it cannot tell you.",
+      "sourceIds": [
+        "bls-data-scientists",
+        "wef-future-jobs"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "clinical-data-scientist",
+      "slug": "clinical-data-scientist",
+      "name": "Clinical Data Scientist",
+      "summary": "Clinical data scientists apply data methods to healthcare or research while working within privacy, safety, and clinical constraints.",
+      "typicalWeek": [
+        "Prepare clinical data",
+        "Build and validate analyses",
+        "Work with clinicians",
+        "Document methods",
+        "Review privacy and bias risks"
+      ],
+      "workEnvironment": [
+        "Health systems",
+        "Life-science companies",
+        "Research organizations",
+        "Health technology"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 5,
+        "writing": 4,
+        "laboratory": 1,
+        "peopleInteraction": 4,
+        "emotionalLoad": 3
+      },
+      "educationPath": "Requirements vary; strong statistics and computing are essential, and graduate or domain-specific training is common.",
+      "relatedProgramIds": [
+        "data-science",
+        "statistics",
+        "public-health",
+        "biology"
+      ],
+      "adjacentCareerIds": [
+        "data-scientist",
+        "biostatistician",
+        "healthcare-operations-analyst"
+      ],
+      "laborData": {
+        "socCode": "15-2051",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 112590,
+        "growthPercent": 34,
+        "typicalEntryEducation": "Data-scientist category used as a proxy",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-data-scientists",
+          "onet-health-informatics"
+        ],
+        "isProxy": true,
+        "limitation": "Clinical data scientist is not a single BLS occupation; figures use the broader data scientist category."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Documentation drafts",
+          "Code assistance",
+          "Initial charting"
+        ],
+        "augmentedTasks": [
+          "Risk-model evaluation",
+          "Text and imaging analysis"
+        ],
+        "humanCenter": [
+          "Clinical relevance",
+          "Safety validation",
+          "Privacy",
+          "Bias assessment"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Review a fictional model result and identify the patient-safety questions that remain.",
+      "sourceIds": [
+        "bls-data-scientists",
+        "onet-health-informatics"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "operations-research-analyst",
+      "slug": "operations-research-analyst",
+      "name": "Operations Research Analyst",
+      "summary": "Operations research analysts use mathematics and models to help organizations allocate resources and improve complex decisions.",
+      "typicalWeek": [
+        "Define objectives and constraints",
+        "Analyze operational data",
+        "Build optimization or simulation models",
+        "Test scenarios",
+        "Present recommendations"
+      ],
+      "workEnvironment": [
+        "Consulting",
+        "Government",
+        "Manufacturing",
+        "Finance",
+        "Logistics",
+        "Healthcare"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 4,
+        "writing": 3,
+        "laboratory": 1,
+        "peopleInteraction": 4,
+        "emotionalLoad": 2
+      },
+      "educationPath": "A bachelor's degree is typical; some employers prefer graduate education.",
+      "relatedProgramIds": [
+        "operations-research",
+        "statistics",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "data-scientist",
+        "healthcare-operations-analyst"
+      ],
+      "laborData": {
+        "socCode": "15-2031",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 91290,
+        "growthPercent": 21,
+        "typicalEntryEducation": "Bachelor's degree",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-or-analysts"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Scenario generation",
+          "Code assistance",
+          "Report drafts"
+        ],
+        "augmentedTasks": [
+          "Large-scale optimization",
+          "Simulation",
+          "Sensitivity analysis"
+        ],
+        "humanCenter": [
+          "Choosing objectives",
+          "Negotiating constraints",
+          "Implementation judgment"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Balance wait time, staffing, and cost in a fictional clinic schedule.",
+      "sourceIds": [
+        "bls-or-analysts"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "ux-researcher",
+      "slug": "ux-researcher",
+      "name": "UX Researcher and Human-Factors Specialist",
+      "summary": "UX and human-factors researchers study how people use products and systems so designs better support performance, safety, and well-being.",
+      "typicalWeek": [
+        "Plan interviews or usability studies",
+        "Observe behavior",
+        "Analyze qualitative and quantitative evidence",
+        "Work with designers and engineers",
+        "Present findings"
+      ],
+      "workEnvironment": [
+        "Technology",
+        "Healthcare",
+        "Consulting",
+        "Consumer products",
+        "Transportation and safety-critical systems"
+      ],
+      "intensities": {
+        "quantitative": 3,
+        "coding": 2,
+        "writing": 5,
+        "laboratory": 2,
+        "peopleInteraction": 5,
+        "emotionalLoad": 2
+      },
+      "educationPath": "Entry routes vary; psychology, cognitive science, human factors, design research, and related graduate training are common.",
+      "relatedProgramIds": [
+        "cognitive-science",
+        "statistics",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "data-scientist",
+        "biomedical-engineer"
+      ],
+      "laborData": {
+        "socCode": "17-2112.01",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 102440,
+        "growthPercent": null,
+        "typicalEntryEducation": "No single UX-research BLS category",
+        "geography": "United States",
+        "sourceIds": [
+          "onet-human-factors"
+        ],
+        "isProxy": true,
+        "limitation": "O*NET maps wage data to the broader industrial engineers category; do not present as UX-research-specific pay or growth."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Transcription",
+          "Coding assistance",
+          "Theme suggestions"
+        ],
+        "augmentedTasks": [
+          "Prototype generation",
+          "Large-scale feedback synthesis"
+        ],
+        "humanCenter": [
+          "Research ethics",
+          "Study design",
+          "Observation",
+          "Interpreting context"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Watch someone use an everyday object, ask neutral questions, and identify one design assumption.",
+      "sourceIds": [
+        "onet-human-factors"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "biomedical-engineer",
+      "slug": "biomedical-engineer",
+      "name": "Biomedical Engineer",
+      "summary": "Biomedical engineers design and test devices, equipment, software, and systems that address biological and healthcare needs.",
+      "typicalWeek": [
+        "Develop requirements",
+        "Model or prototype",
+        "Test performance",
+        "Work with clinicians and manufacturers",
+        "Document safety and design decisions"
+      ],
+      "workEnvironment": [
+        "Medical-device companies",
+        "Research laboratories",
+        "Hospitals",
+        "Engineering services",
+        "Manufacturing"
+      ],
+      "intensities": {
+        "quantitative": 5,
+        "coding": 3,
+        "writing": 3,
+        "laboratory": 4,
+        "peopleInteraction": 3,
+        "emotionalLoad": 2
+      },
+      "educationPath": "A bachelor's degree is typical; research and some advanced roles require graduate education.",
+      "relatedProgramIds": [
+        "bioengineering",
+        "biology",
+        "biochemistry",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "bioinformatics-scientist",
+        "physician",
+        "ux-researcher"
+      ],
+      "laborData": {
+        "socCode": "17-2031",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 106950,
+        "growthPercent": 5,
+        "typicalEntryEducation": "Bachelor's degree",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-biomedical-engineers"
+        ]
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Draft documentation",
+          "Simulation setup",
+          "Code assistance"
+        ],
+        "augmentedTasks": [
+          "Design search",
+          "Imaging analysis",
+          "Predictive maintenance"
+        ],
+        "humanCenter": [
+          "Safety verification",
+          "Physical testing",
+          "Regulatory responsibility",
+          "Clinical context"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Compare two fictional wearable-sensor designs and decide what must be tested before use.",
+      "sourceIds": [
+        "bls-biomedical-engineers"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "public-health-analyst",
+      "slug": "public-health-analyst",
+      "name": "Public Health Analyst",
+      "summary": "Public health analysts use evidence, policy, and program evaluation to help organizations improve population health.",
+      "typicalWeek": [
+        "Analyze program data",
+        "Review evidence",
+        "Write policy or evaluation briefs",
+        "Meet with community and agency partners",
+        "Track implementation"
+      ],
+      "workEnvironment": [
+        "Government",
+        "Nonprofits",
+        "Health systems",
+        "Consulting",
+        "Research organizations"
+      ],
+      "intensities": {
+        "quantitative": 3,
+        "coding": 2,
+        "writing": 5,
+        "laboratory": 1,
+        "peopleInteraction": 5,
+        "emotionalLoad": 3
+      },
+      "educationPath": "Requirements vary; bachelor's-entry roles exist, while specialized analysis often favors an MPH or related graduate degree.",
+      "relatedProgramIds": [
+        "public-health",
+        "statistics",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "epidemiologist",
+        "healthcare-operations-analyst"
+      ],
+      "laborData": {
+        "socCode": "19-1041",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 83980,
+        "growthPercent": 16,
+        "typicalEntryEducation": "No single BLS category; epidemiologist proxy",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-epidemiologists"
+        ],
+        "isProxy": true,
+        "limitation": "Public health analyst titles span multiple occupations. Figures use epidemiologists only as a related benchmark."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Document summaries",
+          "Data cleanup",
+          "Draft charts"
+        ],
+        "augmentedTasks": [
+          "Literature scanning",
+          "Program monitoring",
+          "Scenario exploration"
+        ],
+        "humanCenter": [
+          "Community context",
+          "Policy judgment",
+          "Equity",
+          "Communication"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Choose measures for a fictional school-health program and explain whose perspective is missing.",
+      "sourceIds": [
+        "bls-epidemiologists"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "genetic-counselor",
+      "slug": "genetic-counselor",
+      "name": "Genetic Counselor",
+      "summary": "Genetic counselors assess inherited-condition risk and help individuals and families understand information and make informed decisions.",
+      "typicalWeek": [
+        "Review family and medical histories",
+        "Explain testing",
+        "Discuss uncertainty and options",
+        "Coordinate with healthcare teams",
+        "Support informed decision-making"
+      ],
+      "workEnvironment": [
+        "Hospitals",
+        "Clinics",
+        "Laboratories",
+        "Research",
+        "Telehealth"
+      ],
+      "intensities": {
+        "quantitative": 3,
+        "coding": 1,
+        "writing": 4,
+        "laboratory": 1,
+        "peopleInteraction": 5,
+        "emotionalLoad": 5
+      },
+      "educationPath": "A specialized master's degree and professional credentialing are typical; verify current accreditation and state requirements.",
+      "relatedProgramIds": [
+        "biology",
+        "biochemistry",
+        "cognitive-science",
+        "public-health"
+      ],
+      "adjacentCareerIds": [
+        "physician",
+        "physician-assistant",
+        "epidemiologist"
+      ],
+      "laborData": {
+        "socCode": "29-9092.00",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": null,
+        "growthPercent": null,
+        "typicalEntryEducation": "Master's degree typical",
+        "geography": "United States",
+        "sourceIds": [
+          "onet-genetic-counselors"
+        ],
+        "limitation": "O*NET identifies the occupation, but this package does not publish a directly comparable national median or growth rate."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Pedigree drafting",
+          "Reference lookup",
+          "Educational material drafts"
+        ],
+        "augmentedTasks": [
+          "Variant information retrieval",
+          "Risk calculations"
+        ],
+        "humanCenter": [
+          "Consent",
+          "Emotional support",
+          "Uncertainty communication",
+          "Values-sensitive decisions"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Explain a fictional recessive inheritance result in plain language without telling the family what decision to make.",
+      "sourceIds": [
+        "onet-genetic-counselors"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "healthcare-operations-analyst",
+      "slug": "healthcare-operations-analyst",
+      "name": "Healthcare Operations Analyst",
+      "summary": "Healthcare operations analysts improve patient flow, staffing, capacity, quality, and cost using data and systems thinking.",
+      "typicalWeek": [
+        "Analyze wait times or capacity",
+        "Map workflows",
+        "Build dashboards or models",
+        "Meet with clinical and administrative teams",
+        "Evaluate changes"
+      ],
+      "workEnvironment": [
+        "Hospitals",
+        "Clinics",
+        "Health systems",
+        "Consulting",
+        "Government"
+      ],
+      "intensities": {
+        "quantitative": 4,
+        "coding": 3,
+        "writing": 4,
+        "laboratory": 1,
+        "peopleInteraction": 4,
+        "emotionalLoad": 3
+      },
+      "educationPath": "Bachelor's-entry analyst roles exist; advancement may favor healthcare, analytics, operations, or management graduate education and experience.",
+      "relatedProgramIds": [
+        "operations-research",
+        "public-health",
+        "statistics",
+        "data-science"
+      ],
+      "adjacentCareerIds": [
+        "operations-research-analyst",
+        "public-health-analyst",
+        "clinical-data-scientist"
+      ],
+      "laborData": {
+        "socCode": "11-9111",
+        "baseYear": 2024,
+        "projectionEndYear": 2034,
+        "medianAnnualUsd": 117960,
+        "growthPercent": 23,
+        "typicalEntryEducation": "Medical and health services managers used as a later-career proxy",
+        "geography": "United States",
+        "sourceIds": [
+          "bls-health-managers",
+          "bls-or-analysts"
+        ],
+        "isProxy": true,
+        "limitation": "Analyst titles do not map to one BLS occupation. Pay and growth shown for medical and health services managers may reflect more experienced roles."
+      },
+      "aiImpact": {
+        "routineTasks": [
+          "Dashboard narratives",
+          "Scheduling suggestions",
+          "Report drafts"
+        ],
+        "augmentedTasks": [
+          "Demand forecasting",
+          "Capacity simulation",
+          "Anomaly detection"
+        ],
+        "humanCenter": [
+          "Workflow context",
+          "Safety and equity tradeoffs",
+          "Implementation",
+          "Stakeholder alignment"
+        ],
+        "confidence": "medium"
+      },
+      "tryNow": "Improve a fictional emergency-department flow while protecting urgent patients and staff workload.",
+      "sourceIds": [
+        "bls-health-managers",
+        "bls-or-analysts"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.0.0",
+      "lastVerified": "2026-07-23",
+      "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    }
+  ]
+}

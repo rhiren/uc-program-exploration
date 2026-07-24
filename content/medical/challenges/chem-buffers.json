@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "lastVerified": "2026-07-23",
+  "nextReviewDue": "2027-07-01",
+  "maintenanceOwnerRole": "science_content_editor",
+  "disclaimer": "This is a fictional educational activity, not a diagnosis, aptitude test, or medical recommendation.",
+  "defaultMinutes": 8,
+  "optionalDeepDiveMinutes": 15,
+  "resultFields": [
+    "perceivedDifficulty",
+    "experience",
+    "favoriteAspect",
+    "wantsMore"
+  ],
+  "id": "chem-blood-buffers",
+  "title": "Why can breathing affect blood pH?",
+  "prerequisites": [
+    "High-school chemistry",
+    "Acids, bases, and equilibrium"
+  ],
+  "learningGoals": [
+    "Use equilibrium reasoning",
+    "Connect carbon dioxide with bicarbonate buffering",
+    "Explain direction of change without calculating a diagnosis"
+  ],
+  "steps": [
+    {
+      "id": "predict",
+      "type": "single_choice",
+      "prompt": "If carbon dioxide builds up, which direction is expected for hydrogen-ion concentration?",
+      "choices": [
+        {
+          "id": "up",
+          "text": "Increase"
+        },
+        {
+          "id": "down",
+          "text": "Decrease"
+        },
+        {
+          "id": "none",
+          "text": "No relationship"
+        }
+      ],
+      "correctChoiceId": "up",
+      "explanation": "CO₂ + H₂O ⇌ H⁺ + HCO₃⁻. More retained CO₂ can shift the system toward more H⁺ and lower pH."
+    },
+    {
+      "id": "revision",
+      "type": "single_choice",
+      "prompt": "Faster ventilation removes more CO₂. What direction would that tend to move pH, all else equal?",
+      "choices": [
+        {
+          "id": "higher",
+          "text": "Higher"
+        },
+        {
+          "id": "lower",
+          "text": "Lower"
+        },
+        {
+          "id": "unknown",
+          "text": "Direction cannot be reasoned about"
+        }
+      ],
+      "correctChoiceId": "higher",
+      "explanation": "Removing CO₂ tends to reduce H⁺ through the buffer relationship, raising pH. Real physiology may involve multiple processes."
+    },
+    {
+      "id": "limits",
+      "type": "multiple_choice",
+      "prompt": "Why is this model not enough to advise a real patient?",
+      "choices": [
+        {
+          "id": "kidneys",
+          "text": "Kidneys also regulate acid–base balance"
+        },
+        {
+          "id": "mixed",
+          "text": "Real disorders can be mixed and require measurements"
+        },
+        {
+          "id": "both",
+          "text": "Both"
+        }
+      ],
+      "correctChoiceId": "both",
+      "explanation": "A simplified equilibrium is useful for learning, not diagnosing or treating."
+    }
+  ],
+  "reflections": [
+    "Was the chemistry-to-physiology connection interesting, okay, or draining?",
+    "Would you rather do more equilibrium reasoning or examine experimental data?"
+  ],
+  "sourceIds": [
+    "ncbi-co2-buffer"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "records": [
+    {
+      "id": "physician",
+      "name": "Physician",
+      "patientInteraction": "high",
+      "typicalPostBachelorTraining": "4 years medical school plus residency; fellowship optional",
+      "autonomy": "high after licensure; team-based",
+      "sourceIds": [
+        "aamc-training-years",
+        "bls-physicians"
+      ]
+    },
+    {
+      "id": "physician-assistant",
+      "name": "Physician Assistant",
+      "patientInteraction": "high",
+      "typicalPostBachelorTraining": "About 27 months for many accredited programs, then certification and licensure",
+      "autonomy": "varies by state and setting; collaborative practice",
+      "sourceIds": [
+        "aapa-pa-path",
+        "bls-physician-assistants"
+      ]
+    },
+    {
+      "id": "genetic-counselor",
+      "name": "Genetic Counselor",
+      "patientInteraction": "high",
+      "typicalPostBachelorTraining": "Specialized master's degree and credentialing are typical",
+      "autonomy": "specialized counseling within healthcare teams",
+      "sourceIds": [
+        "onet-genetic-counselors"
+      ]
+    },
+    {
+      "id": "epidemiologist",
+      "name": "Epidemiologist",
+      "patientInteraction": "low_to_variable",
+      "typicalPostBachelorTraining": "Master's degree typical",
+      "autonomy": "independent analytical work within public-health and research teams",
+      "sourceIds": [
+        "bls-epidemiologists"
+      ]
+    },
+    {
+      "id": "biomedical-engineer",
+      "name": "Biomedical Engineer",
+      "patientInteraction": "low_to_variable",
+      "typicalPostBachelorTraining": "Bachelor's degree typical; graduate education for some roles",
+      "autonomy": "engineering responsibility within multidisciplinary teams",
+      "sourceIds": [
+        "bls-biomedical-engineers"
+      ]
+    }
+  ],
+  "comparisonWarning": "Training, scope, licensure, and work settings vary. Verify professional and state requirements before making decisions."
+}

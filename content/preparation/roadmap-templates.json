@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "contentVersion": "1.0.0",
+    "lastVerified": "2026-07-23",
+    "nextReviewDue": "2027-07-01",
+    "maintenanceOwnerRole": "family_content_editor"
+  },
+  "periods": [
+    {
+      "id": "summer_before_11",
+      "title": "Now / summer before 11th grade",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "fall_11",
+      "title": "Fall of 11th grade",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "winter_11",
+      "title": "Winter of 11th grade",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "spring_11",
+      "title": "Spring of 11th grade",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "summer_before_12",
+      "title": "Summer before 12th grade",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "fall_12",
+      "title": "Fall of 12th grade / application season",
+      "defaultMaxVisibleActions": 3
+    },
+    {
+      "id": "after_application",
+      "title": "After application",
+      "defaultMaxVisibleActions": 3
+    }
+  ],
+  "templates": [
+    {
+      "id": "audit-ag",
+      "period": "fall_11",
+      "category": "required",
+      "title": "Review A–G progress",
+      "rationale": "Identify unresolved classifications early.",
+      "verificationNeeded": true
+    },
+    {
+      "id": "verify-gpa",
+      "period": "fall_11",
+      "category": "recommended",
+      "title": "Review the UC GPA estimate and assumptions",
+      "rationale": "Understand what is included without treating it as a prediction.",
+      "verificationNeeded": true
+    },
+    {
+      "id": "test-path",
+      "period": "fall_11",
+      "category": "exploration",
+      "title": "Test one program family through a short activity",
+      "rationale": "Use experience, not labels, to learn what holds attention."
+    },
+    {
+      "id": "senior-plan",
+      "period": "spring_11",
+      "category": "recommended",
+      "title": "Draft a sustainable senior schedule",
+      "rationale": "Balance A–G, preparation, mastery, and wellbeing.",
+      "verificationNeeded": true
+    },
+    {
+      "id": "counselor-sheet",
+      "period": "spring_11",
+      "category": "recommended",
+      "title": "Bring the discussion sheet to a counselor",
+      "rationale": "Resolve school-specific course and opportunity questions.",
+      "verificationNeeded": true
+    },
+    {
+      "id": "summer-experience",
+      "period": "spring_11",
+      "category": "exploration",
+      "title": "Choose one meaningful summer exploration",
+      "rationale": "Depth and learning matter more than résumé count."
+    },
+    {
+      "id": "portfolio",
+      "period": "summer_before_12",
+      "category": "recommended",
+      "title": "Refine campus-major combinations",
+      "rationale": "Compare fit, constraints, cost, and data limitations."
+    },
+    {
+      "id": "piq-bank",
+      "period": "summer_before_12",
+      "category": "recommended",
+      "title": "Build a PIQ story bank",
+      "rationale": "Preserve the student's own experiences and authorship."
+    },
+    {
+      "id": "verify-cycle",
+      "period": "summer_before_12",
+      "category": "required",
+      "title": "Load the published application dates",
+      "rationale": "Future-cycle dates were not available when this package was authored.",
+      "verificationNeeded": true
+    },
+    {
+      "id": "course-reporting",
+      "period": "fall_12",
+      "category": "required",
+      "title": "Verify course reporting before submission",
+      "rationale": "Resolve classifications and transcript details.",
+      "verificationNeeded": true
+    }
+  ],
+  "sourceIds": [
+    "uc-first-year-requirements",
+    "uc-dates",
+    "uc-piq"
+  ]
+}
