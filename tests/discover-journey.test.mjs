@@ -71,3 +71,22 @@ test("all-skip onboarding still produces three non-predictive starting points", 
   assert.match(recommendations[0].reason, /not much evidence/i);
   assert.equal(new Set(recommendations.map((item) => item.program.id)).size, 3);
 });
+
+test("makes the student's reaction visible without treating one sampler as a verdict", () => {
+  const recommendations = buildProgramRecommendations(
+    {
+      "problem-style": "Explain how a living system works",
+      "activity-style": "A biology mechanism",
+    },
+    {
+      experience: "Draining or too detailed",
+      more: "More patient-centered cases",
+    },
+    programs,
+  );
+
+  assert.equal(recommendations[0].program.id, "biology");
+  assert.match(recommendations[0].reason, /patient-centered cases/i);
+  assert.match(recommendations[0].reason, /molecular activity draining/i);
+  assert.match(recommendations[0].reason, /not a verdict/i);
+});

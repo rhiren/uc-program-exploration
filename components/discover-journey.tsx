@@ -152,9 +152,15 @@ function JourneyFrame({
   return (
     <>
       <div className="journey-progress-row">
-        <button className="text-button" onClick={onBack} type="button">
-          ← Back
-        </button>
+        {currentStep === 1 ? (
+          <Link className="text-button" href="/discover">
+            ← Back
+          </Link>
+        ) : (
+          <button className="text-button" onClick={onBack} type="button">
+            ← Back
+          </button>
+        )}
         <span>Step {currentStep} of about 10</span>
         <Link href="/discover">Exit for now</Link>
       </div>
@@ -703,9 +709,11 @@ export function DiscoverJourney({
         </div>
         <input
           accept="application/json"
+          aria-hidden="true"
           className="visually-hidden"
           onChange={importProgress}
           ref={importInput}
+          tabIndex={-1}
           type="file"
         />
         {storageMessage && <p aria-live="polite">{storageMessage}</p>}

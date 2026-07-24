@@ -18,9 +18,22 @@ export function SiteHeader() {
           <Link href="/prepare">Prepare</Link>
           <Link href="/medical">Medicine</Link>
         </nav>
-        <span className="local-badge">Local &amp; private</span>
+        <span
+          className="local-badge"
+          title="Guided-journey progress stays in this browser on this device"
+        >
+          Progress on this device
+        </span>
+      </div>
+      <div className="preview-strip">
+        <div className="shell">
+          <strong>Early preview</strong>
+          <span>
+            Guided Discover is ready. Personalized UC preparation, career
+            outlooks, and campus comparisons are still being built.
+          </span>
+        </div>
       </div>
     </header>
   );
 }
-

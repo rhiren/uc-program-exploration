@@ -34,6 +34,8 @@ test("server-renders the product home from validated content", async () => {
   assert.match(html, /Start with Discover/);
   assert.match(html, /Start with Prepare/);
   assert.match(html, /Exploration, not prediction/);
+  assert.match(html, /Early preview/);
+  assert.match(html, /Progress on this device/);
   assert.match(html, /53(?:<!-- -->)? sources/);
   assert.match(html, /9(?:<!-- -->)? UC campuses/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
