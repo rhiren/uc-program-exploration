@@ -88,7 +88,9 @@ export default function DiscoverPage() {
             {content.programs.map((program) => (
               <article className="program-card" key={program.id}>
                 <div className="program-card-top">
-                  <h3>{program.name}</h3>
+                  <h3>
+                    <Link href={`/programs/${program.slug}`}>{program.name}</Link>
+                  </h3>
                   <span>
                     Coding use: {program.intensities.coding ?? "varies"}/5
                   </span>
@@ -107,6 +109,9 @@ export default function DiscoverPage() {
                     <p>{program.codingReality}</p>
                   </div>
                 </details>
+                <Link className="card-deep-link" href={`/programs/${program.slug}`}>
+                  Open the full program guide →
+                </Link>
               </article>
             ))}
           </div>
@@ -119,6 +124,39 @@ export default function DiscoverPage() {
               Explore the medical path →
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="shell content-section" id="careers" aria-labelledby="career-map">
+        <div className="section-heading">
+          <p className="eyebrow">Look beyond the major</p>
+          <h2 id="career-map">Thirteen career realities</h2>
+          <p>
+            See a typical week, education path, national labor baseline, and
+            which tasks AI may absorb, augment, or leave deeply human.
+          </p>
+        </div>
+        <div className="career-card-grid">
+          {content.careers.map((career) => (
+            <Link className="career-card" href={`/careers/${career.slug}`} key={career.id}>
+              <span>
+                People {career.intensities.peopleInteraction}/5 · Coding{" "}
+                {career.intensities.coding}/5
+              </span>
+              <h3>{career.name}</h3>
+              <p>{career.summary}</p>
+              <strong>Open career reality →</strong>
+            </Link>
+          ))}
+        </div>
+        <div className="next-invitation">
+          <div>
+            <p className="eyebrow">Ready to organize?</p>
+            <h2>Save possibilities without choosing one yet.</h2>
+          </div>
+          <Link className="button button-primary" href="/explore">
+            Open My paths →
+          </Link>
         </div>
       </section>
     </main>

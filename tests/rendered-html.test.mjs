@@ -41,12 +41,16 @@ test("server-renders the product home from validated content", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("renders the three foundational routes", async () => {
+test("renders the foundational and exploration routes", async () => {
   const expectations = [
     ["/discover", /Twelve program families/],
     ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
     ["/medical", /Premed is generally a preparation pathway/],
+    ["/programs/biology", /Where this appears across the UC system/],
+    ["/careers/data-scientist", /Look at tasks, not “job replaced” headlines/],
+    ["/explore", /Opening paths saved on this device/],
+    ["/compare", /Put the real tradeoffs side by side/],
   ];
 
   for (const [pathname, expected] of expectations) {
@@ -68,15 +72,17 @@ test("describes the study experience before explaining coding", async () => {
 });
 
 test("keeps editorial content behind the centralized loader", async () => {
-  const [home, discover, prepare, medical, packageJson] = await Promise.all([
+  const [home, discover, prepare, medical, program, career, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/discover/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/prepare/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/medical/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/programs/[slug]/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/careers/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  for (const page of [home, discover, prepare, medical]) {
+  for (const page of [home, discover, prepare, medical, program, career]) {
     assert.match(page, /loadContent/);
     assert.doesNotMatch(page, /from ["']@\/content\//);
   }

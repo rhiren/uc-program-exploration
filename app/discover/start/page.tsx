@@ -19,6 +19,7 @@ export default function GuidedDiscoverPage() {
 
   const programs = content.programs.map((program) => ({
     id: program.id,
+    slug: program.slug,
     name: program.name,
     summary: program.summary,
     codingUse: program.intensities.coding ?? "varies",

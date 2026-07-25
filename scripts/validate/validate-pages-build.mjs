@@ -4,7 +4,23 @@ import { join } from "node:path";
 const root = process.cwd();
 const outputRoot = join(root, "out");
 const basePath = process.env.PAGES_BASE_PATH ?? "";
-const routes = ["", "discover", "discover/start", "prepare", "medical"];
+const programs = JSON.parse(
+  await readFile(join(root, "content", "programs.json"), "utf8"),
+).records;
+const careers = JSON.parse(
+  await readFile(join(root, "content", "careers.json"), "utf8"),
+).records;
+const routes = [
+  "",
+  "discover",
+  "discover/start",
+  "prepare",
+  "medical",
+  "explore",
+  "compare",
+  ...programs.map((program) => `programs/${program.slug}`),
+  ...careers.map((career) => `careers/${career.slug}`),
+];
 const failures = [];
 
 for (const route of routes) {

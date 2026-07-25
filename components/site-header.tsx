@@ -17,6 +17,7 @@ export function SiteHeader() {
           <Link href="/discover">Discover</Link>
           <Link href="/prepare">Prepare</Link>
           <Link href="/medical">Medicine</Link>
+          <Link href="/explore">My paths</Link>
         </nav>
         <span
           className="local-badge"
@@ -29,8 +30,8 @@ export function SiteHeader() {
         <div className="shell">
           <strong>Early preview</strong>
           <span>
-            Guided Discover is ready. Personalized UC preparation, career
-            outlooks, and campus comparisons are still being built.
+            Explore eight programs, thirteen careers, verified UC offerings,
+            and your own saved comparisons.
           </span>
         </div>
       </div>

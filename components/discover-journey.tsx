@@ -17,6 +17,11 @@ import {
   serializeDiscoverProgress,
 } from "@/lib/discover/progress-store.mjs";
 import { buildProgramRecommendations } from "@/lib/discover/recommendations.mjs";
+import {
+  readExplorerLibrary,
+  toggleSavedItem,
+  writeExplorerLibrary,
+} from "@/lib/explorer/library-store.mjs";
 
 type DiscoverStage = "onboarding" | "challenge" | "reflection" | "results";
 
@@ -70,6 +75,7 @@ type ChallengeContent = {
 
 type ProgramView = {
   id: string;
+  slug: string;
   name: string;
   summary: string;
   codingUse: number | string;
@@ -381,12 +387,22 @@ export function DiscoverJourney({
   }
 
   function toggleSavedProgram(programId: string) {
+    const shouldSave = !progress.savedProgramIds.includes(programId);
     updateProgress((current) => ({
       ...current,
       savedProgramIds: current.savedProgramIds.includes(programId)
         ? current.savedProgramIds.filter((id) => id !== programId)
         : [...current.savedProgramIds, programId],
     }));
+
+    const library = readExplorerLibrary(window.localStorage);
+    const isSavedInLibrary = library.savedProgramIds.includes(programId);
+    if (isSavedInLibrary !== shouldSave) {
+      writeExplorerLibrary(
+        window.localStorage,
+        toggleSavedItem(library, "program", programId),
+      );
+    }
   }
 
   function exportProgress() {
@@ -412,6 +428,13 @@ export function DiscoverJourney({
       ) as DiscoverProgress | null;
       if (!parsed) throw new Error("Invalid progress");
       setProgress(parsed);
+      let library = readExplorerLibrary(window.localStorage);
+      for (const programId of parsed.savedProgramIds) {
+        if (!library.savedProgramIds.includes(programId)) {
+          library = toggleSavedItem(library, "program", programId);
+        }
+      }
+      writeExplorerLibrary(window.localStorage, library);
       setStorageMessage("Progress restored from the selected file.");
     } catch {
       setStorageMessage(
@@ -425,7 +448,7 @@ export function DiscoverJourney({
   function clearProgress() {
     if (
       !window.confirm(
-        "Clear this Discover journey and its saved paths from this device?",
+        "Clear this Discover journey from this device? Items in My paths are managed separately.",
       )
     ) {
       return;
@@ -670,6 +693,12 @@ export function DiscoverJourney({
                         {isSaved ? "Saved ✓" : "Save to explore"}
                       </button>
                     </div>
+                    <Link
+                      className="recommendation-link"
+                      href={`/programs/${recommendation.program.slug}`}
+                    >
+                      Open full program guide →
+                    </Link>
                   </article>
                 );
               })}
