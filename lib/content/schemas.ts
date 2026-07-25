@@ -140,7 +140,7 @@ export const offeringSchema = maintainedRecordSchema
     officialMajorName: z.string().min(1),
     degreeType: z.enum(["BA", "BS", "BFA", "other"]),
     schoolOrCollege: z.string().min(1),
-    firstYearAvailable: z.boolean(),
+    firstYearAvailable: z.boolean().nullable(),
     admissionContext: z.enum(["campus", "college", "direct_major", "unknown"]),
     capacityStatus: z.enum([
       "selective",
@@ -162,6 +162,47 @@ export const offeringSchema = maintainedRecordSchema
     sourceIds: z.array(z.string().min(1)).min(1),
   })
   .passthrough();
+
+export const ucMajorCatalogSchema = z.object({
+  meta: maintenanceMetaSchema.passthrough(),
+  term: z.string().min(1),
+  sourceUrl: z.url(),
+  sourcePageUrl: z.url(),
+  sourceIds: z.array(z.string().min(1)).min(1),
+  caveat: z.string().min(1),
+  categories: z.array(
+    z.object({ id: z.string().min(1), name: z.string().min(1) }),
+  ),
+  campuses: z.array(
+    z.object({
+      sourceId: z.string().min(1),
+      institutionId: z.string().min(1),
+      name: z.string().min(1),
+      officialCatalogUrl: z.url(),
+    }),
+  ),
+  majors: z.array(
+    z.object({
+      id: z.string().min(1),
+      name: z.string().min(1),
+      categoryIds: z.array(z.string().min(1)).min(1),
+      familyIds: z.array(z.string().min(1)).min(1),
+      emphases: z.array(z.string().min(1)),
+      campuses: z.array(
+        z.object({
+          institutionId: z.string().min(1),
+          name: z.string().min(1),
+          emphases: z.array(z.string().min(1)),
+          officialCatalogUrl: z.url(),
+        }),
+      ).min(1),
+    }),
+  ),
+  counts: z.object({
+    namedMajors: z.number().int().positive(),
+    campusMajorEntries: z.number().int().positive(),
+  }),
+});
 
 export const metricSchema = maintainedRecordSchema
   .extend({
@@ -212,6 +253,7 @@ export type Program = z.infer<typeof programSchema>;
 export type Career = z.infer<typeof careerSchema>;
 export type Institution = z.infer<typeof institutionSchema>;
 export type Offering = z.infer<typeof offeringSchema>;
+export type UcMajorCatalog = z.infer<typeof ucMajorCatalogSchema>;
 export type Metric = z.infer<typeof metricSchema>;
 export type Challenge = z.infer<typeof challengeSchema>;
 export type SourceRef = z.infer<typeof sourceRefSchema>;

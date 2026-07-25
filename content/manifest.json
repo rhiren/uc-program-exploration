@@ -1,19 +1,20 @@
 {
   "meta": {
     "schemaVersion": "1.0.0",
-    "contentVersion": "1.0.0",
-    "lastVerified": "2026-07-23",
-    "nextReviewDue": "2027-07-01",
+    "contentVersion": "1.1.0",
+    "lastVerified": "2026-07-24",
+    "nextReviewDue": "2026-12-01",
     "maintenanceOwnerRole": "family_content_editor",
     "packageName": "UC Pathways Explorer version-1 content package"
   },
   "scope": {
     "included": [
-      "12 program families",
-      "8 detailed programs",
+      "13 comprehensive interest gateways",
+      "9 detailed programs",
       "12 primary career records plus one clinical-data supporting record",
       "9 UC undergraduate campuses",
-      "verified initial UC offering mappings",
+      "verified detailed-program UC offering mappings",
+      "complete Fall 2026 official UC major-finder directory snapshot",
       "Fall 2025 campus-wide admission context",
       "UC preparation rules",
       "medical path and three challenges",
@@ -21,24 +22,23 @@
       "synthetic out-of-state portability fixture"
     ],
     "excluded": [
-      "Exhaustive all-UC major mapping",
       "Nationwide student-facing content",
       "Fall 2027 application dates before official publication",
       "Invented major-level admit rates",
       "Personalized admission predictions"
     ]
   },
-  "fileCount": 30,
+  "fileCount": 31,
   "files": [
     {
       "path": "program-families.json",
       "kind": "content",
-      "recordCount": 12
+      "recordCount": 13
     },
     {
       "path": "programs.json",
       "kind": "content",
-      "recordCount": 8
+      "recordCount": 9
     },
     {
       "path": "careers.json",
@@ -68,7 +68,7 @@
     {
       "path": "institutions/offerings.json",
       "kind": "content",
-      "recordCount": 67
+      "recordCount": 77
     },
     {
       "path": "institutions/admissions.json",
@@ -79,6 +79,11 @@
       "path": "institutions/metrics.json",
       "kind": "content",
       "recordCount": 9
+    },
+    {
+      "path": "institutions/major-catalog.json",
+      "kind": "content",
+      "recordCount": 634
     },
     {
       "path": "providers/uc/provider.json",

@@ -111,7 +111,7 @@ export function ExplorerWorkspace({
         ) : (
           <EmptyShelf
             href="/discover#detailed-programs"
-            label="Browse the eight program guides"
+            label="Browse the detailed program guides"
             text="Save a program when it raises a question you want to revisit."
           />
         )}

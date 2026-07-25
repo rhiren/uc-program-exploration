@@ -86,7 +86,9 @@ code.
 ## Current implementation
 
 - Product home page
-- Discover overview with 12 program families and 8 detailed programs
+- Discover overview with 13 interest gateways, 9 detailed program guides, and
+  a searchable Fall 2026 official UC directory snapshot containing 634 named
+  majors across 920 campus-major entries
 - Guided Discover journey with four questions, a genetics sampler, reflection,
   and a diverse three-path reveal
 - Versioned device-local progress with export, import, and reset

@@ -43,7 +43,8 @@ test("server-renders the product home from validated content", async () => {
 
 test("renders the foundational and exploration routes", async () => {
   const expectations = [
-    ["/discover", /Twelve program families/],
+    ["/discover", /interest gateways/],
+    ["/majors", /Every current UC option/],
     ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
     ["/medical", /Premed is generally a preparation pathway/],
@@ -69,6 +70,18 @@ test("describes the study experience before explaining coding", async () => {
   assert.match(html, /Plan and interpret experiments/);
   assert.match(html, /How coding fits/);
   assert.doesNotMatch(html, /What coding is really like/);
+});
+
+test("makes exhaustive catalog coverage and deep-guide coverage distinct", async () => {
+  const response = await render("/majors");
+  const html = await response.text();
+
+  assert.match(html, /634/);
+  assert.match(html, /campus-major entries/);
+  assert.match(html, /Complete for the snapshot/);
+  assert.match(html, /Computer Science/);
+  assert.match(html, /Full guide available/);
+  assert.match(html, /future application cycle/);
 });
 
 test("keeps editorial content behind the centralized loader", async () => {

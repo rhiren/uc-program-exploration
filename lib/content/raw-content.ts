@@ -9,6 +9,7 @@ import institutions from "@/content/institutions/institutions.json";
 import offerings from "@/content/institutions/offerings.json";
 import admissions from "@/content/institutions/admissions.json";
 import metrics from "@/content/institutions/metrics.json";
+import ucMajorCatalog from "@/content/institutions/major-catalog.json";
 import ucProvider from "@/content/providers/uc/provider.json";
 import outOfStateFixture from "@/content/providers/fixtures/out-of-state-institution.json";
 import medicalPath from "@/content/medical/path.json";
@@ -40,6 +41,7 @@ export const rawContentFiles = {
   "institutions/offerings.json": offerings,
   "institutions/admissions.json": admissions,
   "institutions/metrics.json": metrics,
+  "institutions/major-catalog.json": ucMajorCatalog,
   "providers/uc/provider.json": ucProvider,
   "providers/fixtures/out-of-state-institution.json": outOfStateFixture,
   "medical/path.json": medicalPath,
@@ -75,6 +77,7 @@ export const rawContent = {
   offerings,
   admissions,
   metrics,
+  ucMajorCatalog,
   ucProvider,
   outOfStateFixture,
   medical: {
@@ -97,4 +100,3 @@ export const rawContent = {
     piq,
   },
 } as const;
-

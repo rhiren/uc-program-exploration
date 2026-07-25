@@ -12,6 +12,6 @@ export const loadContent = cache(() => {
     medical: rawContent.medical,
     journey: rawContent.journey,
     preparation: rawContent.preparation,
+    ucMajorCatalog: catalog.ucMajorCatalog,
   };
 });
-

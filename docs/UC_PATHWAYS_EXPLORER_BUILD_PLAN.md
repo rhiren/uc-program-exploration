@@ -9,7 +9,7 @@
 **Expected UC application cycle:** Fall 2027 for fall 2028 enrollment  
 **Initial runtime:** Local computer only; no hosting, accounts, or cloud database  
 **Expansion model:** UC-first content on a nationwide, institution-neutral architecture  
-**Initial content status:** Version 1.0.0 JSON package generated locally and ready for application integration
+**Current content status:** Version 1.1.0 JSON package integrated, including a complete Fall 2026 official UC major-finder directory snapshot and nine detailed program guides
 
 ---
 
@@ -246,6 +246,7 @@ Recommended routes:
 | `/journey` | Guided question and activity flow |
 | `/discoveries` | Evidence summary, favorites, unexplored dimensions |
 | `/explore` | Browse program families, programs, and careers |
+| `/majors` | Search the complete official UC major-directory snapshot by interest gateway, campus, or name |
 | `/programs/[slug]` | Undergraduate program detail |
 | `/careers/[slug]` | Career detail and future outlook |
 | `/medical` | Medical-track hub |
@@ -1304,8 +1305,9 @@ The version 1.0.0 package was generated and validated on July 23, 2026. `content
 The package currently contains:
 
 - 30 JSON files
-- 12 program-family records
-- 8 detailed program records
+- 13 interest-gateway records, explicitly presented as navigation rather than an exhaustive list of majors
+- 9 detailed program records, including Computer Science
+- A complete Fall 2026 official UC major-finder snapshot with 634 named majors and 920 campus-major entries; preserve its future-cycle verification caveat
 - 13 career records, including one supporting clinical-data-scientist record
 - 9 UC undergraduate-campus records
 - 67 initial UC program-offering mappings
@@ -2431,7 +2433,7 @@ If the coding agent needs one precise starting target, implement this:
 - Complete programs: Biology, Biochemistry, Data Science, Statistics, Cognitive Science, Public Health, Bioengineering, Operations Research
 - Complete careers: Physician, Physician Assistant, Epidemiologist, Biostatistician, Bioinformatics Scientist, Data Scientist, Operations Research Analyst, UX Researcher, Biomedical Engineer, Public Health Analyst, Genetic Counselor, Healthcare Operations Analyst
 - UC campuses: all nine summary records
-- UC offerings: verified mappings only for the eight complete programs
+- UC offerings: verified mappings for the detailed program set, plus a separately labeled complete official major-directory snapshot
 - Preparation rules: current A–G, UC GPA, comprehensive-review factors, PIQ structure, and application-cycle milestones
 - Medical activities:
   - Genetics and proteins
@@ -2594,7 +2596,7 @@ Do not re-author the initial program, career, institution, admission, medical, p
 Before building student-facing pages:
 
 - Verify all files and counts against `content/manifest.json`.
-- Validate the 12 families, 8 detailed programs, 13 careers, 9 UC campuses, 67 offerings, 9 campus metrics, 53 sources, and 3 medical challenges.
+- Validate the 13 interest gateways, 9 detailed programs, 13 careers, 9 UC campuses, 77 detailed-program offerings, the 634-name UC directory snapshot, 9 campus metrics, 53 sources, and 3 medical challenges.
 - Validate the synthetic out-of-state fixture through the same institution-neutral provider contract used for UC content.
 - Confirm Fall 2025 campus-wide metrics cannot be presented as major-level admission statistics.
 - Confirm future-cycle application dates remain hidden while their status is `awaiting_official_cycle`.

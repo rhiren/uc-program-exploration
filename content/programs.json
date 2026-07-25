@@ -980,6 +980,141 @@
       "ucOfferingIds": [
         "berkeley-ieor-bs"
       ]
+    },
+    {
+      "id": "computer-science",
+      "slug": "computer-science",
+      "name": "Computer Science",
+      "familyIds": [
+        "computing-data-ai",
+        "engineering-physical-systems",
+        "math-stat-physical"
+      ],
+      "summary": "Computer science studies computation, algorithms, software, data structures, intelligent systems, and the mathematical limits of what computers can do.",
+      "coreQuestions": [
+        "How can a problem be represented so a computer can solve it?",
+        "Which algorithm is correct, efficient, and reliable?",
+        "How should complex software and computing systems be designed?"
+      ],
+      "typicalWork": [
+        "Design algorithms and data structures",
+        "Write, test, and debug programs",
+        "Reason about correctness and efficiency",
+        "Build software individually and in teams",
+        "Study computing systems, theory, and societal consequences"
+      ],
+      "representativeCourses": [
+        "Programming",
+        "Data structures",
+        "Discrete mathematics",
+        "Algorithms",
+        "Computer architecture",
+        "Operating systems",
+        "Artificial intelligence",
+        "Software engineering"
+      ],
+      "commonAssignments": [
+        "Programming projects",
+        "Algorithm proofs and problem sets",
+        "Debugging and code review",
+        "Team software projects"
+      ],
+      "intensities": {
+        "mathematics": 4,
+        "coding": 5,
+        "laboratory": 1,
+        "writing": 3,
+        "memorization": 2,
+        "abstractTheory": 5,
+        "teamwork": 4,
+        "peopleInteraction": 2
+      },
+      "codingReality": "Programming is a central learning tool in computer science. AI may change how code is drafted, tested, and reviewed, but students still need to understand algorithms, systems, correctness, and how to diagnose failures. Not enjoying one programming experience is useful evidence, but a small algorithms or systems activity can reveal whether the underlying problem solving feels different.",
+      "rewarding": [
+        "Turning an idea into a working system",
+        "Elegant logical and mathematical problem solving",
+        "Applying computation across science, medicine, art, policy, and business"
+      ],
+      "frustrating": [
+        "Long debugging sessions",
+        "Abstract concepts can take repeated practice",
+        "Programming is sustained and unavoidable in most curricula"
+      ],
+      "mayEnjoy": [
+        "Breaking a complex problem into precise steps",
+        "Looking for efficient patterns and edge cases",
+        "Building and improving systems through iteration"
+      ],
+      "adjacentProgramIds": [
+        "data-science",
+        "statistics",
+        "cognitive-science",
+        "operations-research"
+      ],
+      "careerIds": [
+        "data-scientist",
+        "bioinformatics-scientist",
+        "ux-researcher",
+        "operations-research-analyst"
+      ],
+      "premedCompatibility": {
+        "level": "possible_with_substantial_planning",
+        "note": "Computer science can support medical technology and computational research, but most medical-school laboratory science prerequisites sit outside the major and require substantial schedule planning."
+      },
+      "highSchoolPreparation": [
+        {
+          "label": "uc_eligibility_requirement",
+          "text": "Complete UC A–G requirements, including the required mathematics sequence."
+        },
+        {
+          "label": "recommended_academic_preparation",
+          "text": "Continue mathematics through the strongest sustainable course available and practice precise, multi-step problem solving."
+        },
+        {
+          "label": "optional_exploration",
+          "text": "Try one short algorithm, logic, or data-structure activity—not only a syntax-heavy programming tutorial—and notice whether the reasoning holds your attention."
+        },
+        {
+          "label": "verify_with_counselor_or_institution",
+          "text": "Computer science admission and change-of-major policies vary sharply by campus; verify the current first-year and alternate-major rules directly."
+        }
+      ],
+      "tryNow": [
+        {
+          "id": "try-computer-science-routing",
+          "title": "Design an efficient route-finding strategy without writing code",
+          "minutes": 8
+        }
+      ],
+      "sourceIds": [
+        "uc-major-checker",
+        "catalog-berkeley",
+        "catalog-davis",
+        "catalog-irvine",
+        "catalog-ucla",
+        "catalog-merced",
+        "catalog-riverside",
+        "catalog-san-diego",
+        "catalog-santa-barbara",
+        "catalog-santa-cruz"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.1.0",
+      "lastVerified": "2026-07-24",
+      "nextReviewDue": "2026-12-01",
+      "maintenanceOwnerRole": "family_content_editor",
+      "ucOfferingIds": [
+        "berkeley-computer-science-ba",
+        "davis-computer-science-bs",
+        "irvine-computer-science-bs",
+        "ucla-computer-science-bs",
+        "merced-computer-science-engineering-bs",
+        "riverside-computer-science-bs",
+        "sandiego-computer-science-bs",
+        "santabarbara-computer-science-bs",
+        "santacruz-computer-science-ba",
+        "santacruz-computer-science-bs"
+      ]
     }
   ]
 }

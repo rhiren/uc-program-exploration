@@ -15,6 +15,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/discover">Discover</Link>
+          <Link href="/majors">All majors</Link>
           <Link href="/prepare">Prepare</Link>
           <Link href="/medical">Medicine</Link>
           <Link href="/explore">My paths</Link>
@@ -30,8 +31,8 @@ export function SiteHeader() {
         <div className="shell">
           <strong>Early preview</strong>
           <span>
-            Explore eight programs, thirteen careers, verified UC offerings,
-            and your own saved comparisons.
+            Search the complete current UC major directory, then go deeper with
+            selected study-and-career guides.
           </span>
         </div>
       </div>

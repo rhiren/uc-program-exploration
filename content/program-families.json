@@ -13,6 +13,7 @@
       "name": "Computing, data, and AI",
       "summary": "Use computation, statistics, and data to understand systems and support decisions.",
       "featuredProgramIds": [
+        "computer-science",
         "data-science",
         "statistics"
       ],
@@ -195,6 +196,22 @@
       "contentVersion": "1.0.0",
       "lastVerified": "2026-07-23",
       "nextReviewDue": "2027-07-01",
+      "maintenanceOwnerRole": "family_content_editor"
+    },
+    {
+      "id": "interdisciplinary-undecided",
+      "slug": "interdisciplinary-undecided",
+      "name": "Interdisciplinary, undecided, and special programs",
+      "summary": "Explore programs that intentionally cross fields, let students design a path, or provide a broad starting point.",
+      "featuredProgramIds": [],
+      "order": 13,
+      "sourceIds": [
+        "uc-major-checker"
+      ],
+      "schemaVersion": "1.0.0",
+      "contentVersion": "1.1.0",
+      "lastVerified": "2026-07-24",
+      "nextReviewDue": "2026-12-01",
       "maintenanceOwnerRole": "family_content_editor"
     }
   ]

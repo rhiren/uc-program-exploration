@@ -12,6 +12,14 @@ export default function DiscoverPage() {
   const programNames = new Map(
     content.programs.map((program) => [program.id, program.name]),
   );
+  const familyMajorCounts = new Map(
+    content.families.map((family) => [
+      family.id,
+      content.ucMajorCatalog.majors.filter((major) =>
+        major.familyIds.includes(family.id),
+      ).length,
+    ]),
+  );
 
   return (
     <main>
@@ -20,10 +28,43 @@ export default function DiscoverPage() {
         <p className="eyebrow">Discover</p>
         <h1>Explore the work, not just the label.</h1>
         <p>
-          Begin with a broad family or examine one of the detailed programs.
-          Nothing here is a commitment, and you can browse without using your
-          answers.
+          Choose the starting point that matches what you know today. Broad
+          interests lead to the complete UC directory; detailed guides explain
+          what studying selected programs is actually like.
         </p>
+      </section>
+
+      <section className="shell exploration-lanes" aria-labelledby="choose-start">
+        <div className="section-heading">
+          <p className="eyebrow">Three clear ways in</p>
+          <h2 id="choose-start">How would you like to explore?</h2>
+        </div>
+        <div>
+          <article>
+            <span>01</span>
+            <h3>I’m not sure yet</h3>
+            <p>Answer a few low-pressure prompts and try one real question.</p>
+            <Link href="/discover/start">Begin guided discovery →</Link>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>I know a broad interest</h3>
+            <p>
+              Choose a gateway such as computing, health, arts, or social
+              sciences and see every related UC major name.
+            </p>
+            <a href="#family-map">Choose an interest gateway ↓</a>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>I know a major name</h3>
+            <p>
+              Search {content.ucMajorCatalog.counts.namedMajors} official UC
+              major names across all nine undergraduate campuses.
+            </p>
+            <Link href="/majors">Search all UC majors →</Link>
+          </article>
+        </div>
       </section>
 
       <section className="shell journey-invitation" aria-labelledby="guided-discovery">
@@ -47,10 +88,14 @@ export default function DiscoverPage() {
       <section className="shell content-section" aria-labelledby="family-map">
         <div className="section-heading inline-heading">
           <div>
-            <p className="eyebrow">The full map</p>
-            <h2 id="family-map">Twelve program families</h2>
+            <p className="eyebrow">Start broad</p>
+            <h2 id="family-map">{content.families.length} interest gateways</h2>
+            <p>
+              These are navigation categories—not majors and not a limit on
+              what she can discover.
+            </p>
           </div>
-          <span className="section-note">Choose what feels curious today</span>
+          <Link href="/majors">Or search all UC majors →</Link>
         </div>
         <div className="family-grid">
           {content.families.map((family, index) => (
@@ -60,12 +105,24 @@ export default function DiscoverPage() {
               </span>
               <h3>{family.name}</h3>
               <p>{family.summary}</p>
+              <Link
+                className="family-browse-link"
+                href={`/majors?family=${family.slug}`}
+              >
+                Browse {familyMajorCounts.get(family.id) ?? 0} related UC major
+                names →
+              </Link>
               {family.featuredProgramIds.length > 0 && (
-                <div className="tag-row" aria-label="Detailed programs available">
+                <div className="family-guide-row" aria-label="Full guides available">
+                  <span>Full guides:</span>
                   {family.featuredProgramIds.map((id) => (
-                    <span className="tag" key={id}>
-                      {programNames.get(id) ?? id}
-                    </span>
+                    <Link
+                      className="tag"
+                      href={`/programs/${content.programs.find((program) => program.id === id)?.slug ?? id}`}
+                      key={id}
+                    >
+                      {programNames.get(id) ?? id} →
+                    </Link>
                   ))}
                 </div>
               )}
@@ -78,11 +135,18 @@ export default function DiscoverPage() {
         <div className="shell content-section" aria-labelledby="detailed-programs">
           <div className="section-heading">
             <p className="eyebrow">Look closer</p>
-            <h2 id="detailed-programs">Eight detailed starting points</h2>
+            <h2 id="detailed-programs">
+              {content.programs.length} detailed program guides
+            </h2>
             <p>
-              These are the first complete guides. More programs can be added
-              without changing the site architecture.
+              These guides go beyond a catalog name into coursework, real
+              assignments, possible frustrations, careers, UC offerings, and
+              high-school preparation. The complete directory remains
+              available even when a full guide has not been written.
             </p>
+            <Link className="card-deep-link" href="/majors">
+              Search the complete UC major directory →
+            </Link>
           </div>
           <div className="program-grid">
             {content.programs.map((program) => (

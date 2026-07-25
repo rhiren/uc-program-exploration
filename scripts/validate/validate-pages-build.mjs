@@ -16,6 +16,7 @@ const routes = [
   "discover/start",
   "prepare",
   "medical",
+  "majors",
   "explore",
   "compare",
   ...programs.map((program) => `programs/${program.slug}`),

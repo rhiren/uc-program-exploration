@@ -243,7 +243,13 @@ export default async function ProgramPage({
                 <dl>
                   <div>
                     <dt>First-year option</dt>
-                    <dd>{offering.firstYearAvailable ? "Yes" : "Not listed"}</dd>
+                    <dd>
+                      {offering.firstYearAvailable === true
+                        ? "Yes"
+                        : offering.firstYearAvailable === false
+                          ? "No"
+                          : "Verify"}
+                    </dd>
                   </div>
                   <div>
                     <dt>Capacity status</dt>

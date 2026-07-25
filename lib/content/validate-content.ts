@@ -10,6 +10,7 @@ import {
   programFamilySchema,
   programSchema,
   sourceRefSchema,
+  ucMajorCatalogSchema,
 } from "./schemas";
 
 const prohibitedOfferingFields = [
@@ -88,6 +89,7 @@ export function validateContent() {
     rawContent.offerings,
   ).records;
   const metrics = collectionOf(metricSchema).parse(rawContent.metrics).records;
+  const ucMajorCatalog = ucMajorCatalogSchema.parse(rawContent.ucMajorCatalog);
   const challenges = rawContent.medical.challenges.map((challenge) =>
     challengeSchema.parse(challenge),
   );
@@ -98,6 +100,7 @@ export function validateContent() {
   const careerIds = ids(careers, "careers");
   const institutionIds = ids(institutions, "institutions");
   const offeringIds = ids(offerings, "offerings");
+  ids(ucMajorCatalog.majors, "UC major catalog");
   ids(metrics, "metrics");
   ids(challenges, "challenges");
 
@@ -136,6 +139,42 @@ export function validateContent() {
     );
   });
 
+  const catalogCategoryIds = new Set(
+    ucMajorCatalog.categories.map((category) => category.id),
+  );
+  ucMajorCatalog.majors.forEach((major) => {
+    major.categoryIds.forEach((categoryId) =>
+      assert(
+        catalogCategoryIds.has(categoryId),
+        `${major.id} references unknown UC category`,
+      ),
+    );
+    major.familyIds.forEach((familyId) =>
+      assert(
+        familyIds.has(familyId),
+        `${major.id} references unknown program family`,
+      ),
+    );
+    major.campuses.forEach((campus) =>
+      assert(
+        institutionIds.has(campus.institutionId),
+        `${major.id} references unknown institution`,
+      ),
+    );
+  });
+  assert(
+    ucMajorCatalog.counts.namedMajors === ucMajorCatalog.majors.length,
+    "UC major catalog named-major count mismatch",
+  );
+  assert(
+    ucMajorCatalog.counts.campusMajorEntries ===
+      ucMajorCatalog.majors.reduce(
+        (total, major) => total + major.campuses.length,
+        0,
+      ),
+    "UC major catalog campus-major count mismatch",
+  );
+
   metrics.forEach((metric) =>
     assert(
       institutionIds.has(metric.institutionId),
@@ -166,6 +205,6 @@ export function validateContent() {
     offerings,
     metrics,
     challenges,
+    ucMajorCatalog,
   };
 }
-
