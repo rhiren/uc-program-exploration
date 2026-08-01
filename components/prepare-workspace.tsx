@@ -38,7 +38,76 @@ type RoadmapAction = {
   verificationNeeded?: boolean;
 };
 
-type PrepareProgress = ReturnType<typeof createPrepareProgress>;
+type PrepareStage = "baseline" | "ag" | "gpa" | "snapshot";
+
+type AgProgress = Record<
+  string,
+  {
+    completed: number;
+    current: number;
+    planned: number;
+    unresolved: number;
+  }
+>;
+
+type GpaSummary = {
+  grades: Record<"A" | "B" | "C" | "D" | "F", number>;
+  honors: Record<10 | 11, number>;
+};
+
+type PrepareBaseline = {
+  residency: "california" | "nonresident";
+  schoolCourseListStatus: string;
+  currentMath: string;
+  seniorMathPlan: string;
+  sustainableLoad: string;
+  explorationPriority: string;
+  agProgress: AgProgress;
+  gpaSummary: GpaSummary;
+};
+
+type PrepareProgress = {
+  version: number;
+  updatedAt: string;
+  stage: PrepareStage;
+  baseline: PrepareBaseline;
+};
+
+type AgAuditCategory = {
+  id: string;
+  name: string;
+  requiredYears: number;
+  recommendedYears: number | null;
+  completedYears: number;
+  futureYears: number;
+  possibleYears: number;
+  remainingYears: number;
+  unresolvedYears: number;
+  status: "on_track" | "needs_classification" | "possible_gap";
+};
+
+type ReadinessSnapshot = {
+  agAudit: {
+    status: "on_track" | "needs_classification" | "possible_gap";
+    categories: AgAuditCategory[];
+    possibleCourseCount: number;
+    unresolvedCourseCount: number;
+  };
+  gpaEstimate: {
+    estimatedGpa: number | null;
+    includedCourseCount: number;
+    honorsPoints: number;
+    ruleId: string;
+  };
+  findings: Array<{
+    id: string;
+    severity: string;
+    title: string;
+    detail: string;
+  }>;
+  nextActions: RoadmapAction[];
+  disclaimer: string;
+};
 
 const stages = [
   { id: "baseline", label: "Baseline" },
@@ -93,14 +162,14 @@ export function PrepareWorkspace({
   roadmapTemplates: RoadmapAction[];
 }) {
   const [progress, setProgress] = useState<PrepareProgress>(() =>
-    createPrepareProgress(),
+    createPrepareProgress() as PrepareProgress,
   );
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      setProgress(readPrepareProgress(window.localStorage));
+      setProgress(readPrepareProgress(window.localStorage) as PrepareProgress);
       setReady(true);
     }, 0);
     return () => window.clearTimeout(timer);
@@ -111,7 +180,9 @@ export function PrepareWorkspace({
       setProgress(next);
       return;
     }
-    setProgress(writePrepareProgress(window.localStorage, next));
+    setProgress(
+      writePrepareProgress(window.localStorage, next) as PrepareProgress,
+    );
   }
 
   function updateBaseline(
@@ -142,7 +213,7 @@ export function PrepareWorkspace({
     () => buildCoursesFromAgProgress(progress.baseline.agProgress),
     [progress.baseline.agProgress],
   );
-  const snapshot = useMemo(
+  const snapshot = useMemo<ReadinessSnapshot>(
     () =>
       buildReadinessSnapshot({
         baseline: progress.baseline,
@@ -150,7 +221,7 @@ export function PrepareWorkspace({
         agRules,
         gpaRules,
         roadmapTemplates,
-      }),
+      }) as ReadinessSnapshot,
     [agRules, courses, gpaRules, progress.baseline, roadmapTemplates],
   );
   const currentStageIndex = stageIndex[progress.stage];
@@ -199,7 +270,7 @@ export function PrepareWorkspace({
   }
 
   function resetProgress() {
-    const next = createPrepareProgress();
+    const next = createPrepareProgress() as PrepareProgress;
     save(next);
     setMessage("Prepare snapshot reset to the starting sample.");
   }
