@@ -3,6 +3,9 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   buildCoursesFromAgProgress,
+  buildApplicationMilestonePreview,
+  buildCounselorQuestions,
+  buildFirstActionPlan,
   buildReadinessSnapshot,
   calculateAgAudit,
   calculateUcGpa,
@@ -23,6 +26,14 @@ const gpaRules = JSON.parse(
 const roadmap = JSON.parse(
   readFileSync(
     new URL("../content/preparation/roadmap-templates.json", import.meta.url),
+  ),
+);
+const milestones = JSON.parse(
+  readFileSync(
+    new URL(
+      "../content/preparation/application-milestones.json",
+      import.meta.url,
+    ),
   ),
 );
 
@@ -112,6 +123,34 @@ test("readiness snapshot returns at most three next actions", () => {
   assert.ok(snapshot.findings.length >= 3);
   assert.ok(snapshot.nextActions.length <= 3);
   assert.match(snapshot.disclaimer, /does not predict admission/i);
+});
+
+test("first action plan and counselor questions stay bounded", () => {
+  const progress = createPrepareProgress();
+  const courses = buildCoursesFromAgProgress(progress.baseline.agProgress);
+  const snapshot = buildReadinessSnapshot({
+    baseline: progress.baseline,
+    courses,
+    agRules,
+    gpaRules,
+    roadmapTemplates: roadmap.templates,
+  });
+  const questions = buildCounselorQuestions(snapshot, progress.baseline);
+  const plan = buildFirstActionPlan(snapshot, roadmap.periods);
+
+  assert.ok(questions.length <= 5);
+  assert.match(questions[0].question, /confirm|which|included/i);
+  assert.equal(plan.length, snapshot.nextActions.length);
+  assert.ok(plan.every((action) => action.selected));
+  assert.ok(plan.every((action) => action.periodTitle));
+});
+
+test("application milestone preview does not invent future official dates", () => {
+  const preview = buildApplicationMilestonePreview(milestones);
+
+  assert.equal(preview.length, 4);
+  assert.ok(preview.every((item) => item.status === "awaiting_official_cycle"));
+  assert.ok(preview.every((item) => item.officialDate === null));
 });
 
 test("prepare progress parser rejects unknown versions", () => {

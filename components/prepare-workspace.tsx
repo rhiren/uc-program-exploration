@@ -2,7 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  buildApplicationMilestonePreview,
+  buildCounselorQuestions,
   buildCoursesFromAgProgress,
+  buildFirstActionPlan,
   buildReadinessSnapshot,
 } from "@/lib/prepare/readiness.mjs";
 import {
@@ -32,10 +35,32 @@ type GpaRules = {
 
 type RoadmapAction = {
   id: string;
+  period: string;
   title: string;
   rationale: string;
   category: string;
   verificationNeeded?: boolean;
+};
+
+type RoadmapPeriod = {
+  id: string;
+  title: string;
+  defaultMaxVisibleActions: number;
+};
+
+type ApplicationMilestones = {
+  meta: {
+    targetEnrollmentTerm: string;
+    expectedApplicationPeriod: string;
+    publicationStatus: string;
+  };
+  milestones: Array<{
+    id: string;
+    expectedTiming: string;
+    officialDate: string | null;
+    status: string;
+    action: string;
+  }>;
 };
 
 type PrepareStage = "baseline" | "ag" | "gpa" | "snapshot";
@@ -109,6 +134,26 @@ type ReadinessSnapshot = {
   disclaimer: string;
 };
 
+type CounselorQuestion = {
+  id: string;
+  topic: string;
+  question: string;
+  reason: string;
+};
+
+type PlannedAction = RoadmapAction & {
+  periodTitle: string;
+  selected: boolean;
+};
+
+type MilestonePreview = {
+  id: string;
+  timing: string;
+  status: string;
+  action: string;
+  officialDate: string | null;
+};
+
 const stages = [
   { id: "baseline", label: "Baseline" },
   { id: "ag", label: "A-G" },
@@ -154,11 +199,15 @@ function NumberStepper({
 
 export function PrepareWorkspace({
   agRules,
+  applicationMilestones,
   gpaRules,
+  roadmapPeriods,
   roadmapTemplates,
 }: {
   agRules: AgRules;
+  applicationMilestones: ApplicationMilestones;
   gpaRules: GpaRules;
+  roadmapPeriods: RoadmapPeriod[];
   roadmapTemplates: RoadmapAction[];
 }) {
   const [progress, setProgress] = useState<PrepareProgress>(() =>
@@ -223,6 +272,26 @@ export function PrepareWorkspace({
         roadmapTemplates,
       }) as ReadinessSnapshot,
     [agRules, courses, gpaRules, progress.baseline, roadmapTemplates],
+  );
+  const counselorQuestions = useMemo<CounselorQuestion[]>(
+    () =>
+      buildCounselorQuestions(
+        snapshot,
+        progress.baseline,
+      ) as CounselorQuestion[],
+    [progress.baseline, snapshot],
+  );
+  const firstActionPlan = useMemo<PlannedAction[]>(
+    () =>
+      buildFirstActionPlan(snapshot, roadmapPeriods) as PlannedAction[],
+    [roadmapPeriods, snapshot],
+  );
+  const milestonePreview = useMemo<MilestonePreview[]>(
+    () =>
+      buildApplicationMilestonePreview(
+        applicationMilestones,
+      ) as MilestonePreview[],
+    [applicationMilestones],
   );
   const currentStageIndex = stageIndex[progress.stage];
 
@@ -606,16 +675,47 @@ export function PrepareWorkspace({
             <div className="next-action-list">
               <p className="eyebrow">Next actions</p>
               <h3>Keep it to three.</h3>
-              {snapshot.nextActions.map((action) => (
+              {firstActionPlan.map((action) => (
                 <article key={action.id}>
                   <div>
                     <span>{action.category}</span>
                     <h4>{action.title}</h4>
                     <p>{action.rationale}</p>
+                    <small>{action.periodTitle}</small>
                   </div>
                   {action.verificationNeeded && <strong>Verify</strong>}
                 </article>
               ))}
+            </div>
+
+            <div className="prepare-planning-grid">
+              <section className="counselor-question-list">
+                <p className="eyebrow">Counselor questions</p>
+                <h3>Bring questions, not conclusions.</h3>
+                {counselorQuestions.map((item) => (
+                  <article key={item.id}>
+                    <span>{item.topic}</span>
+                    <h4>{item.question}</h4>
+                    <p>{item.reason}</p>
+                  </article>
+                ))}
+              </section>
+
+              <section className="milestone-preview">
+                <p className="eyebrow">Future milestones</p>
+                <h3>
+                  {applicationMilestones.meta.expectedApplicationPeriod} for{" "}
+                  {applicationMilestones.meta.targetEnrollmentTerm}
+                </h3>
+                <div>
+                  {milestonePreview.map((item) => (
+                    <article key={item.id}>
+                      <span>{item.timing}</span>
+                      <p>{item.action}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
             </div>
           </div>
         )}

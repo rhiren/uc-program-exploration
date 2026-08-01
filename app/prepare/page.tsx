@@ -12,6 +12,8 @@ export default function PreparePage() {
   const agRules = content.preparation.agRules;
   const gpaRules = content.preparation.gpaRules;
   const review = content.preparation.comprehensiveReview;
+  const applicationMilestones = content.preparation.applicationMilestones;
+  const roadmapPeriods = content.preparation.roadmapTemplates.periods;
   const roadmapTemplates = content.preparation.roadmapTemplates.templates;
 
   return (
@@ -62,7 +64,9 @@ export default function PreparePage() {
       <div id="prepare-workspace">
         <PrepareWorkspace
           agRules={agRules}
+          applicationMilestones={applicationMilestones}
           gpaRules={gpaRules}
+          roadmapPeriods={roadmapPeriods}
           roadmapTemplates={roadmapTemplates}
         />
       </div>

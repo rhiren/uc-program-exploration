@@ -29,3 +29,17 @@ export function buildReadinessSnapshot(options: {
   gpaRules: UnknownRecord;
   roadmapTemplates?: UnknownRecord[];
 }): UnknownRecord;
+
+export function buildCounselorQuestions(
+  snapshot: UnknownRecord,
+  baseline?: UnknownRecord,
+): UnknownRecord[];
+
+export function buildFirstActionPlan(
+  snapshot: UnknownRecord,
+  roadmapPeriods?: UnknownRecord[],
+): UnknownRecord[];
+
+export function buildApplicationMilestonePreview(
+  applicationMilestones?: UnknownRecord,
+): UnknownRecord[];
