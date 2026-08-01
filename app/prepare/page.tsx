@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PrepareWorkspace } from "@/components/prepare-workspace";
 import { SiteHeader } from "@/components/site-header";
 import { loadContent } from "@/lib/content/load-content";
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 export default function PreparePage() {
   const content = loadContent();
   const agRules = content.preparation.agRules;
+  const gpaRules = content.preparation.gpaRules;
   const review = content.preparation.comprehensiveReview;
+  const roadmapTemplates = content.preparation.roadmapTemplates.templates;
 
   return (
     <main>
@@ -33,7 +36,9 @@ export default function PreparePage() {
               Courses, grades, available opportunities, responsibilities, and
               constraints all belong in the picture.
             </p>
-            <span className="status-chip">Interactive audit coming next</span>
+            <a className="button button-primary" href="#prepare-workspace">
+              Start the first pass
+            </a>
           </article>
           <article className="readiness-card">
             <span className="step-label">Step 2</span>
@@ -53,6 +58,14 @@ export default function PreparePage() {
           </article>
         </div>
       </section>
+
+      <div id="prepare-workspace">
+        <PrepareWorkspace
+          agRules={agRules}
+          gpaRules={gpaRules}
+          roadmapTemplates={roadmapTemplates}
+        />
+      </div>
 
       <section className="ag-section">
         <div className="shell content-section">
@@ -118,4 +131,3 @@ export default function PreparePage() {
     </main>
   );
 }
-
