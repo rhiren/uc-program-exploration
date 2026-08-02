@@ -2,13 +2,17 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
+  buildCoursesFromCourseEntries,
   buildCoursesFromAgProgress,
   buildApplicationMilestonePreview,
   buildCounselorQuestions,
   buildFirstActionPlan,
   buildReadinessSnapshot,
+  buildSeniorCourseConsiderations,
   calculateAgAudit,
   calculateUcGpa,
+  inferCourseFromName,
+  summarizeCourseInventory,
 } from "../lib/prepare/readiness.mjs";
 import {
   createPrepareProgress,
@@ -151,6 +155,105 @@ test("application milestone preview does not invent future official dates", () =
   assert.equal(preview.length, 4);
   assert.ok(preview.every((item) => item.status === "awaiting_official_cycle"));
   assert.ok(preview.every((item) => item.officialDate === null));
+});
+
+test("typed course names get lightweight suggestions without becoming official", () => {
+  const biology = inferCourseFromName("AP Biology");
+  const chemistry = inferCourseFromName("Honors Chemistry");
+  const collegeStats = inferCourseFromName("Community College Statistics");
+
+  assert.equal(biology.agCategory, "d");
+  assert.equal(biology.level, "ap");
+  assert.equal(chemistry.agCategory, "d");
+  assert.equal(chemistry.level, "honors");
+  assert.equal(collegeStats.agCategory, "c");
+  assert.equal(collegeStats.level, "college");
+});
+
+test("course inventory report separates confirmed courses from verification", () => {
+  const entries = [
+    {
+      id: "ap-bio",
+      name: "AP Biology",
+      gradeLevel: 11,
+      status: "planned",
+      source: "high_school",
+      agCategory: "d",
+      level: "ap",
+      grade: "",
+      verificationStatus: "needs_verification",
+    },
+    {
+      id: "honors-chem",
+      name: "Honors Chemistry",
+      gradeLevel: 10,
+      status: "completed",
+      source: "high_school",
+      agCategory: "d",
+      level: "honors",
+      grade: "A",
+      verificationStatus: "confirmed",
+    },
+  ];
+  const courses = buildCoursesFromCourseEntries(entries);
+  const audit = calculateAgAudit(courses, agRules);
+  const summary = summarizeCourseInventory(entries);
+
+  assert.equal(summary.advancedCount, 2);
+  assert.equal(summary.needsVerificationCount, 1);
+  assert.equal(
+    audit.categories.find((category) => category.id === "d").status,
+    "needs_classification",
+  );
+});
+
+test("senior course considerations stay advisory", () => {
+  const considerations = buildSeniorCourseConsiderations(
+    [
+      {
+        id: "bio",
+        name: "Biology",
+        gradeLevel: 9,
+        status: "completed",
+        source: "high_school",
+        agCategory: "d",
+        level: "regular",
+        grade: "A",
+        verificationStatus: "confirmed",
+      },
+      {
+        id: "chem",
+        name: "Chemistry",
+        gradeLevel: 10,
+        status: "completed",
+        source: "high_school",
+        agCategory: "d",
+        level: "regular",
+        grade: "A",
+        verificationStatus: "confirmed",
+      },
+      {
+        id: "precalc",
+        name: "Precalculus",
+        gradeLevel: 11,
+        status: "current",
+        source: "high_school",
+        agCategory: "c",
+        level: "regular",
+        grade: "",
+        verificationStatus: "needs_verification",
+      },
+    ],
+    { seniorMathPlan: "not-sure" },
+  );
+
+  assert.ok(considerations.length <= 4);
+  assert.match(considerations[0].title, /math/i);
+  assert.ok(
+    considerations.some(
+      (item) => /humane/i.test(item.title) || /humane/i.test(item.detail),
+    ),
+  );
 });
 
 test("prepare progress parser rejects unknown versions", () => {

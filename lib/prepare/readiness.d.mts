@@ -7,6 +7,19 @@ export function buildCoursesFromAgProgress(
   agProgress: Record<string, unknown>,
 ): UnknownRecord[];
 
+export function inferCourseFromName(name: string): UnknownRecord;
+
+export function buildCoursesFromCourseEntries(
+  entries: UnknownRecord[],
+): UnknownRecord[];
+
+export function summarizeCourseInventory(entries: UnknownRecord[]): UnknownRecord;
+
+export function buildSeniorCourseConsiderations(
+  entries: UnknownRecord[],
+  baseline?: UnknownRecord,
+): UnknownRecord[];
+
 export function calculateAgAudit(
   courses: UnknownRecord[],
   agRules: UnknownRecord,

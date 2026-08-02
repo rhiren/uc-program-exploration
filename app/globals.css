@@ -43,7 +43,8 @@ a {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -960,6 +961,191 @@ summary {
   color: var(--ink);
   font-weight: 750;
   padding: 8px 10px;
+}
+
+.course-entry-form {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.35fr) repeat(4, minmax(120px, 0.65fr));
+  gap: 10px;
+  align-items: end;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  margin-top: 28px;
+  padding: 16px;
+}
+
+.course-entry-form label,
+.course-row-actions select {
+  display: grid;
+  gap: 6px;
+}
+
+.course-entry-form label > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.course-entry-form input,
+.course-entry-form select,
+.course-row-actions select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 8px 10px;
+}
+
+.course-entry-form .button {
+  border: 0;
+  cursor: pointer;
+}
+
+.course-name-field {
+  grid-column: span 2;
+}
+
+.course-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.course-list article,
+.course-empty-state,
+.course-inventory-summary,
+.senior-consideration-list {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  padding: 18px;
+}
+
+.course-list article {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 0.9fr) minmax(260px, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.course-list h3,
+.course-list p,
+.course-empty-state h3,
+.course-empty-state p,
+.course-inventory-summary h3,
+.senior-consideration-list h3,
+.senior-consideration-list h4,
+.senior-consideration-list p {
+  margin: 0;
+}
+
+.course-list p,
+.course-empty-state p,
+.senior-consideration-list p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.course-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.course-chip-row span,
+.ag-derived-counts span {
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 7px 9px;
+  text-transform: uppercase;
+}
+
+.course-row-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.course-report-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.course-report-grid article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  padding: 16px;
+}
+
+.course-report-grid span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.course-report-grid p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 8px 0 0;
+}
+
+.ag-derived-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.course-inventory-summary,
+.senior-consideration-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.course-inventory-summary .course-report-grid {
+  margin-top: 0;
+}
+
+.senior-consideration-list article {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.senior-consideration-list article:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.senior-consideration-list strong {
+  align-self: start;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  color: #72571d;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  text-transform: uppercase;
 }
 
 .prepare-status {
@@ -2934,6 +3120,9 @@ summary {
     .prepare-gpa-grid,
     .snapshot-grid,
     .prepare-planning-grid,
+    .course-entry-form,
+    .course-list article,
+    .course-report-grid,
     .recommendation-grid,
     .career-card-grid,
     .three-panel-grid,
@@ -3021,6 +3210,18 @@ summary {
 
   .prepare-stepper-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-name-field {
+    grid-column: auto;
+  }
+
+  .course-row-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .senior-consideration-list article {
+    display: grid;
   }
 
   .finding-list article {

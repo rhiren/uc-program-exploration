@@ -4,9 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import {
   buildApplicationMilestonePreview,
   buildCounselorQuestions,
+  buildCoursesFromCourseEntries,
   buildCoursesFromAgProgress,
   buildFirstActionPlan,
   buildReadinessSnapshot,
+  inferCourseFromName,
 } from "@/lib/prepare/readiness.mjs";
 import {
   createPrepareProgress,
@@ -63,7 +65,26 @@ type ApplicationMilestones = {
   }>;
 };
 
-type PrepareStage = "baseline" | "ag" | "gpa" | "snapshot";
+type PrepareStage = "baseline" | "courses" | "ag" | "gpa" | "snapshot";
+
+type CourseEntry = {
+  id: string;
+  name: string;
+  gradeLevel: 9 | 10 | 11 | 12;
+  status: "completed" | "current" | "planned";
+  source:
+    | "high_school"
+    | "community_college"
+    | "online_school"
+    | "outside_enrichment";
+  agCategory: "a" | "b" | "c" | "d" | "e" | "f" | "g" | "unknown";
+  level: "regular" | "honors" | "ap" | "ib" | "college" | "other";
+  grade: "" | "A" | "B" | "C" | "D" | "F";
+  verificationStatus:
+    | "confirmed"
+    | "needs_verification"
+    | "not_ag_enrichment";
+};
 
 type AgProgress = Record<
   string,
@@ -89,6 +110,7 @@ type PrepareBaseline = {
   explorationPriority: string;
   agProgress: AgProgress;
   gpaSummary: GpaSummary;
+  courseEntries: CourseEntry[];
 };
 
 type PrepareProgress = {
@@ -131,6 +153,22 @@ type ReadinessSnapshot = {
     detail: string;
   }>;
   nextActions: RoadmapAction[];
+  courseInventory: {
+    totalCourses: number;
+    completedCount: number;
+    currentOrPlannedCount: number;
+    advancedCount: number;
+    outsideCourseCount: number;
+    needsVerificationCount: number;
+    mathScienceCount: number;
+    notes: string[];
+  };
+  seniorCourseConsiderations: Array<{
+    id: string;
+    title: string;
+    detail: string;
+    verify: boolean;
+  }>;
   disclaimer: string;
 };
 
@@ -156,6 +194,7 @@ type MilestonePreview = {
 
 const stages = [
   { id: "baseline", label: "Baseline" },
+  { id: "courses", label: "Courses" },
   { id: "ag", label: "A-G" },
   { id: "gpa", label: "GPA" },
   { id: "snapshot", label: "Snapshot" },
@@ -172,6 +211,56 @@ function optionClass(selected: boolean) {
 function formatYears(value: number) {
   return `${value.toFixed(value % 1 === 0 ? 0 : 1)} year${value === 1 ? "" : "s"}`;
 }
+
+const emptyCourseDraft: Omit<CourseEntry, "id"> = {
+  name: "",
+  gradeLevel: 11,
+  status: "current",
+  source: "high_school",
+  agCategory: "unknown",
+  level: "regular",
+  grade: "",
+  verificationStatus: "needs_verification",
+};
+
+const sourceLabels = {
+  high_school: "High school",
+  community_college: "Community college",
+  online_school: "Online school",
+  outside_enrichment: "Outside enrichment",
+};
+
+const statusLabels = {
+  completed: "Completed",
+  current: "Current",
+  planned: "Planned",
+};
+
+const levelLabels = {
+  regular: "Regular",
+  honors: "Honors",
+  ap: "AP",
+  ib: "IB",
+  college: "College",
+  other: "Other",
+};
+
+const categoryLabels = {
+  unknown: "Not sure",
+  a: "A - History",
+  b: "B - English",
+  c: "C - Math",
+  d: "D - Science",
+  e: "E - Language",
+  f: "F - Arts",
+  g: "G - Elective",
+};
+
+const verificationLabels = {
+  confirmed: "Confirmed",
+  needs_verification: "Needs verification",
+  not_ag_enrichment: "Enrichment only",
+};
 
 function NumberStepper({
   label,
@@ -213,6 +302,8 @@ export function PrepareWorkspace({
   const [progress, setProgress] = useState<PrepareProgress>(() =>
     createPrepareProgress() as PrepareProgress,
   );
+  const [courseDraft, setCourseDraft] =
+    useState<Omit<CourseEntry, "id">>(emptyCourseDraft);
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -258,9 +349,17 @@ export function PrepareWorkspace({
     setStage(previous.id);
   }
 
+  const hasCourseInventory = progress.baseline.courseEntries.length > 0;
   const courses = useMemo(
-    () => buildCoursesFromAgProgress(progress.baseline.agProgress),
-    [progress.baseline.agProgress],
+    () =>
+      hasCourseInventory
+        ? buildCoursesFromCourseEntries(progress.baseline.courseEntries)
+        : buildCoursesFromAgProgress(progress.baseline.agProgress),
+    [
+      hasCourseInventory,
+      progress.baseline.agProgress,
+      progress.baseline.courseEntries,
+    ],
   );
   const snapshot = useMemo<ReadinessSnapshot>(
     () =>
@@ -335,6 +434,61 @@ export function PrepareWorkspace({
           [gradeLevel]: value,
         },
       },
+    }));
+  }
+
+  function addCourseEntry() {
+    const name = courseDraft.name.trim();
+    if (!name) {
+      setMessage("Add a course name first.");
+      return;
+    }
+
+    const inferred = inferCourseFromName(name) as Pick<
+      CourseEntry,
+      "agCategory" | "level" | "verificationStatus"
+    >;
+    const nextEntry: CourseEntry = {
+      ...courseDraft,
+      id: `course-${Date.now()}`,
+      name,
+      agCategory:
+        courseDraft.agCategory === "unknown"
+          ? inferred.agCategory
+          : courseDraft.agCategory,
+      level:
+        courseDraft.level === "regular" ? inferred.level : courseDraft.level,
+    };
+
+    updateBaseline((baseline) => ({
+      ...baseline,
+      courseEntries: [...baseline.courseEntries, nextEntry],
+    }));
+    setCourseDraft({
+      ...emptyCourseDraft,
+      gradeLevel: courseDraft.gradeLevel,
+      status: courseDraft.status,
+    });
+    setMessage("Course added. Keep anything uncertain marked for verification.");
+  }
+
+  function updateCourseEntry(
+    id: string,
+    field: keyof CourseEntry,
+    value: CourseEntry[keyof CourseEntry],
+  ) {
+    updateBaseline((baseline) => ({
+      ...baseline,
+      courseEntries: baseline.courseEntries.map((course) =>
+        course.id === id ? { ...course, [field]: value } : course,
+      ),
+    }));
+  }
+
+  function removeCourseEntry(id: string) {
+    updateBaseline((baseline) => ({
+      ...baseline,
+      courseEntries: baseline.courseEntries.filter((course) => course.id !== id),
     }));
   }
 
@@ -481,7 +635,264 @@ export function PrepareWorkspace({
 
             <div className="journey-actions">
               <button className="button button-primary" onClick={nextStage} type="button">
+                Continue to courses
+              </button>
+            </div>
+          </div>
+        )}
+
+        {progress.stage === "courses" && (
+          <div className="prepare-step">
+            <p className="eyebrow">Course inventory</p>
+            <h2>Enter courses as she knows them, then mark what needs verification.</h2>
+            <p className="journey-intro">
+              Course names do not need to be perfect. The report separates
+              confirmed, likely, and uncertain items so counselor questions stay
+              visible.
+            </p>
+
+            <div className="course-entry-form">
+              <label className="course-name-field">
+                <span>Course name</span>
+                <input
+                  onChange={(event) =>
+                    setCourseDraft({ ...courseDraft, name: event.target.value })
+                  }
+                  placeholder="AP Biology, Honors Chemistry, Spanish 3..."
+                  type="text"
+                  value={courseDraft.name}
+                />
+              </label>
+              <label>
+                <span>Grade</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      gradeLevel: Number(event.target.value) as CourseEntry["gradeLevel"],
+                    })
+                  }
+                  value={courseDraft.gradeLevel}
+                >
+                  {[9, 10, 11, 12].map((gradeLevel) => (
+                    <option key={gradeLevel} value={gradeLevel}>
+                      {gradeLevel}th
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>Status</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      status: event.target.value as CourseEntry["status"],
+                    })
+                  }
+                  value={courseDraft.status}
+                >
+                  {Object.entries(statusLabels).map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>Source</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      source: event.target.value as CourseEntry["source"],
+                    })
+                  }
+                  value={courseDraft.source}
+                >
+                  {Object.entries(sourceLabels).map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>A-G</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      agCategory: event.target.value as CourseEntry["agCategory"],
+                    })
+                  }
+                  value={courseDraft.agCategory}
+                >
+                  {Object.entries(categoryLabels).map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>Level</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      level: event.target.value as CourseEntry["level"],
+                    })
+                  }
+                  value={courseDraft.level}
+                >
+                  {Object.entries(levelLabels).map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>Grade</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      grade: event.target.value as CourseEntry["grade"],
+                    })
+                  }
+                  value={courseDraft.grade}
+                >
+                  {["", "A", "B", "C", "D", "F"].map((grade) => (
+                    <option key={grade || "blank"} value={grade}>
+                      {grade || "Later"}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span>Verify</span>
+                <select
+                  onChange={(event) =>
+                    setCourseDraft({
+                      ...courseDraft,
+                      verificationStatus: event.target
+                        .value as CourseEntry["verificationStatus"],
+                    })
+                  }
+                  value={courseDraft.verificationStatus}
+                >
+                  {Object.entries(verificationLabels).map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button className="button button-primary" onClick={addCourseEntry} type="button">
+                Add course
+              </button>
+            </div>
+
+            {progress.baseline.courseEntries.length > 0 ? (
+              <div className="course-list">
+                {progress.baseline.courseEntries.map((course) => (
+                  <article key={course.id}>
+                    <div>
+                      <h3>{course.name}</h3>
+                      <p>
+                        {course.gradeLevel}th · {statusLabels[course.status]} ·{" "}
+                        {sourceLabels[course.source]}
+                      </p>
+                    </div>
+                    <div className="course-chip-row">
+                      <span>{categoryLabels[course.agCategory]}</span>
+                      <span>{levelLabels[course.level]}</span>
+                      <span>{verificationLabels[course.verificationStatus]}</span>
+                    </div>
+                    <div className="course-row-actions">
+                      <select
+                        aria-label={`A-G category for ${course.name}`}
+                        onChange={(event) =>
+                          updateCourseEntry(
+                            course.id,
+                            "agCategory",
+                            event.target.value as CourseEntry["agCategory"],
+                          )
+                        }
+                        value={course.agCategory}
+                      >
+                        {Object.entries(categoryLabels).map(([id, label]) => (
+                          <option key={id} value={id}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                      <select
+                        aria-label={`Verification status for ${course.name}`}
+                        onChange={(event) =>
+                          updateCourseEntry(
+                            course.id,
+                            "verificationStatus",
+                            event.target
+                              .value as CourseEntry["verificationStatus"],
+                          )
+                        }
+                        value={course.verificationStatus}
+                      >
+                        {Object.entries(verificationLabels).map(([id, label]) => (
+                          <option key={id} value={id}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        className="text-button danger-text"
+                        onClick={() => removeCourseEntry(course.id)}
+                        type="button"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="course-empty-state">
+                <h3>No courses added yet.</h3>
+                <p>
+                  The A-G step can still use rough counts, but course rows will
+                  make the final report more specific.
+                </p>
+              </div>
+            )}
+
+            <div className="course-report-grid">
+              <article>
+                <span>{snapshot.courseInventory.totalCourses}</span>
+                <p>courses entered</p>
+              </article>
+              <article>
+                <span>{snapshot.courseInventory.advancedCount}</span>
+                <p>advanced or college-level</p>
+              </article>
+              <article>
+                <span>{snapshot.courseInventory.mathScienceCount}</span>
+                <p>math/science pattern</p>
+              </article>
+              <article>
+                <span>{snapshot.courseInventory.needsVerificationCount}</span>
+                <p>need verification</p>
+              </article>
+            </div>
+
+            <div className="journey-actions">
+              <button className="button button-primary" onClick={nextStage} type="button">
                 Continue to A-G
+              </button>
+              <button className="button button-secondary" onClick={() => setStage("snapshot")} type="button">
+                Preview report
               </button>
             </div>
           </div>
@@ -490,10 +901,15 @@ export function PrepareWorkspace({
         {progress.stage === "ag" && (
           <div className="prepare-step">
             <p className="eyebrow">A-G review</p>
-            <h2>Mark completed, current, planned, and unresolved years.</h2>
+            <h2>
+              {hasCourseInventory
+                ? "Review likely A-G coverage from the course inventory."
+                : "Mark completed, current, planned, and unresolved years."}
+            </h2>
             <p className="journey-intro">
-              Unresolved means “verify,” not “missing.” Use half-years for
-              semester courses when that is easier.
+              {hasCourseInventory
+                ? "Only courses marked confirmed are treated as counted. Uncertain courses stay as counselor questions."
+                : "Unresolved means “verify,” not “missing.” Use half-years for semester courses when that is easier."}
             </p>
             <div className="prepare-ag-table">
               {agRules.categories.map((category) => {
@@ -515,36 +931,44 @@ export function PrepareWorkspace({
                           : ""}
                       </p>
                     </div>
-                    <div className="prepare-stepper-row">
-                      <NumberStepper
-                        label="Done"
-                        onChange={(value) =>
-                          updateAgValue(category.id, "completed", value)
-                        }
-                        value={values.completed}
-                      />
-                      <NumberStepper
-                        label="Now"
-                        onChange={(value) =>
-                          updateAgValue(category.id, "current", value)
-                        }
-                        value={values.current}
-                      />
-                      <NumberStepper
-                        label="Planned"
-                        onChange={(value) =>
-                          updateAgValue(category.id, "planned", value)
-                        }
-                        value={values.planned}
-                      />
-                      <NumberStepper
-                        label="Verify"
-                        onChange={(value) =>
-                          updateAgValue(category.id, "unresolved", value)
-                        }
-                        value={values.unresolved}
-                      />
-                    </div>
+                    {hasCourseInventory ? (
+                      <div className="ag-derived-counts">
+                        <span>Done {formatYears(audit?.completedYears ?? 0)}</span>
+                        <span>Planned {formatYears(audit?.futureYears ?? 0)}</span>
+                        <span>Verify {formatYears(audit?.unresolvedYears ?? 0)}</span>
+                      </div>
+                    ) : (
+                      <div className="prepare-stepper-row">
+                        <NumberStepper
+                          label="Done"
+                          onChange={(value) =>
+                            updateAgValue(category.id, "completed", value)
+                          }
+                          value={values.completed}
+                        />
+                        <NumberStepper
+                          label="Now"
+                          onChange={(value) =>
+                            updateAgValue(category.id, "current", value)
+                          }
+                          value={values.current}
+                        />
+                        <NumberStepper
+                          label="Planned"
+                          onChange={(value) =>
+                            updateAgValue(category.id, "planned", value)
+                          }
+                          value={values.planned}
+                        />
+                        <NumberStepper
+                          label="Verify"
+                          onChange={(value) =>
+                            updateAgValue(category.id, "unresolved", value)
+                          }
+                          value={values.unresolved}
+                        />
+                      </div>
+                    )}
                     <p className={`prepare-status status-${audit?.status}`}>
                       {audit?.status === "on_track"
                         ? "Looks covered in this first pass"
@@ -557,6 +981,11 @@ export function PrepareWorkspace({
               })}
             </div>
             <div className="journey-actions">
+              {hasCourseInventory && (
+                <button className="button button-secondary" onClick={() => setStage("courses")} type="button">
+                  Edit courses
+                </button>
+              )}
               <button className="button button-primary" onClick={nextStage} type="button">
                 Continue to GPA
               </button>
@@ -668,6 +1097,48 @@ export function PrepareWorkspace({
                     <h3>{finding.title}</h3>
                     <p>{finding.detail}</p>
                   </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="course-inventory-summary">
+              <p className="eyebrow">Course pattern</p>
+              <h3>Rigor and verification, without a score.</h3>
+              <div className="course-report-grid">
+                <article>
+                  <span>{snapshot.courseInventory.advancedCount}</span>
+                  <p>advanced or college-level</p>
+                </article>
+                <article>
+                  <span>{snapshot.courseInventory.mathScienceCount}</span>
+                  <p>math/science courses</p>
+                </article>
+                <article>
+                  <span>{snapshot.courseInventory.outsideCourseCount}</span>
+                  <p>outside-school entries</p>
+                </article>
+                <article>
+                  <span>{snapshot.courseInventory.needsVerificationCount}</span>
+                  <p>verification items</p>
+                </article>
+              </div>
+              <ul className="clean-list">
+                {snapshot.courseInventory.notes.map((note) => (
+                  <li key={note}>{note}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="senior-consideration-list">
+              <p className="eyebrow">12th-grade considerations</p>
+              <h3>Options to discuss, not a required schedule.</h3>
+              {snapshot.seniorCourseConsiderations.map((item) => (
+                <article key={item.id}>
+                  <div>
+                    <h4>{item.title}</h4>
+                    <p>{item.detail}</p>
+                  </div>
+                  {item.verify && <strong>Verify</strong>}
                 </article>
               ))}
             </div>
