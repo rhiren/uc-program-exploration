@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
   buildApplicationMilestonePreview,
@@ -1050,6 +1051,9 @@ export function PrepareWorkspace({
               <button className="button button-primary" onClick={nextStage} type="button">
                 Build snapshot
               </button>
+              <Link className="button button-secondary" href="/fit">
+                Connect to path fit
+              </Link>
             </div>
           </div>
         )}

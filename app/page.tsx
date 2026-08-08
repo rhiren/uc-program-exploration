@@ -26,6 +26,9 @@ export default function Home() {
             <Link className="button button-secondary" href="/campuses">
               Compare UC campuses
             </Link>
+            <Link className="button button-secondary" href="/fit">
+              Build path fit
+            </Link>
             <Link className="button button-secondary" href="/prepare">
               Start with Prepare
             </Link>
@@ -68,7 +71,7 @@ export default function Home() {
       <section className="orientation shell" aria-labelledby="ways-heading">
         <div className="section-heading">
           <p className="eyebrow">Begin anywhere</p>
-          <h2 id="ways-heading">Three equally useful ways in</h2>
+          <h2 id="ways-heading">Four equally useful ways in</h2>
           <p>You can switch between them whenever you want.</p>
         </div>
         <div className="pillar-grid">
@@ -113,6 +116,20 @@ export default function Home() {
               <li>Research questions instead of rankings</li>
             </ul>
             <Link href="/campuses">Compare UC campuses →</Link>
+          </article>
+          <article className="pillar-card pillar-fit">
+            <p className="card-label">Path fit</p>
+            <h3>What should I verify based on my interests?</h3>
+            <p>
+              Connect saved coursework with selected UC interests and campuses
+              to create a focused parent-student-counselor discussion guide.
+            </p>
+            <ul className="clean-list">
+              <li>Course signals by interest area</li>
+              <li>Campus-specific research questions</li>
+              <li>Next checks without admissions predictions</li>
+            </ul>
+            <Link href="/fit">Build a path fit snapshot →</Link>
           </article>
         </div>
       </section>

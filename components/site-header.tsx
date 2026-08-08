@@ -17,6 +17,7 @@ export function SiteHeader() {
           <Link href="/discover">Discover</Link>
           <Link href="/majors">All majors</Link>
           <Link href="/campuses">Campuses</Link>
+          <Link href="/fit">Path fit</Link>
           <Link href="/prepare">Prepare</Link>
           <Link href="/medical">Medicine</Link>
           <Link href="/explore">My paths</Link>
