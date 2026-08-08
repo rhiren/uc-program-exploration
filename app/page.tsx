@@ -23,6 +23,9 @@ export default function Home() {
             <Link className="button button-primary" href="/discover/start">
               Start with Discover <span aria-hidden="true">→</span>
             </Link>
+            <Link className="button button-secondary" href="/campuses">
+              Compare UC campuses
+            </Link>
             <Link className="button button-secondary" href="/prepare">
               Start with Prepare
             </Link>
@@ -62,10 +65,10 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="orientation shell" aria-labelledby="two-ways-heading">
+      <section className="orientation shell" aria-labelledby="ways-heading">
         <div className="section-heading">
           <p className="eyebrow">Begin anywhere</p>
-          <h2 id="two-ways-heading">Two equally useful ways in</h2>
+          <h2 id="ways-heading">Three equally useful ways in</h2>
           <p>You can switch between them whenever you want.</p>
         </div>
         <div className="pillar-grid">
@@ -96,6 +99,20 @@ export default function Home() {
               <li>Campus-major portfolio</li>
             </ul>
             <Link href="/prepare">See the preparation path →</Link>
+          </article>
+          <article className="pillar-card pillar-campus">
+            <p className="card-label">Campuses</p>
+            <h3>Which UC environments and programs should I inspect?</h3>
+            <p>
+              Compare the nine undergraduate UCs by interests, setting, program
+              signals, and questions worth researching before building a list.
+            </p>
+            <ul className="clean-list">
+              <li>Campus setting and academic breadth</li>
+              <li>Program signals from the UC major catalog</li>
+              <li>Research questions instead of rankings</li>
+            </ul>
+            <Link href="/campuses">Compare UC campuses →</Link>
           </article>
         </div>
       </section>

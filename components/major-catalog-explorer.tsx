@@ -55,15 +55,19 @@ export function MajorCatalogExplorer({
     const timer = window.setTimeout(() => {
       const params = new URLSearchParams(window.location.search);
       const requestedFamily = params.get("family");
+      const requestedCampus = params.get("campus");
       const requestedQuery = params.get("q");
       if (requestedFamily && families.some((item) => item.id === requestedFamily)) {
         setFamilyId(requestedFamily);
+      }
+      if (requestedCampus && campuses.some((item) => item.id === requestedCampus)) {
+        setCampusId(requestedCampus);
       }
       if (requestedQuery) setQuery(requestedQuery);
       setReady(true);
     }, 0);
     return () => window.clearTimeout(timer);
-  }, [families]);
+  }, [campuses, families]);
 
   const results = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
