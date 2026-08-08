@@ -29,6 +29,9 @@ export default function Home() {
             <Link className="button button-secondary" href="/fit">
               Build path fit
             </Link>
+            <Link className="button button-secondary" href="/activities">
+              Track activities
+            </Link>
             <Link className="button button-secondary" href="/prepare">
               Start with Prepare
             </Link>
@@ -71,7 +74,7 @@ export default function Home() {
       <section className="orientation shell" aria-labelledby="ways-heading">
         <div className="section-heading">
           <p className="eyebrow">Begin anywhere</p>
-          <h2 id="ways-heading">Four equally useful ways in</h2>
+          <h2 id="ways-heading">Five equally useful ways in</h2>
           <p>You can switch between them whenever you want.</p>
         </div>
         <div className="pillar-grid">
@@ -130,6 +133,20 @@ export default function Home() {
               <li>Next checks without admissions predictions</li>
             </ul>
             <Link href="/fit">Build a path fit snapshot →</Link>
+          </article>
+          <article className="pillar-card pillar-activities">
+            <p className="card-label">Activities</p>
+            <h3>What stories and commitments should I remember?</h3>
+            <p>
+              Track activities, awards, work, service, family responsibilities,
+              and projects with impact notes and possible PIQ story seeds.
+            </p>
+            <ul className="clean-list">
+              <li>UC Activities & Awards categories</li>
+              <li>Depth, impact, and reflection notes</li>
+              <li>Next steps for meaningful growth</li>
+            </ul>
+            <Link href="/activities">Build the activities inventory →</Link>
           </article>
         </div>
       </section>

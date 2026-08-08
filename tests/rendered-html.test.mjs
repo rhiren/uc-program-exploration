@@ -47,6 +47,7 @@ test("renders the foundational and exploration routes", async () => {
     ["/majors", /Every current UC option/],
     ["/campuses", /Compare the nine undergraduate UCs/],
     ["/fit", /Build a path fit snapshot/],
+    ["/activities", /Turn everyday commitments into a clear activities inventory/],
     ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
     ["/medical", /Premed is generally a preparation pathway/],

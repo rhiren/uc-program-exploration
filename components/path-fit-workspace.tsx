@@ -223,6 +223,9 @@ export function PathFitWorkspace({
             <Link className="text-button" href="/prepare">
               Edit courses
             </Link>
+            <Link className="text-button" href="/activities">
+              Track activities
+            </Link>
           </div>
 
           <div className="path-fit-card-grid">
