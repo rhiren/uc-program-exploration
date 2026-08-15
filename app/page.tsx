@@ -32,6 +32,9 @@ export default function Home() {
             <Link className="button button-secondary" href="/activities">
               Track activities
             </Link>
+            <Link className="button button-secondary" href="/report">
+              Review report
+            </Link>
             <Link className="button button-secondary" href="/prepare">
               Start with Prepare
             </Link>
@@ -74,7 +77,7 @@ export default function Home() {
       <section className="orientation shell" aria-labelledby="ways-heading">
         <div className="section-heading">
           <p className="eyebrow">Begin anywhere</p>
-          <h2 id="ways-heading">Five equally useful ways in</h2>
+          <h2 id="ways-heading">Six equally useful ways in</h2>
           <p>You can switch between them whenever you want.</p>
         </div>
         <div className="pillar-grid">
@@ -147,6 +150,20 @@ export default function Home() {
               <li>Next steps for meaningful growth</li>
             </ul>
             <Link href="/activities">Build the activities inventory →</Link>
+          </article>
+          <article className="pillar-card pillar-report">
+            <p className="card-label">Report</p>
+            <h3>What should we do next this month?</h3>
+            <p>
+              Pull courses, activities, campuses, and fit signals into one
+              family review page with a short action list.
+            </p>
+            <ul className="clean-list">
+              <li>Academic and activity summaries</li>
+              <li>Campus and counselor questions</li>
+              <li>Three priority next actions</li>
+            </ul>
+            <Link href="/report">Open the UC prep report →</Link>
           </article>
         </div>
       </section>
