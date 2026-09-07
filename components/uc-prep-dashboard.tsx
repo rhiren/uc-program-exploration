@@ -325,6 +325,22 @@ export function UcPrepDashboard({
             </Link>
           </div>
         </section>
+
+        <section className="dashboard-counselor-card premed-report-card">
+          <div>
+            <p className="eyebrow">Major decision</p>
+            <h2>Use evidence to narrow the finalist majors.</h2>
+          </div>
+          <div>
+            <p>
+              Track interest, academic confidence, pre-med feasibility, fallback
+              career value, workload, UC availability, and decision experiments.
+            </p>
+            <Link className="button button-primary" href="/decision-lab">
+              Open Decision Lab →
+            </Link>
+          </div>
+        </section>
       </div>
     </section>
   );

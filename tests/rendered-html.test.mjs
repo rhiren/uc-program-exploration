@@ -52,6 +52,7 @@ test("renders the foundational and exploration routes", async () => {
     ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
     ["/premed", /Choose a major that keeps medicine possible/],
+    ["/decision-lab", /Make the next six months produce a real undergraduate major decision/],
     ["/medical", /Premed is generally a preparation pathway/],
     ["/programs/biology", /Where this appears across the UC system/],
     ["/careers/data-scientist", /Look at tasks, not “job replaced” headlines/],
@@ -90,17 +91,27 @@ test("makes exhaustive catalog coverage and deep-guide coverage distinct", async
 });
 
 test("keeps editorial content behind the centralized loader", async () => {
-  const [home, discover, prepare, medical, program, career, packageJson] = await Promise.all([
+  const [
+    home,
+    discover,
+    prepare,
+    medical,
+    decisionLab,
+    program,
+    career,
+    packageJson,
+  ] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/discover/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/prepare/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/medical/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/decision-lab/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/programs/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/careers/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  for (const page of [home, discover, prepare, medical, program, career]) {
+  for (const page of [home, discover, prepare, medical, decisionLab, program, career]) {
     assert.match(page, /loadContent/);
     assert.doesNotMatch(page, /from ["']@\/content\//);
   }

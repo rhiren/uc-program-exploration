@@ -263,6 +263,21 @@ export function PremedMajorStrategy({
           </ol>
         </section>
 
+        <section className="premed-decision-lab-card">
+          <div>
+            <p className="eyebrow">Next six months</p>
+            <h3>Move from shortlist to confident decision.</h3>
+            <p>
+              Use the Decision Lab to keep finalist majors, score the evidence,
+              track experiments, and decide which paths are strong enough for
+              applications.
+            </p>
+          </div>
+          <Link className="button button-primary" href="/decision-lab">
+            Open Decision Lab →
+          </Link>
+        </section>
+
         <section className="premed-major-finder" aria-labelledby="premed-major-finder-heading">
           <div className="premed-section-heading">
             <div>

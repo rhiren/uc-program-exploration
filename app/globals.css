@@ -1824,6 +1824,408 @@ summary {
   padding-top: 12px;
 }
 
+.premed-decision-lab-card,
+.decision-target-card,
+.decision-top-paths,
+.decision-experiment-board {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  margin-top: 36px;
+  padding: 22px;
+}
+
+.premed-decision-lab-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  background: #f8eedf;
+}
+
+.premed-decision-lab-card h3,
+.premed-decision-lab-card p {
+  margin: 8px 0 0;
+}
+
+.premed-decision-lab-card p {
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.decision-hero {
+  background:
+    linear-gradient(135deg, rgba(248, 238, 222, 0.92), rgba(220, 238, 232, 0.9)),
+    var(--paper);
+}
+
+.decision-lab {
+  scroll-margin-top: 24px;
+}
+
+.decision-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 5vw, 52px);
+}
+
+.decision-heading,
+.decision-target-card,
+.decision-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: clamp(20px, 4vw, 42px);
+  align-items: start;
+}
+
+.decision-heading h2 {
+  max-width: 880px;
+  margin: 10px 0 16px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.decision-heading p,
+.decision-target-card p,
+.decision-top-paths p,
+.decision-experiment-list p,
+.decision-gap-list,
+.decision-finalist-list p,
+.decision-score-grid small,
+.decision-evidence-grid label {
+  color: var(--muted);
+}
+
+.decision-readiness-card {
+  border: 1px solid #b7cec5;
+  border-radius: 18px;
+  background: var(--teal-soft);
+  padding: 20px;
+}
+
+.decision-readiness-card strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+.decision-readiness-card span,
+.decision-readiness-card small {
+  display: block;
+  color: var(--teal-dark);
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.decision-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.decision-summary-grid article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  padding: 18px;
+}
+
+.decision-summary-grid span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.decision-summary-grid p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  margin: 8px 0 0;
+}
+
+.decision-target-card textarea,
+.decision-add-major select,
+.decision-evidence-grid textarea,
+.decision-experiment-list textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 650;
+  padding: 12px;
+}
+
+.decision-target-card textarea {
+  min-height: 112px;
+}
+
+.decision-section-heading {
+  border-top: 1px solid var(--line);
+  margin-top: 36px;
+  padding-top: 32px;
+}
+
+.decision-section-heading h3,
+.decision-target-card h3,
+.decision-top-paths h3,
+.decision-experiment-board h3 {
+  margin: 8px 0 12px;
+}
+
+.decision-add-major {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.decision-add-major select {
+  min-height: 46px;
+}
+
+.decision-add-major .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.decision-finalist-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.decision-finalist-list > article {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  padding: 22px;
+}
+
+.decision-finalist-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.decision-finalist-header h4,
+.decision-top-grid h4,
+.decision-experiment-list h4 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.decision-score {
+  flex: none;
+  border-radius: 16px;
+  min-width: 118px;
+  padding: 14px;
+  text-align: center;
+}
+
+.decision-score strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.decision-score span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 850;
+  margin-top: 6px;
+}
+
+.decision-score.is-strong {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+}
+
+.decision-score.is-testing {
+  background: var(--amber-soft);
+  color: #72571d;
+}
+
+.decision-score.is-early {
+  background: #f4dfd7;
+  color: #8c3d2d;
+}
+
+.decision-status-row,
+.decision-finalist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.decision-status-row button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 850;
+  padding: 8px 11px;
+}
+
+.decision-status-row button[aria-pressed="true"] {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+}
+
+.decision-score-grid,
+.decision-evidence-grid,
+.decision-top-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.decision-score-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.decision-score-grid label {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+}
+
+.decision-score-grid label > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.decision-score-grid input {
+  accent-color: var(--teal);
+  width: 100%;
+}
+
+.decision-evidence-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.decision-evidence-grid label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.decision-evidence-grid textarea,
+.decision-experiment-list textarea {
+  min-height: 90px;
+  resize: vertical;
+  text-transform: none;
+}
+
+.decision-finalist-actions {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.decision-finalist-actions a {
+  color: var(--teal-dark);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.decision-top-paths {
+  background: var(--amber-soft);
+}
+
+.decision-top-paths > div:first-child {
+  max-width: 840px;
+}
+
+.decision-top-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.decision-top-grid article {
+  border: 1px solid rgba(114, 87, 29, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 16px;
+}
+
+.decision-top-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  font-family: var(--serif);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.decision-gap-list {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.decision-experiment-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.decision-experiment-list article {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.decision-experiment-list article:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.decision-experiment-list label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--teal-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.decision-experiment-list input {
+  accent-color: var(--teal);
+  margin-top: 2px;
+}
+
+.decision-experiment-list p {
+  margin: 8px 0 12px;
+}
+
 .journey-page {
   min-height: 100vh;
   background:
@@ -4404,6 +4806,9 @@ summary {
   .premed-workspace-grid,
   .premed-detail-grid,
   .premed-next-card,
+  .decision-heading,
+  .decision-target-card,
+  .decision-section-heading,
   .path-fit-heading,
   .path-fit-discussion,
   .activities-heading,
@@ -4440,6 +4845,11 @@ summary {
   }
 
   .premed-shortlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .decision-score-grid,
+  .decision-top-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -4542,6 +4952,10 @@ summary {
     .premed-signal-grid,
     .premed-signal-notes,
     .premed-shortlist-grid,
+    .decision-summary-grid,
+    .decision-score-grid,
+    .decision-evidence-grid,
+    .decision-top-grid,
     .recommendation-grid,
     .career-card-grid,
     .three-panel-grid,
@@ -4580,7 +4994,10 @@ summary {
     .premed-strategy-heading,
     .premed-workspace-grid,
     .premed-detail-grid,
-    .premed-next-card {
+    .premed-next-card,
+    .decision-heading,
+    .decision-target-card,
+    .decision-section-heading {
     grid-template-columns: 1fr;
   }
 
@@ -4674,6 +5091,16 @@ summary {
 
   .premed-section-heading {
     display: grid;
+  }
+
+  .premed-decision-lab-card,
+  .decision-finalist-header {
+    display: grid;
+  }
+
+  .decision-add-major,
+  .decision-experiment-list article {
+    grid-template-columns: 1fr;
   }
 
   .finding-list article {
