@@ -379,6 +379,55 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
                   ))}
                 </div>
 
+                <div className="decision-reality-grid">
+                  <section>
+                    <div className="decision-mini-heading">
+                      <p className="card-label">Campus-specific fit</p>
+                      <strong>{finalist.campusFit.label}</strong>
+                    </div>
+                    <p>{finalist.campusFit.risk}</p>
+                    <div className="decision-campus-list">
+                      {finalist.campusFit.campuses.slice(0, 6).map((campus) => (
+                        <a
+                          href={campus.officialCatalogUrl}
+                          key={campus.institutionId}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          {campus.name} ↗
+                        </a>
+                      ))}
+                    </div>
+                    <ul>
+                      {(finalist.campusFit.campuses[0]?.checklist ?? [
+                        "Find the campus catalog page for this major.",
+                        "Confirm first-year availability and pre-health advising.",
+                      ]).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section>
+                    <div className="decision-mini-heading">
+                      <p className="card-label">Pre-med requirement map</p>
+                      <strong>Likely covered vs. layered separately</strong>
+                    </div>
+                    <div className="decision-requirement-grid">
+                      {finalist.premedRequirementMap.map((requirement) => (
+                        <article
+                          className={`coverage-${requirement.status}`}
+                          key={requirement.id}
+                          title={requirement.note}
+                        >
+                          <span>{requirement.label}</span>
+                          <strong>{requirement.statusLabel}</strong>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+
                 <div className="decision-evidence-grid">
                   <label>
                     Why interested?

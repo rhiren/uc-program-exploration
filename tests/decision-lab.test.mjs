@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   buildDecisionLabReport,
+  buildCampusFitSummary,
+  buildPremedRequirementMap,
   decisionExperiments,
   decisionScoreFields,
 } from "../lib/decision-lab/decision-lab.mjs";
@@ -122,4 +124,55 @@ test("decision progress parser sanitizes unknown status and out-of-range scores"
   assert.equal(parsed.finalists[0].scores.academicConfidence, 1);
   assert.equal(parsed.experiments.length, 1);
   assert.ok(decisionScoreFields.length >= 6);
+});
+
+test("pre-med requirement map separates built-in overlap from layered planning", () => {
+  const biology = buildPremedRequirementMap({
+    name: "Biochemistry and Molecular Biology",
+    categoryName: "Biological and Life Sciences",
+  });
+  const data = buildPremedRequirementMap({
+    name: "Data Science",
+    categoryName: "Engineering and Computer Science",
+  });
+
+  assert.equal(
+    biology.find((item) => item.id === "biology").status,
+    "likely-covered",
+  );
+  assert.equal(
+    biology.find((item) => item.id === "mathStats").status,
+    "partial-overlap",
+  );
+  assert.equal(
+    data.find((item) => item.id === "mathStats").status,
+    "likely-covered",
+  );
+  assert.equal(
+    data.find((item) => item.id === "organicChemistry").status,
+    "layer-separately",
+  );
+});
+
+test("campus fit summary makes narrow availability explicit", () => {
+  const narrow = buildCampusFitSummary({
+    campuses: [
+      {
+        institutionId: "uc-merced",
+        name: "Merced",
+        officialCatalogUrl: "https://example.edu",
+      },
+    ],
+  });
+  const broad = buildCampusFitSummary({
+    campuses: Array.from({ length: 6 }, (_, index) => ({
+      institutionId: `uc-${index}`,
+      name: `UC ${index}`,
+    })),
+  });
+
+  assert.equal(narrow.label, "Campus-specific option");
+  assert.match(narrow.risk, /Narrow availability/i);
+  assert.equal(narrow.campuses[0].checklist.length, 4);
+  assert.equal(broad.label, "Broad UC availability");
 });

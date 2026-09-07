@@ -2087,6 +2087,7 @@ summary {
 
 .decision-score-grid,
 .decision-evidence-grid,
+.decision-reality-grid,
 .decision-top-grid {
   display: grid;
   gap: 12px;
@@ -2117,6 +2118,108 @@ summary {
 .decision-score-grid input {
   accent-color: var(--teal);
   width: 100%;
+}
+
+.decision-reality-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.decision-reality-grid > section {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  padding: 16px;
+}
+
+.decision-mini-heading {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.decision-mini-heading strong {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.decision-campus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 14px 0;
+}
+
+.decision-campus-list a {
+  border-radius: 999px;
+  background: white;
+  color: var(--teal-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  padding: 7px 9px;
+}
+
+.decision-reality-grid ul {
+  color: var(--muted);
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.decision-requirement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.decision-requirement-grid article {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  display: grid;
+  gap: 5px;
+  min-height: 78px;
+  padding: 12px;
+}
+
+.decision-requirement-grid span {
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.decision-requirement-grid strong {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.decision-requirement-grid .coverage-likely-covered {
+  border-color: #b7cec5;
+  background: var(--teal-soft);
+}
+
+.decision-requirement-grid .coverage-likely-covered strong {
+  color: var(--teal-dark);
+}
+
+.decision-requirement-grid .coverage-partial-overlap {
+  border-color: rgba(114, 87, 29, 0.25);
+  background: var(--amber-soft);
+}
+
+.decision-requirement-grid .coverage-partial-overlap strong {
+  color: #72571d;
+}
+
+.decision-requirement-grid .coverage-layer-separately {
+  background: #f6f1ea;
+}
+
+.decision-requirement-grid .coverage-layer-separately strong {
+  color: var(--muted);
 }
 
 .decision-evidence-grid {
@@ -4849,6 +4952,7 @@ summary {
   }
 
   .decision-score-grid,
+  .decision-reality-grid,
   .decision-top-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -4955,6 +5059,8 @@ summary {
     .decision-summary-grid,
     .decision-score-grid,
     .decision-evidence-grid,
+    .decision-reality-grid,
+    .decision-requirement-grid,
     .decision-top-grid,
     .recommendation-grid,
     .career-card-grid,

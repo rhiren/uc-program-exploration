@@ -12,6 +12,40 @@ export const decisionExperiments: Array<{
   title: string;
   detail: string;
 }>;
+export const premedRequirementAreas: Array<{
+  id: string;
+  label: string;
+  direct: string[];
+  partial: string[];
+}>;
+export function buildPremedRequirementMap(major?: {
+  name?: string;
+  categoryName?: string;
+  emphases?: string[];
+}): Array<{
+  id: string;
+  label: string;
+  status: "likely-covered" | "partial-overlap" | "layer-separately";
+  statusLabel: string;
+  note: string;
+}>;
+export function buildCampusFitSummary(major?: {
+  campuses?: Array<{
+    institutionId: string;
+    name: string;
+    officialCatalogUrl?: string;
+  }>;
+}): {
+  count: number;
+  label: string;
+  risk: string;
+  campuses: Array<{
+    institutionId: string;
+    name: string;
+    officialCatalogUrl?: string;
+    checklist: string[];
+  }>;
+};
 export function buildDecisionLabReport(
   progress: DecisionLabProgress,
   majors?: Array<{
@@ -23,7 +57,9 @@ export function buildDecisionLabReport(
   finalists: Array<
     DecisionLabProgress["finalists"][number] & {
       campusCount: number;
+      campusFit: ReturnType<typeof buildCampusFitSummary>;
       deepGuideSlug?: string;
+      premedRequirementMap: ReturnType<typeof buildPremedRequirementMap>;
       score: number;
       scoreLabel: string;
       evidenceItems: number;
@@ -33,7 +69,9 @@ export function buildDecisionLabReport(
   topFinalists: Array<
     DecisionLabProgress["finalists"][number] & {
       campusCount: number;
+      campusFit: ReturnType<typeof buildCampusFitSummary>;
       deepGuideSlug?: string;
+      premedRequirementMap: ReturnType<typeof buildPremedRequirementMap>;
       score: number;
       scoreLabel: string;
       evidenceItems: number;
