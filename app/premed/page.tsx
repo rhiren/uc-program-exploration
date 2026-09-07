@@ -10,7 +10,42 @@ export const metadata: Metadata = {
 };
 
 export default function PremedPage() {
-  loadContent();
+  const content = loadContent();
+  const categoryNames = new Map(
+    content.ucMajorCatalog.categories.map((category) => [
+      category.id,
+      category.name,
+    ]),
+  );
+  const offeringAliases = new Map<string, string>();
+  content.programs.forEach((program) => {
+    offeringAliases.set(program.name.toLowerCase(), program.slug);
+    program.ucOfferingIds.forEach((offeringId) => {
+      const offering = content.offerings.find((item) => item.id === offeringId);
+      if (offering) {
+        offeringAliases.set(offering.officialMajorName.toLowerCase(), program.slug);
+      }
+    });
+  });
+  const majors = content.ucMajorCatalog.majors.map((major) => ({
+    id: major.id,
+    name: major.name,
+    categoryName: major.categoryIds
+      .map((categoryId) => categoryNames.get(categoryId) ?? "Other")
+      .join(" · "),
+    familyIds: major.familyIds,
+    emphases: major.emphases,
+    deepGuideSlug: offeringAliases.get(major.name.toLowerCase()),
+    campuses: major.campuses.map((campus) => ({
+      institutionId: campus.institutionId,
+      name: campus.name,
+      officialCatalogUrl: campus.officialCatalogUrl,
+    })),
+  }));
+  const campuses = content.ucMajorCatalog.campuses.map((campus) => ({
+    id: campus.institutionId,
+    name: campus.name,
+  }));
 
   return (
     <main>
@@ -24,7 +59,7 @@ export default function PremedPage() {
           what remains valuable if she later chooses a different path.
         </p>
       </section>
-      <PremedMajorStrategy />
+      <PremedMajorStrategy campuses={campuses} majors={majors} />
     </main>
   );
 }

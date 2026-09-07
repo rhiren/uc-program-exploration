@@ -2,13 +2,35 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { buildPremedMajorStrategy } from "@/lib/premed/major-strategy.mjs";
+import {
+  buildPremedMajorShortlist,
+  buildPremedMajorStrategy,
+} from "@/lib/premed/major-strategy.mjs";
 import {
   createPrepareProgress,
   readPrepareProgress,
 } from "@/lib/prepare/progress-store.mjs";
 
 type PrepareProgress = ReturnType<typeof createPrepareProgress>;
+
+type CampusFilter = {
+  id: string;
+  name: string;
+};
+
+type CatalogMajor = {
+  id: string;
+  name: string;
+  categoryName: string;
+  familyIds: string[];
+  emphases: string[];
+  deepGuideSlug?: string;
+  campuses: Array<{
+    institutionId: string;
+    name: string;
+    officialCatalogUrl: string;
+  }>;
+};
 
 const workloadOptions = [
   { id: "steady", label: "Steady" },
@@ -21,13 +43,26 @@ function buttonClass(selected: boolean) {
   return selected ? "premed-choice is-selected" : "premed-choice";
 }
 
-export function PremedMajorStrategy() {
+export function PremedMajorStrategy({
+  campuses,
+  majors,
+}: {
+  campuses: CampusFilter[];
+  majors: CatalogMajor[];
+}) {
   const [prepare, setPrepare] = useState<PrepareProgress>(
     createPrepareProgress(),
   );
   const [ready, setReady] = useState(false);
   const [selectedTrackId, setSelectedTrackId] = useState("data-health");
   const [workloadPreference, setWorkloadPreference] = useState("not-sure");
+  const [selectedInterestIds, setSelectedInterestIds] = useState([
+    "biology-lab",
+    "data-computing",
+    "people-behavior",
+  ]);
+  const [fallbackPriorityId, setFallbackPriorityId] = useState("tech-data");
+  const [campusIds, setCampusIds] = useState<string[]>([]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -48,6 +83,34 @@ export function PremedMajorStrategy() {
       }),
     [prepare.baseline.courseEntries, selectedTrackId, workloadPreference],
   );
+  const shortlist = useMemo(
+    () =>
+      buildPremedMajorShortlist({
+        majors,
+        selectedInterestIds,
+        fallbackPriorityId,
+        campusIds,
+        limit: 9,
+      }),
+    [campusIds, fallbackPriorityId, majors, selectedInterestIds],
+  );
+
+  function toggleInterest(id: string) {
+    setSelectedInterestIds((values) => {
+      if (values.includes(id)) {
+        const next = values.filter((value) => value !== id);
+        return next.length ? next : values;
+      }
+      return [...values, id].slice(-3);
+    });
+  }
+
+  function toggleCampus(id: string) {
+    setCampusIds((values) => {
+      if (values.includes(id)) return values.filter((value) => value !== id);
+      return [...values, id].slice(-4);
+    });
+  }
 
   return (
     <section className="premed-strategy shell content-section">
@@ -198,6 +261,120 @@ export function PremedMajorStrategy() {
               <li key={check}>{check}</li>
             ))}
           </ol>
+        </section>
+
+        <section className="premed-major-finder" aria-labelledby="premed-major-finder-heading">
+          <div className="premed-section-heading">
+            <div>
+              <p className="eyebrow">Concrete UC major finder</p>
+              <h3 id="premed-major-finder-heading">
+                Build a shortlist where pre-med stays possible and the career path stays useful.
+              </h3>
+              <p>{shortlist.summary}</p>
+            </div>
+            <Link className="text-button" href="/majors">
+              Search all majors
+            </Link>
+          </div>
+
+          <div className="premed-finder-controls">
+            <section>
+              <p className="card-label">Interests to test</p>
+              <div className="filter-chips">
+                {shortlist.interests.map((interest) => (
+                  <button
+                    aria-pressed={selectedInterestIds.includes(interest.id)}
+                    key={interest.id}
+                    onClick={() => toggleInterest(interest.id)}
+                    type="button"
+                  >
+                    {interest.label}
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <p className="card-label">Fallback career priority</p>
+              <div className="filter-chips">
+                {shortlist.fallbackProfiles.map((profile) => (
+                  <button
+                    aria-pressed={fallbackPriorityId === profile.id}
+                    key={profile.id}
+                    onClick={() => setFallbackPriorityId(profile.id)}
+                    type="button"
+                  >
+                    {profile.label}
+                  </button>
+                ))}
+              </div>
+              <p className="premed-control-note">{shortlist.fallbackProfile.note}</p>
+            </section>
+
+            <section>
+              <p className="card-label">Campus focus</p>
+              <div className="filter-chips compact-chips">
+                <button
+                  aria-pressed={campusIds.length === 0}
+                  onClick={() => setCampusIds([])}
+                  type="button"
+                >
+                  All UCs
+                </button>
+                {campuses.map((campus) => (
+                  <button
+                    aria-pressed={campusIds.includes(campus.id)}
+                    key={campus.id}
+                    onClick={() => toggleCampus(campus.id)}
+                    type="button"
+                  >
+                    {campus.name}
+                  </button>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <div className="premed-shortlist-grid" aria-live="polite">
+            {shortlist.results.map((major) => (
+              <article key={major.id}>
+                <div className="premed-major-card-heading">
+                  <p className="card-label">{major.categoryName}</p>
+                  <span>{major.campusCount} UC{major.campusCount === 1 ? "" : "s"}</span>
+                </div>
+                <h4>{major.name}</h4>
+                <div className="premed-major-tags">
+                  <span>{major.premedFitLabel}</span>
+                  <span>{major.fallbackLabel}</span>
+                </div>
+                <p>{major.why}</p>
+                <p className="premed-major-watchout">{major.watchout}</p>
+                <div className="premed-major-campus-row">
+                  {major.campuses.map((campus) => (
+                    <a
+                      href={campus.officialCatalogUrl}
+                      key={campus.institutionId}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {campus.name} ↗
+                    </a>
+                  ))}
+                </div>
+                <div className="premed-major-actions">
+                  {major.deepGuideSlug ? (
+                    <Link href={`/programs/${major.deepGuideSlug}`}>
+                      Open deep guide →
+                    </Link>
+                  ) : (
+                    <Link href={`/majors?q=${encodeURIComponent(major.name)}`}>
+                      View in UC directory →
+                    </Link>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <p className="source-note">

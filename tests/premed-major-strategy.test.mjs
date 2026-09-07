@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   buildPremedMajorStrategy,
+  buildPremedMajorShortlist,
   getPremedMajorTracks,
   summarizePremedCourseSignals,
 } from "../lib/premed/major-strategy.mjs";
@@ -73,4 +74,49 @@ test("selected strategy returns concrete checks for demanding majors", () => {
     strategy.nextChecks.some((check) => /required labs fit/i.test(check)),
   );
   assert.match(strategy.disclaimer, /not a medical-school admissions prediction/i);
+});
+
+test("major shortlist changes with fallback priority while preserving pre-med fit", () => {
+  const majors = [
+    {
+      id: "biology",
+      name: "Biology",
+      categoryName: "Biological and Life Sciences",
+      familyIds: ["biology-life-sciences"],
+      emphases: [],
+      campuses: [{ institutionId: "uc-davis", name: "Davis" }],
+    },
+    {
+      id: "data-science",
+      name: "Data Science",
+      categoryName: "Engineering and Computer Science",
+      familyIds: ["computing-data-ai", "math-stat-physical"],
+      emphases: [],
+      campuses: [{ institutionId: "uc-san-diego", name: "San Diego" }],
+    },
+    {
+      id: "public-health",
+      name: "Public Health",
+      categoryName: "Health Professions",
+      familyIds: ["medicine-health-public-health"],
+      emphases: [],
+      campuses: [{ institutionId: "uc-irvine", name: "Irvine" }],
+    },
+  ];
+
+  const tech = buildPremedMajorShortlist({
+    majors,
+    selectedInterestIds: ["biology-lab", "data-computing"],
+    fallbackPriorityId: "tech-data",
+  });
+  const health = buildPremedMajorShortlist({
+    majors,
+    selectedInterestIds: ["biology-lab", "people-behavior"],
+    fallbackPriorityId: "health-systems",
+  });
+
+  assert.equal(tech.results[0].id, "data-science");
+  assert.equal(health.results[0].id, "public-health");
+  assert.ok(tech.results.every((major) => major.premedFitLabel));
+  assert.ok(health.results.every((major) => major.fallbackLabel));
 });
