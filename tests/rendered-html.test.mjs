@@ -51,6 +51,7 @@ test("renders the foundational and exploration routes", async () => {
     ["/report", /Review the whole picture before choosing the next step/],
     ["/discover/start", /Restoring your private progress/],
     ["/prepare", /A–G at a glance/],
+    ["/premed", /Choose a major that keeps medicine possible/],
     ["/medical", /Premed is generally a preparation pathway/],
     ["/programs/biology", /Where this appears across the UC system/],
     ["/careers/data-scientist", /Look at tasks, not “job replaced” headlines/],

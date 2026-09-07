@@ -308,6 +308,23 @@ export function UcPrepDashboard({
             )}
           </ol>
         </section>
+
+        <section className="dashboard-counselor-card premed-report-card">
+          <div>
+            <p className="eyebrow">Pre-med option</p>
+            <h2>Choose a major that works even if medicine changes.</h2>
+          </div>
+          <div>
+            <p>
+              Use the saved course inventory to compare life sciences, data,
+              engineering, public health, and humanities paths against pre-med
+              preparation and fallback value.
+            </p>
+            <Link className="button button-primary" href="/premed">
+              Open pre-med strategy →
+            </Link>
+          </div>
+        </section>
       </div>
     </section>
   );

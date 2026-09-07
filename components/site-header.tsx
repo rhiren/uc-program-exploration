@@ -21,6 +21,7 @@ export function SiteHeader() {
           <Link href="/activities">Activities</Link>
           <Link href="/report">Report</Link>
           <Link href="/prepare">Prepare</Link>
+          <Link href="/premed">Pre-med</Link>
           <Link href="/medical">Medicine</Link>
           <Link href="/explore">My paths</Link>
         </nav>

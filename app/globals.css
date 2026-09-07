@@ -1467,6 +1467,252 @@ summary {
   font-weight: 750;
 }
 
+.premed-hero {
+  background:
+    linear-gradient(135deg, rgba(220, 238, 232, 0.88), rgba(248, 238, 222, 0.9)),
+    var(--paper);
+}
+
+.premed-strategy {
+  scroll-margin-top: 24px;
+}
+
+.premed-strategy-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 5vw, 52px);
+}
+
+.premed-strategy-heading,
+.premed-workspace-grid,
+.premed-detail-grid,
+.premed-next-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: clamp(20px, 4vw, 42px);
+  align-items: start;
+}
+
+.premed-strategy-heading h2 {
+  max-width: 820px;
+  margin: 10px 0 16px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.premed-strategy-heading p,
+.premed-track-card p,
+.premed-detail-grid p,
+.premed-course-signal p,
+.premed-next-card li {
+  color: var(--muted);
+}
+
+.premed-summary-card {
+  border: 1px solid #b7cec5;
+  border-radius: 18px;
+  background: var(--teal-soft);
+  padding: 20px;
+}
+
+.premed-summary-card strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.premed-summary-card span,
+.premed-summary-card small {
+  display: block;
+  color: var(--teal-dark);
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.premed-workspace-grid,
+.premed-detail-grid,
+.premed-course-signal,
+.premed-next-card {
+  border-top: 1px solid var(--line);
+  margin-top: 36px;
+  padding-top: 32px;
+}
+
+.premed-workspace-grid h3,
+.premed-track-card h3,
+.premed-detail-grid h3,
+.premed-course-signal h3,
+.premed-next-card h3 {
+  margin: 8px 0 14px;
+}
+
+.premed-choice-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.premed-choice {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 5px;
+  min-height: 70px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.premed-choice span {
+  font-weight: 800;
+}
+
+.premed-choice small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.premed-choice:hover,
+.premed-choice.is-selected {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+
+.premed-track-card,
+.premed-detail-grid section,
+.premed-course-signal,
+.premed-next-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  padding: 22px;
+}
+
+.premed-track-card {
+  position: sticky;
+  top: 24px;
+}
+
+.premed-value-band {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.premed-value-band strong {
+  color: var(--teal-dark);
+}
+
+.premed-detail-grid ul,
+.premed-detail-grid ol,
+.premed-next-card ol,
+.premed-note-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.premed-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.premed-signal-grid,
+.premed-signal-notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.premed-signal-grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.premed-signal-grid article,
+.premed-signal-notes article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  padding: 16px;
+}
+
+.premed-signal-grid article.is-seen {
+  border-color: #b7cec5;
+  background: var(--teal-soft);
+}
+
+.premed-signal-grid span,
+.premed-signal-notes strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.premed-signal-grid p,
+.premed-signal-notes span {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 750;
+  margin: 8px 0 0;
+}
+
+.premed-signal-notes {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.premed-note-list {
+  margin-top: 18px;
+}
+
+.premed-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 18px;
+}
+
+.premed-pill-row button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 9px 12px;
+}
+
+.premed-pill-row button[aria-pressed="true"] {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+}
+
+.premed-next-card {
+  background: var(--amber-soft);
+}
+
+.premed-report-card {
+  margin-top: 18px;
+}
+
+.premed-report-card p {
+  color: var(--muted);
+  margin-top: 0;
+}
+
 .journey-page {
   min-height: 100vh;
   background:
@@ -4043,6 +4289,10 @@ summary {
   .trust-grid,
   .readiness-grid,
   .review-layout,
+  .premed-strategy-heading,
+  .premed-workspace-grid,
+  .premed-detail-grid,
+  .premed-next-card,
   .path-fit-heading,
   .path-fit-discussion,
   .activities-heading,
@@ -4068,6 +4318,14 @@ summary {
 
   .principle-card {
     position: static;
+  }
+
+  .premed-track-card {
+    position: static;
+  }
+
+  .premed-signal-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .recommendation-grid article:first-child {
@@ -4166,6 +4424,8 @@ summary {
     .course-entry-form,
     .course-list article,
     .course-report-grid,
+    .premed-signal-grid,
+    .premed-signal-notes,
     .recommendation-grid,
     .career-card-grid,
     .three-panel-grid,
@@ -4200,7 +4460,11 @@ summary {
     .dashboard-summary-grid,
     .dashboard-action-band,
     .dashboard-section-grid,
-    .dashboard-counselor-card {
+    .dashboard-counselor-card,
+    .premed-strategy-heading,
+    .premed-workspace-grid,
+    .premed-detail-grid,
+    .premed-next-card {
     grid-template-columns: 1fr;
   }
 
@@ -4289,6 +4553,10 @@ summary {
   }
 
   .senior-consideration-list article {
+    display: grid;
+  }
+
+  .premed-section-heading {
     display: grid;
   }
 

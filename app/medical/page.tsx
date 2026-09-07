@@ -31,6 +31,9 @@ export default function MedicalPage() {
           prerequisites vary, so undergraduate major choice and premedical
           preparation should be planned separately.
         </p>
+        <Link className="button button-primary" href="/premed">
+          Build pre-med major strategy →
+        </Link>
       </section>
 
       <section className="shell content-section" aria-labelledby="training-path">
@@ -109,9 +112,14 @@ export default function MedicalPage() {
             research, policy, and other health professions.
           </p>
         </div>
-        <Link className="button button-primary" href="/discover">
-          Return to all programs →
-        </Link>
+        <div className="button-row">
+          <Link className="button button-primary" href="/premed">
+            Plan the major →
+          </Link>
+          <Link className="button button-secondary" href="/discover">
+            Return to all programs →
+          </Link>
+        </div>
       </section>
     </main>
   );
