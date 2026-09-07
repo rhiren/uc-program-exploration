@@ -4,6 +4,7 @@ import {
   buildDecisionLabReport,
   buildCampusFitSummary,
   buildPremedRequirementMap,
+  buildThirtyDayActionPlan,
   decisionExperiments,
   decisionScoreFields,
 } from "../lib/decision-lab/decision-lab.mjs";
@@ -175,4 +176,33 @@ test("campus fit summary makes narrow availability explicit", () => {
   assert.match(narrow.risk, /Narrow availability/i);
   assert.equal(narrow.campuses[0].checklist.length, 4);
   assert.equal(broad.label, "Broad UC availability");
+});
+
+test("thirty day action plan turns finalist gaps into concrete next steps", () => {
+  const report = buildDecisionLabReport({
+    ...createDecisionLabProgress(),
+    finalists: [
+      {
+        id: "biology",
+        majorId: "biology",
+        majorName: "Biology",
+        status: "maybe",
+        scores: scores(4),
+        evidence: {
+          whyInterested: "Likes lab work.",
+          courseEvidence: "",
+          careerFallback: "",
+          concerns: "",
+        },
+      },
+    ],
+    experiments: [],
+  });
+
+  const plan = buildThirtyDayActionPlan(report);
+
+  assert.equal(plan.length, 3);
+  assert.match(plan[0].title, /Biology/);
+  assert.match(plan[0].detail, /coursework|fallback/i);
+  assert.match(plan[1].title, /biology|medicine/i);
 });

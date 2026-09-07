@@ -231,15 +231,43 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
 
   return (
     <section className="decision-lab shell content-section">
+      <section className="decision-onboarding" aria-labelledby="decision-onboarding-heading">
+        <div>
+          <p className="eyebrow">How to use this with confidence</p>
+          <h2 id="decision-onboarding-heading">
+            Do not decide from a mood. Decide from evidence.
+          </h2>
+          <p>
+            A score is useful only when she can point to something real: a class,
+            assignment, conversation, reading, project, or four-year plan check.
+            It is fine for a major to stay in “Maybe” while she gathers that
+            evidence.
+          </p>
+        </div>
+        <div className="decision-example-grid">
+          <article>
+            <p className="card-label">Good evidence</p>
+            <strong>“I liked the genetics problem set and wanted to keep going.”</strong>
+          </article>
+          <article>
+            <p className="card-label">Still too vague</p>
+            <strong>“Medicine sounds stable and impressive.”</strong>
+          </article>
+          <article>
+            <p className="card-label">Useful concern</p>
+            <strong>“Organic chemistry plus this major may crowd 12th grade planning.”</strong>
+          </article>
+        </div>
+      </section>
+
       <div className="decision-panel">
         <div className="decision-heading">
           <div>
             <p className="eyebrow">Six-month decision lab</p>
-            <h2>Turn “I might do medicine” into a trusted major decision.</h2>
+            <h2>Turn a possible medical path into a trusted major decision.</h2>
             <p>
-              Score only what she has evidence for. Keep finalists alive until
-              she has tested coursework, workload, pre-med fit, and fallback
-              value.
+              Keep the serious options visible, score them honestly, and let the
+              next 30 days tell her what deserves more attention.
             </p>
           </div>
           <div className="decision-readiness-card">
@@ -270,7 +298,7 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
         <section className="decision-target-card">
           <div>
             <p className="eyebrow">Decision target</p>
-            <h3>What “made up our mind” should mean.</h3>
+            <h3>What a good decision should mean.</h3>
           </div>
           <textarea
             aria-label="Decision target"
@@ -432,6 +460,7 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
                   <label>
                     Why interested?
                     <textarea
+                      placeholder="Example: I liked the real coursework sample, not just the career title."
                       onChange={(event) =>
                         updateEvidence(
                           finalist.id,
@@ -445,6 +474,7 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
                   <label>
                     Course/workload evidence
                     <textarea
+                      placeholder="Example: AP Bio feels energizing; math is strong but long proofs drain me."
                       onChange={(event) =>
                         updateEvidence(
                           finalist.id,
@@ -458,6 +488,7 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
                   <label>
                     Backup career value
                     <textarea
+                      placeholder="Example: health data, biotech, public health, research, product, analytics."
                       onChange={(event) =>
                         updateEvidence(
                           finalist.id,
@@ -471,6 +502,7 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
                   <label>
                     Concerns to verify
                     <textarea
+                      placeholder="Example: Will this major leave room for chemistry, physics, writing, and activities?"
                       onChange={(event) =>
                         updateEvidence(finalist.id, "concerns", event.target.value)
                       }
@@ -518,6 +550,27 @@ export function DecisionLabWorkspace({ majors }: { majors: CatalogMajor[] }) {
               ))}
             </ul>
           )}
+        </section>
+
+        <section className="decision-action-plan" aria-labelledby="decision-action-plan-heading">
+          <div className="decision-section-heading">
+            <div>
+              <p className="eyebrow">Next 30 days</p>
+              <h3 id="decision-action-plan-heading">Leave this page with three useful actions.</h3>
+            </div>
+            <Link className="text-button" href="/report">
+              Open full report
+            </Link>
+          </div>
+          <div className="decision-action-grid">
+            {report.thirtyDayActions.map((action, index) => (
+              <article key={`${action.id}-${index}`}>
+                <span>{index + 1}</span>
+                <h4>{action.title}</h4>
+                <p>{action.detail}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="decision-experiment-board">

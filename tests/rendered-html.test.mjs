@@ -31,7 +31,8 @@ test("server-renders the product home from validated content", async () => {
   const html = await response.text();
   assert.match(html, /<title>UC Pathways Explorer<\/title>/i);
   assert.match(html, /Find paths worth exploring/);
-  assert.match(html, /Start with Discover/);
+  assert.match(html, /Start Here/);
+  assert.match(html, /Continue Discover/);
   assert.match(html, /Start with Prepare/);
   assert.match(html, /Exploration, not prediction/);
   assert.match(html, /Early preview/);
@@ -44,6 +45,7 @@ test("server-renders the product home from validated content", async () => {
 test("renders the foundational and exploration routes", async () => {
   const expectations = [
     ["/discover", /interest gateways/],
+    ["/start-here", /You are not choosing your whole life today/],
     ["/majors", /Every current UC option/],
     ["/campuses", /Compare the nine undergraduate UCs/],
     ["/fit", /Build a path fit snapshot/],
@@ -97,6 +99,7 @@ test("keeps editorial content behind the centralized loader", async () => {
     prepare,
     medical,
     decisionLab,
+    startHere,
     program,
     career,
     packageJson,
@@ -106,12 +109,22 @@ test("keeps editorial content behind the centralized loader", async () => {
     readFile(new URL("../app/prepare/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/medical/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/decision-lab/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/start-here/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/programs/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/careers/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  for (const page of [home, discover, prepare, medical, decisionLab, program, career]) {
+  for (const page of [
+    home,
+    discover,
+    prepare,
+    medical,
+    decisionLab,
+    startHere,
+    program,
+    career,
+  ]) {
     assert.match(page, /loadContent/);
     assert.doesNotMatch(page, /from ["']@\/content\//);
   }

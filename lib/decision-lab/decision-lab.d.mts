@@ -12,6 +12,11 @@ export const decisionExperiments: Array<{
   title: string;
   detail: string;
 }>;
+export const decisionActionTemplates: Array<{
+  id: string;
+  title: string;
+  detail: string;
+}>;
 export const premedRequirementAreas: Array<{
   id: string;
   label: string;
@@ -46,6 +51,27 @@ export function buildCampusFitSummary(major?: {
     checklist: string[];
   }>;
 };
+export function buildThirtyDayActionPlan(report: {
+  finalists?: Array<
+    DecisionLabProgress["finalists"][number] & {
+      status: string;
+      score?: number;
+      evidenceItems?: number;
+    }
+  >;
+  topFinalists?: Array<
+    DecisionLabProgress["finalists"][number] & {
+      status: string;
+      score?: number;
+      evidenceItems?: number;
+    }
+  >;
+  progressExperiments?: DecisionLabProgress["experiments"];
+}): Array<{
+  id: string;
+  title: string;
+  detail: string;
+}>;
 export function buildDecisionLabReport(
   progress: DecisionLabProgress,
   majors?: Array<{
@@ -82,4 +108,6 @@ export function buildDecisionLabReport(
   totalExperiments: number;
   readiness: string;
   gaps: string[];
+  progressExperiments: DecisionLabProgress["experiments"];
+  thirtyDayActions: ReturnType<typeof buildThirtyDayActionPlan>;
 };

@@ -20,8 +20,11 @@ export default function Home() {
             your future into a test.
           </p>
           <div className="hero-actions" aria-label="Choose where to begin">
+            <Link className="button button-primary" href="/start-here">
+              Start Here <span aria-hidden="true">→</span>
+            </Link>
             <Link className="button button-primary" href="/discover/start">
-              Start with Discover <span aria-hidden="true">→</span>
+              Continue Discover
             </Link>
             <Link className="button button-secondary" href="/campuses">
               Compare UC campuses
@@ -80,6 +83,19 @@ export default function Home() {
           <h2 id="ways-heading">Six equally useful ways in</h2>
           <p>You can switch between them whenever you want.</p>
         </div>
+        <article className="handoff-card">
+          <div>
+            <p className="card-label">Recommended first session</p>
+            <h3>Use this as a guided workbook, not a final-answer machine.</h3>
+            <p>
+              Begin with a calm orientation, review the academic baseline, then
+              use the Decision Lab to compare majors with evidence.
+            </p>
+          </div>
+          <Link className="button button-primary" href="/start-here">
+            Open Start Here <span aria-hidden="true">→</span>
+          </Link>
+        </article>
         <div className="pillar-grid">
           <article className="pillar-card pillar-discover">
             <p className="card-label">Discover</p>

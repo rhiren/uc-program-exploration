@@ -361,6 +361,29 @@ nav a:hover {
   font-weight: 700;
 }
 
+.handoff-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  margin-bottom: 22px;
+  padding: 22px;
+}
+
+.handoff-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+
+.handoff-card p {
+  max-width: 760px;
+}
+
 .pillar-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1863,6 +1886,109 @@ summary {
   scroll-margin-top: 24px;
 }
 
+.start-hero {
+  padding-bottom: 42px;
+}
+
+.start-reassurance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding-bottom: 24px;
+}
+
+.start-reassurance article,
+.start-step-list article,
+.decision-onboarding,
+.decision-action-plan {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.start-reassurance article {
+  padding: 20px;
+}
+
+.start-reassurance span,
+.start-step-list > article > span,
+.decision-action-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  font-family: var(--serif);
+  font-weight: 700;
+}
+
+.start-reassurance h2 {
+  font-size: 1.55rem;
+  margin: 16px 0 8px;
+}
+
+.start-plan {
+  padding-top: 30px;
+}
+
+.start-step-list {
+  display: grid;
+  gap: 12px;
+}
+
+.start-step-list article {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  padding: 20px;
+}
+
+.start-step-list h3 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  margin: 5px 0 8px;
+}
+
+.start-step-list a {
+  color: var(--teal-dark);
+  font-weight: 850;
+}
+
+.decision-onboarding {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding: 24px;
+}
+
+.decision-onboarding h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.decision-example-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.decision-example-grid article {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+  padding: 15px;
+}
+
+.decision-example-grid strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.25;
+}
+
 .decision-panel {
   border: 1px solid var(--line);
   border-radius: var(--radius-large);
@@ -2290,6 +2416,33 @@ summary {
   gap: 8px;
   margin: 18px 0 0;
   padding-left: 22px;
+}
+
+.decision-action-plan {
+  margin-top: 18px;
+  padding: 24px;
+}
+
+.decision-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.decision-action-grid article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  min-height: 210px;
+  padding: 16px;
+}
+
+.decision-action-grid h4 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.1;
+  margin: 14px 0 8px;
 }
 
 .decision-experiment-list {
@@ -4903,6 +5056,9 @@ summary {
   }
 
   .trust-grid,
+  .handoff-card,
+  .start-reassurance,
+  .decision-onboarding,
   .readiness-grid,
   .review-layout,
   .premed-strategy-heading,
@@ -4953,7 +5109,8 @@ summary {
 
   .decision-score-grid,
   .decision-reality-grid,
-  .decision-top-grid {
+  .decision-top-grid,
+  .decision-action-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -5042,6 +5199,11 @@ summary {
 
   .pillar-grid,
   .family-strip,
+    .handoff-card,
+    .start-reassurance,
+    .start-step-list article,
+    .decision-onboarding,
+    .decision-example-grid,
     .family-grid,
     .program-grid,
     .challenge-grid,
@@ -5062,6 +5224,7 @@ summary {
     .decision-reality-grid,
     .decision-requirement-grid,
     .decision-top-grid,
+    .decision-action-grid,
     .recommendation-grid,
     .career-card-grid,
     .three-panel-grid,
